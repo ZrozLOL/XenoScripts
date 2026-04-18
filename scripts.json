@@ -85,9 +85,9 @@
       "description": "\uD83C\uDDFA\uD83C\uDDF8 : Nice, OP, Universal Aim Assist, looks like it was taken from an external!\n\uD83C\uDDF7\uD83C\uDDFA : \u0425\u043E\u0440\u043E\u0448\u0438\u0439, \u0441\u0438\u043B\u044C\u043D\u044B\u0439, \u0443\u043D\u0438\u0432\u0435\u0440\u0441\u0430\u043B\u044C\u043D\u044B\u0439 \u0430\u0438\u043C \u0430\u0441\u0441\u0438\u0441\u0442, \u0432\u044B\u0433\u043B\u044F\u0434\u0438\u0442 \u043A\u0430\u043A \u0431\u0443\u0434\u0442\u043E \u0435\u0433\u043E \u0432\u0437\u044F\u043B\u0438 \u0441 \u044D\u043A\u0441\u0442\u0435\u0440\u043D\u0430\u043B\u0430!",
       "code": "loadstring(game:HttpGet(\u0022https://pastebin.com/raw/jaSKX7XB\u0022))()",
       "game": "Universal",
-      "keyless": false,
+      "keyless": true,
       "key_difficulty": "none",
-      "serversided": true,
+      "serversided": false,
       "date": "2026-04-18"
     },
     "script_1776532545": {
@@ -105,7 +105,7 @@
       "description": "\uD83C\uDDFA\uD83C\uDDF8 OP Script - Powerful \u0026 Feature-Rich\nYou can wipe the entire server instantly.\n\n\uD83D\uDD27 Features:\nSpeed, CFrame, Keybinds, Fly, Teleport, Characters, Automations, Dashes, Attack, Wall Combo, ESP, Tracers, Commands, Settings, Fling Type, Anti-Ban, Animations, Misc\n\n\uD83C\uDDF7\uD83C\uDDFA OP \u0421\u043A\u0440\u0438\u043F\u0442 - \u043C\u043E\u0449\u043D\u044B\u0439 \u0438 \u043C\u043D\u043E\u0433\u043E\u0444\u0443\u043D\u043A\u0446\u0438\u043E\u043D\u0430\u043B\u044C\u043D\u044B\u0439\n\u041C\u043E\u0436\u043D\u043E \u043C\u0433\u043D\u043E\u0432\u0435\u043D\u043D\u043E \u0443\u043D\u0438\u0447\u0442\u043E\u0436\u0438\u0442\u044C \u0432\u0435\u0441\u044C \u0441\u0435\u0440\u0432\u0435\u0440.\n\n\uD83D\uDD27 \u0424\u0443\u043D\u043A\u0446\u0438\u0438:\nSpeed, CFrame, Keybinds, Fly, Teleport, Characters, Automations, Dashes, Attack, Wall Combo, ESP, Tracers, Commands, Settings, Fling Type, Anti-Ban, Animations, Misc",
       "code": "loadstring(game:HttpGet(\u0022https://raw.githubusercontent.com/ATrainz/Phantasm/refs/heads/main/Games/TSB.lua\u0022))()",
       "game": "The Strongest Battlegrounds",
-      "keyless": false,
+      "keyless": true,
       "key_difficulty": "none",
       "serversided": true,
       "date": "2026-04-18"
