@@ -273,28 +273,40 @@ window.addEventListener('load', function() {
     setTimeout(function() {
         let adBlockDetected = false;
         
-        // Метод 1: Перевірка через тестовий div
+        // Метод 1: Перевірка через тестовий div з множинними класами
         const testAd = document.createElement('div');
-        testAd.className = 'adsbox ad-banner';
-        testAd.style.cssText = 'position:absolute;left:-9999px;width:1px;height:1px;';
+        testAd.className = 'ad ads adsbox ad-banner advertisement';
+        testAd.style.cssText = 'height:1px!important;';
         document.body.appendChild(testAd);
         
-        if (testAd.offsetHeight === 0 || window.getComputedStyle(testAd).display === 'none') {
+        // Перевірка висоти
+        const height = testAd.offsetHeight;
+        const display = window.getComputedStyle(testAd).display;
+        const visibility = window.getComputedStyle(testAd).visibility;
+        
+        if (height === 0 || display === 'none' || visibility === 'hidden') {
             adBlockDetected = true;
         }
+        
         testAd.remove();
         
-        // Метод 2: Перевірка чи рекламні скрипти завантажилися
-        const adScripts = document.querySelectorAll('script[data-cfasync="false"]');
-        if (adScripts.length > 0) {
-            let anyLoaded = false;
-            adScripts.forEach(function(script) {
-                // Перевіряємо чи є window властивості від AdMaven
-                if (window.addEventListener && !adBlockDetected) {
-                    // Якщо скрипт завантажився, він створює глобальні змінні
-                    anyLoaded = true;
-                }
-            });
+        // Метод 2: Перевірка чи скрипти завантажилися через onerror
+        if (!adBlockDetected) {
+            const adScripts = document.querySelectorAll('script[data-cfasync="false"]');
+            if (adScripts.length > 0) {
+                // Якщо жоден скрипт не має src (значить не завантажився)
+                let allBlocked = true;
+                adScripts.forEach(function(script) {
+                    if (script.src && !script.error) {
+                        // Скрипт існує але перевіримо чи він завантажився
+                        const testImg = new Image();
+                        testImg.src = script.src;
+                        testImg.onerror = function() {
+                            adBlockDetected = true;
+                        };
+                    }
+                });
+            }
         }
         
         // Показати попередження якщо виявлено AdBlock
@@ -335,6 +347,7 @@ window.addEventListener('load', function() {
                     </button>
                 </div>
             `;
+            return;
         }
     }, 1500);
 });
