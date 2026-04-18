@@ -1,1 +1,59 @@
 
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Get Script</title>
+
+<!-- 🔥 ВСТАВ СЮДИ КОД AdMaven -->
+<script>
+/* ТУТ ВСТАВ СВІЙ AD CODE */
+</script>
+
+<style>
+body {
+    background: #0f0f0f;
+    color: white;
+    font-family: Arial;
+    text-align: center;
+    padding-top: 100px;
+}
+button {
+    padding: 15px 30px;
+    font-size: 18px;
+    background: purple;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<h1>⏳ Почекай 10 секунд...</h1>
+<p id="timer">10</p>
+
+<button id="btn" style="display:none;" onclick="getScript()">Отримати скрипт</button>
+
+<script>
+let time = 10;
+let timer = document.getElementById("timer");
+
+let interval = setInterval(() => {
+    time--;
+    timer.innerText = time;
+
+    if (time <= 0) {
+        clearInterval(interval);
+        document.getElementById("btn").style.display = "inline-block";
+    }
+}, 1000);
+
+function getScript() {
+    window.location.href = "https://YOUR_SCRIPT_LINK_HERE";
+}
+</script>
+
+</body>
+</html>
