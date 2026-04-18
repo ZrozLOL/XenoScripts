@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Script</title>
+<style>
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.script-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 30px;
+    max-width: 800px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.script-box {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px 0;
+    font-family: 'Courier New', monospace;
+    word-wrap: break-word;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+button {
+    padding: 15px 40px;
+    font-size: 18px;
+    background: linear-gradient(135deg, #00d2ff 0%, #3a47d5 100%);
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 50px;
+    font-weight: 600;
+    box-shadow: 0 10px 30px rgba(0, 210, 255, 0.4);
+    transition: all 0.3s ease;
+    margin: 10px;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0, 210, 255, 0.6);
+}
+
+.copied {
+    color: #00ff88;
+    font-weight: bold;
+    margin-top: 10px;
+}
+</style>
+</head>
+<body>
+
+<div class="script-container">
+    <h1>✅ Your Script is Ready!</h1>
+    <div class="script-box" id="scriptCode">
+        Loading script...
+    </div>
+    <button onclick="copyScript()">📋 Copy Script</button>
+    <button onclick="window.location.href='https://t.me/твій_канал'">📢 Join Channel</button>
+    <p class="copied" id="copiedMsg" style="display:none;">✓ Copied to clipboard!</p>
+</div>
+
+<script>
+// Отримуємо ID скрипта з URL
+const urlParams = new URLSearchParams(window.location.search);
+const scriptId = urlParams.get('id');
+
+// Завантажуємо скрипт
+async function loadScript() {
+    try {
+        // Запит до твого API або GitHub файлу
+        const response = await fetch(`https://raw.githubusercontent.com/zrozloi/XenoScripts/main/scripts/${scriptId}.txt`);
+        const scriptCode = await response.text();
+        document.getElementById('scriptCode').innerText = scriptCode;
+    } catch (error) {
+        document.getElementById('scriptCode').innerText = "Error loading script. Please contact support.";
+    }
+}
+
+function copyScript() {
+    const scriptText = document.getElementById('scriptCode').innerText;
+    navigator.clipboard.writeText(scriptText);
+    document.getElementById('copiedMsg').style.display = 'block';
+    setTimeout(() => {
+        document.getElementById('copiedMsg').style.display = 'none';
+    }, 2000);
+}
+
+// Завантажуємо скрипт при відкритті сторінки
+loadScript();
+</script>
+
+</body>
+</html>
