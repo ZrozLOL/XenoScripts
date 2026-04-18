@@ -197,7 +197,7 @@ button.show {
         <div class="progress-fill"></div>
     </div>
     <p class="subtitle">Your script is being prepared</p>
-    <button id="btn" onclick="getScript()">Get Script Now</button>
+    <button id="btn" onclick="getScript()">Get Script</button>
 </div>
 
 <script>
@@ -246,7 +246,7 @@ let interval = setInterval(() => {
         clearInterval(interval);
         timer.innerText = "✓";
         btn.classList.add('show');
-        document.querySelector('.subtitle').innerText = "Ready to download!";
+        document.querySelector('.subtitle').innerText = "Ready to copy!!";
     }
 }, 1000);
 
