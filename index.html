@@ -268,93 +268,71 @@ function getScript() {
 }
 </script>
 <script>
-// Покращена детекція AdBlock
+// Проста але ефективна детекція AdBlock
 (function() {
-    var adBlockDetected = false;
-    
-    // Метод 1: Перевірка через bait елемент
-    var bait = document.createElement('div');
-    bait.className = 'ad ads adsbox doubleclick ad-placement ad-placeholder adbadge BannerAd';
-    bait.style.cssText = 'width:1px!important;height:1px!important;position:absolute!important;left:-10000px!important;top:-1000px!important;';
-    document.body.appendChild(bait);
-    
-    // Метод 2: Перевірка через fetch
-    var adCheckUrl = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
-    
-    function showAdBlockMessage() {
-        document.body.innerHTML = `
-            <div style="
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                min-height: 100vh;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                color: white;
-                font-family: 'Segoe UI', sans-serif;
-                text-align: center;
-                padding: 20px;
-            ">
-                <div style="font-size: 80px; margin-bottom: 20px;">🚫</div>
-                <h1 style="font-size: 32px; margin-bottom: 15px;">
-                    Please Disable AdBlock
-                </h1>
-                <p style="font-size: 16px; opacity: 0.9; margin-bottom: 30px; max-width: 400px;">
-                    We detected that you're using an ad blocker. 
-                    Please disable it and refresh the page to continue.
-                </p>
-                <button onclick="location.reload()" style="
-                    padding: 18px 45px;
-                    font-size: 18px;
-                    background: white;
-                    color: #667eea;
-                    border: none;
-                    border-radius: 50px;
-                    cursor: pointer;
-                    font-weight: 600;
-                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-                    transition: transform 0.2s;
-                " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                    🔄 Refresh Page
-                </button>
-            </div>
-        `;
+    function checkAdBlock() {
+        // Створюємо приманку
+        var bait = document.createElement('div');
+        bait.className = 'ad adsbox ad-placement';
+        bait.style.cssText = 'width:1px;height:1px;position:absolute;left:-999px;';
+        document.body.appendChild(bait);
+        
+        setTimeout(function() {
+            var isBlocked = false;
+            
+            // Перевірка 1: чи елемент схований
+            if (bait.offsetHeight === 0 || window.getComputedStyle(bait).display === 'none') {
+                isBlocked = true;
+            }
+            
+            bait.remove();
+            
+            if (isBlocked) {
+                document.body.innerHTML = `
+                    <div style="
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        min-height: 100vh;
+                        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                        color: white;
+                        font-family: 'Segoe UI', sans-serif;
+                        text-align: center;
+                        padding: 20px;
+                    ">
+                        <div style="font-size: 80px; margin-bottom: 20px;">🚫</div>
+                        <h1 style="font-size: 32px; margin-bottom: 15px;">
+                            Please Disable AdBlock
+                        </h1>
+                        <p style="font-size: 16px; opacity: 0.9; margin-bottom: 30px; max-width: 400px;">
+                            We detected that you're using an ad blocker. 
+                            Please disable it and refresh the page to continue.
+                        </p>
+                        <button onclick="location.reload()" style="
+                            padding: 18px 45px;
+                            font-size: 18px;
+                            background: white;
+                            color: #667eea;
+                            border: none;
+                            border-radius: 50px;
+                            cursor: pointer;
+                            font-weight: 600;
+                            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+                        ">
+                            🔄 Refresh Page
+                        </button>
+                    </div>
+                `;
+            }
+        }, 100);
     }
     
-    // Перевірка через затримку
-    setTimeout(function() {
-        // Перевіряємо bait елемент
-        if (window.getComputedStyle(bait).display === 'none' || 
-            bait.offsetHeight === 0 || 
-            bait.offsetWidth === 0 ||
-            bait.offsetParent === null) {
-            adBlockDetected = true;
-        }
-        
-        // Перевіряємо чи завантажились рекламні скрипти
-        var scripts = document.querySelectorAll('script[src*="cloudfront"]');
-        var scriptsLoaded = false;
-        scripts.forEach(function(script) {
-            if (script.readyState === 'complete' || script.readyState === 'loaded') {
-                scriptsLoaded = true;
-            }
-        });
-        
-        bait.remove();
-        
-        if (adBlockDetected || !scriptsLoaded) {
-            showAdBlockMessage();
-        }
-    }, 300);
-    
-    // Додаткова перевірка через fetch
-    fetch(adCheckUrl, {
-        method: 'HEAD',
-        mode: 'no-cors',
-        cache: 'no-store'
-    }).catch(function() {
-        setTimeout(showAdBlockMessage, 500);
-    });
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', checkAdBlock);
+    } else {
+        checkAdBlock();
+    }
 })();
 </script>
 </body>
