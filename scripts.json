@@ -23,6 +23,14 @@
       "game": "Universal",
       "keyless": true,
       "date": "2026-04-18"
+    },
+    "script_1776524479": {
+      "name": "Build A Boat AutoFarm",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8: Autofarm script for Build a Boat for Treasure.\n\uD83C\uDDF7\uD83C\uDDFA: \u0421\u043A\u0440\u0438\u043F\u0442 \u0434\u043B\u044F \u0430\u0432\u0442\u043E\u0444\u0430\u0440\u043C\u0430 \u0434\u043B\u044F Build a Boat for Treasure.",
+      "code": "--WAIT ~20 SECONDS IF SCRIPT DON\u0027T LAUCNHING TRY AGAIN!\nloadstring(game:HttpGet(\u0027https://raw.githubusercontent.com/ZrozLOL/TDH-V2/refs/heads/main/BABFT\u0027))()",
+      "game": "Build a Boat for Treasure",
+      "keyless": true,
+      "date": "2026-04-18"
     }
   }
 }
