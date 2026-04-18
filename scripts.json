@@ -31,6 +31,14 @@
       "game": "Build a Boat for Treasure",
       "keyless": true,
       "date": "2026-04-18"
+    },
+    "script_1776524705": {
+      "name": "Blocks n\u0027 Props (VERY OP)",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8: Script for Blocks n\u0027 Props, very OP, easy to use, many features, no key, can lead to total chaos on server.\n\uD83C\uDDF7\uD83C\uDDFA: \u0421\u043A\u0440\u0438\u043F\u0442 \u0434\u043B\u044F Blocks n\u0027 Props, \u043E\u0447\u0435\u043D\u044C \u0441\u0438\u043B\u0451\u043D, \u043B\u0451\u0433\u043E\u043A \u0432 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u0438, \u043C\u043D\u043E\u0433\u043E \u0444\u0443\u043D\u043A\u0446\u0438\u0439, \u0431\u0435\u0437 \u043A\u043B\u044E\u0447\u0430, \u043C\u043E\u0436\u0435\u0442 \u043F\u0440\u0438\u0432\u0435\u0441\u0442\u0438 \u043A \u0442\u043E\u0442\u0430\u043B\u044C\u043D\u043E\u043C\u0443 \u0445\u0430\u043E\u0441\u0443 \u043D\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0435.",
+      "code": "--WAIT ~20 SECONDS! IF NOT LAUNCHING TRY AGAIN!\nloadstring(game:HttpGet(\u0027https://raw.githubusercontent.com/ZrozLOL/TDH-V2/refs/heads/main/TDH_blocks-n-props\u0027))()",
+      "game": "Blocks n\u0027 Props",
+      "keyless": true,
+      "date": "2026-04-18"
     }
   }
 }
