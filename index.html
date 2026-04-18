@@ -266,6 +266,62 @@ function getScript() {
         alert('Error: No script ID provided');
     }
 }
+<script>
+// Перевірка AdBlock при завантаженні сторінки
+window.addEventListener('load', function() {
+    setTimeout(function() {
+        // Перевіряємо чи завантажилися рекламні скрипти
+        const adScripts = document.querySelectorAll('script[src*="cloudfront"]');
+        let adsLoaded = false;
+        
+        adScripts.forEach(function(script) {
+            // Якщо скрипт успішно завантажився
+            if (typeof script.sheet !== 'undefined' || script.readyState === 'complete') {
+                adsLoaded = true;
+            }
+        });
+        
+        // Якщо реклама не завантажилася
+        if (adScripts.length > 0 && !adsLoaded) {
+            document.body.innerHTML = `
+                <div style="
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    min-height: 100vh;
+                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    color: white;
+                    font-family: 'Segoe UI', sans-serif;
+                    text-align: center;
+                    padding: 20px;
+                ">
+                    <div style="font-size: 80px; margin-bottom: 20px;">🚫</div>
+                    <h1 style="font-size: 32px; margin-bottom: 15px;">
+                        Please Disable AdBlock
+                    </h1>
+                    <p style="font-size: 16px; opacity: 0.9; margin-bottom: 30px; max-width: 400px;">
+                        We detected that you're using an ad blocker. 
+                        Please disable it and refresh the page to continue.
+                    </p>
+                    <button onclick="location.reload()" style="
+                        padding: 18px 45px;
+                        font-size: 18px;
+                        background: white;
+                        color: #667eea;
+                        border: none;
+                        border-radius: 50px;
+                        cursor: pointer;
+                        font-weight: 600;
+                        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+                    ">
+                        🔄 Refresh Page
+                    </button>
+                </div>
+            `;
+        }
+    }, 1000);
+});
 </script>
 </body>
 </html>
