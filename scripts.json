@@ -119,6 +119,16 @@
       "key_difficulty": "none",
       "serversided": false,
       "date": "2026-04-18"
+    },
+    "script_1776543689": {
+      "name": "Bite by night Script",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : OP Script - Powerful \u0026 Feature-Rich\nYou can dominate the game with insane advantages.\n\uD83C\uDDF7\uD83C\uDDFA : OP \u0421\u043A\u0440\u0438\u043F\u0442 - \u043C\u043E\u0449\u043D\u044B\u0439 \u0438 \u043C\u043D\u043E\u0433\u043E\u0444\u0443\u043D\u043A\u0446\u0438\u043E\u043D\u0430\u043B\u044C\u043D\u044B\u0439\n\u041F\u043E\u043B\u043D\u044B\u0439 \u043A\u043E\u043D\u0442\u0440\u043E\u043B\u044C \u043D\u0430\u0434 \u0438\u0433\u0440\u043E\u0439 \u0438 \u043C\u0430\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u043E\u0435 \u043F\u0440\u0435\u0438\u043C\u0443\u0449\u0435\u0441\u0442\u0432\u043E.\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438\uD83C\uDDFA\uD83C\uDDF8\uD83C\uDDF7\uD83C\uDDFA:\nFOV Changer, Walkspeed, JumpPower, Infinite Jump, Noclip, ESP, Infinite Stamina, Anti Stamina Fatigue, Auto Solve Generator Puzzle, Hide Generator UI, Solve Generator Puzzle, Fullbright, Auto Hit, Auto Aim Nearest Survivor, Auto Aim Axe, Auto Aim Wires, Auto Repair Generators, Auto Insert Battery, Auto Escape, Auto Hold Barricade, Auto Eat Pizza, Auto Parry, Auto Aim Taser, Auto Shake Camera, Skin Changer",
+      "code": "loadstring(game:HttpGet(\u0022https://essencesuite.onrender.com/script/loader.lua\u0022))()",
+      "game": "Bite by night",
+      "keyless": false,
+      "key_difficulty": "easy",
+      "serversided": true,
+      "date": "2026-04-18"
     }
   }
 }
