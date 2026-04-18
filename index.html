@@ -266,23 +266,39 @@ function getScript() {
         alert('Error: No script ID provided');
     }
 }
+</script>
 <script>
 // Перевірка AdBlock при завантаженні сторінки
 window.addEventListener('load', function() {
     setTimeout(function() {
-        // Перевіряємо чи завантажилися рекламні скрипти
-        const adScripts = document.querySelectorAll('script[src*="cloudfront"]');
-        let adsLoaded = false;
+        let adBlockDetected = false;
         
-        adScripts.forEach(function(script) {
-            // Якщо скрипт успішно завантажився
-            if (typeof script.sheet !== 'undefined' || script.readyState === 'complete') {
-                adsLoaded = true;
-            }
-        });
+        // Метод 1: Перевірка через тестовий div
+        const testAd = document.createElement('div');
+        testAd.className = 'adsbox ad-banner';
+        testAd.style.cssText = 'position:absolute;left:-9999px;width:1px;height:1px;';
+        document.body.appendChild(testAd);
         
-        // Якщо реклама не завантажилася
-        if (adScripts.length > 0 && !adsLoaded) {
+        if (testAd.offsetHeight === 0 || window.getComputedStyle(testAd).display === 'none') {
+            adBlockDetected = true;
+        }
+        testAd.remove();
+        
+        // Метод 2: Перевірка чи рекламні скрипти завантажилися
+        const adScripts = document.querySelectorAll('script[data-cfasync="false"]');
+        if (adScripts.length > 0) {
+            let anyLoaded = false;
+            adScripts.forEach(function(script) {
+                // Перевіряємо чи є window властивості від AdMaven
+                if (window.addEventListener && !adBlockDetected) {
+                    // Якщо скрипт завантажився, він створює глобальні змінні
+                    anyLoaded = true;
+                }
+            });
+        }
+        
+        // Показати попередження якщо виявлено AdBlock
+        if (adBlockDetected) {
             document.body.innerHTML = `
                 <div style="
                     display: flex;
@@ -320,7 +336,7 @@ window.addEventListener('load', function() {
                 </div>
             `;
         }
-    }, 1000);
+    }, 1500);
 });
 </script>
 </body>
