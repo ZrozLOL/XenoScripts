@@ -268,24 +268,13 @@ function getScript() {
 }
 </script>
 <script>
-// Багаторівнева детекція AdBlock
+// МАКСИМАЛЬНА детекція AdBlock
 (function() {
-    var adBlockDetected = false;
+    var detectionMethods = 0;
+    var detectionsPassed = 0;
+    var requiredDetections = 1; // Достатньо 1 спрацювання
     
-    // Метод 1: Множинні приманки
-    var baits = [];
-    var baitClasses = ['ad', 'ads', 'adsbox', 'adsbygoogle', 'ad-placement', 'doubleclick', 'ad-banner'];
-    
-    baitClasses.forEach(function(className) {
-        var bait = document.createElement('div');
-        bait.className = className;
-        bait.style.cssText = 'height:1px!important;width:1px!important;position:absolute!important;left:-999px!important;';
-        bait.innerHTML = '&nbsp;';
-        document.body.appendChild(bait);
-        baits.push(bait);
-    });
-    
-    function showAdBlockWarning() {
+    function blockPage() {
         document.body.innerHTML = `
             <div style="
                 display: flex;
@@ -324,32 +313,114 @@ function getScript() {
         `;
     }
     
-    setTimeout(function() {
-        var blockedCount = 0;
+    // Метод 1: Множинні bait елементи
+    var baitNames = [
+        'ad', 'ads', 'adsbox', 'adsbygoogle', 'ad-placement', 
+        'doubleclick', 'ad-banner', 'advert', 'advertisement',
+        'ad-container', 'ad-wrapper', 'sponsored', 'sponsor-ad'
+    ];
+    
+    baitNames.forEach(function(name) {
+        var bait = document.createElement('div');
+        bait.className = name;
+        bait.id = name + '-bait';
+        bait.style.cssText = 'height:1px!important;width:1px!important;position:absolute!important;left:-10000px!important;top:-1000px!important;';
+        bait.innerHTML = '<ins class="adsbygoogle"></ins>';
+        document.body.appendChild(bait);
         
-        baits.forEach(function(bait) {
+        setTimeout(function() {
             if (bait.offsetHeight === 0 || 
                 bait.offsetWidth === 0 || 
+                !bait.offsetParent ||
                 window.getComputedStyle(bait).display === 'none' ||
-                window.getComputedStyle(bait).visibility === 'hidden') {
-                blockedCount++;
+                window.getComputedStyle(bait).visibility === 'hidden' ||
+                window.getComputedStyle(bait).opacity === '0') {
+                detectionsPassed++;
+                if (detectionsPassed >= requiredDetections) blockPage();
             }
-            bait.remove();
-        });
-        
-        // Якщо хоча б 2 приманки заблоковані
-        if (blockedCount >= 2) {
-            showAdBlockWarning();
+            try { bait.remove(); } catch(e) {}
+        }, 100);
+    });
+    
+    // Метод 2: Перевірка window.canRunAds
+    setTimeout(function() {
+        if (typeof window.canRunAds === 'undefined' || window.canRunAds === false) {
+            detectionsPassed++;
+            if (detectionsPassed >= requiredDetections) blockPage();
+        }
+    }, 150);
+    
+    // Метод 3: Google AdSense script check
+    setTimeout(function() {
+        var adsenseLoaded = false;
+        var scripts = document.getElementsByTagName('script');
+        for (var i = 0; i < scripts.length; i++) {
+            if (scripts[i].src.indexOf('adsbygoogle') !== -1 || 
+                scripts[i].src.indexOf('googlesyndication') !== -1) {
+                adsenseLoaded = true;
+                break;
+            }
+        }
+        if (!adsenseLoaded) {
+            detectionsPassed++;
+            if (detectionsPassed >= requiredDetections) blockPage();
         }
     }, 200);
     
-    // Метод 2: Перевірка через fetch Google Ads
+    // Метод 4: Fetch Google Ads
     fetch('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', {
         method: 'HEAD',
-        mode: 'no-cors'
+        mode: 'no-cors',
+        cache: 'no-store'
     }).catch(function() {
-        setTimeout(showAdBlockWarning, 300);
+        detectionsPassed++;
+        if (detectionsPassed >= requiredDetections) blockPage();
     });
+    
+    // Метод 5: Перевірка AdMaven скриптів
+    setTimeout(function() {
+        var scripts = document.querySelectorAll('script[src*="cloudfront"]');
+        if (scripts.length === 0) {
+            detectionsPassed++;
+            if (detectionsPassed >= requiredDetections) blockPage();
+        }
+    }, 250);
+    
+    // Метод 6: Створення fake ad елемента та перевірка через MutationObserver
+    var fakeAd = document.createElement('div');
+    fakeAd.className = 'adsbygoogle';
+    fakeAd.style.cssText = 'display:block;width:1px;height:1px;';
+    document.body.appendChild(fakeAd);
+    
+    var observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if (mutation.removedNodes.length > 0) {
+                Array.from(mutation.removedNodes).forEach(function(node) {
+                    if (node === fakeAd) {
+                        detectionsPassed++;
+                        if (detectionsPassed >= requiredDetections) blockPage();
+                    }
+                });
+            }
+        });
+    });
+    
+    observer.observe(document.body, { childList: true });
+    
+    setTimeout(function() {
+        if (fakeAd.offsetHeight === 0 || !document.body.contains(fakeAd)) {
+            detectionsPassed++;
+            if (detectionsPassed >= requiredDetections) blockPage();
+        }
+        observer.disconnect();
+    }, 300);
+    
+    // Фінальна перевірка через 500ms
+    setTimeout(function() {
+        if (detectionsPassed >= requiredDetections) {
+            blockPage();
+        }
+    }, 500);
 })();
 </script>
 </body>
