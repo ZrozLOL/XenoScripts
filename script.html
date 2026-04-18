@@ -113,6 +113,14 @@ h1 {
     font-size: 13px;
     font-weight: 600;
 }
+.both-badge {
+    display: inline-block;
+    background: rgba(138, 43, 226, 0.25);
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
 .script-box {
     background: rgba(0, 0, 0, 0.4);
     padding: 20px;
@@ -291,9 +299,13 @@ async function loadScript() {
             ? `<div class="keyless-badge">Keyless 🔑🚫</div>`
             : `<div class="haskey-badge">Have key 🔑</div>`;
         
-        const sideBadge = script.serversided  // Тут використовується правильна назва поля
+        const sideBadge = 
+            script.script_side === 'server' 
             ? `<div class="server-badge">ServerSided 🖥️</div>`
+            : script.script_side === 'both'
+            ? `<div class="both-badge">Server & Client 🖥️💻</div>`
             : `<div class="client-badge">ClientSided 💻</div>`;
+        
 
         container.innerHTML = `
             <h1>✅ ${script.name}</h1>
