@@ -89,6 +89,15 @@
       "keyless": false,
       "serversided": false,
       "date": "2026-04-18"
+    },
+    "script_1776540005": {
+      "name": "Phantasm TSB",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 OP Script - Powerful \u0026 Feature-Rich\nYou can wipe the entire server instantly.\n\n\uD83D\uDD27 Features:\nSpeed, CFrame, Keybinds, Fly, Teleport, Characters, Automations, Dashes, Attack, Wall Combo, ESP, Tracers, Commands, Settings, Fling Type, Anti-Ban, Animations, Misc\n\n\uD83C\uDDF7\uD83C\uDDFA OP \u0421\u043A\u0440\u0438\u043F\u0442 - \u043C\u043E\u0449\u043D\u044B\u0439 \u0438 \u043C\u043D\u043E\u0433\u043E\u0444\u0443\u043D\u043A\u0446\u0438\u043E\u043D\u0430\u043B\u044C\u043D\u044B\u0439\n\u041C\u043E\u0436\u043D\u043E \u043C\u0433\u043D\u043E\u0432\u0435\u043D\u043D\u043E \u0443\u043D\u0438\u0447\u0442\u043E\u0436\u0438\u0442\u044C \u0432\u0435\u0441\u044C \u0441\u0435\u0440\u0432\u0435\u0440.\n\n\uD83D\uDD27 \u0424\u0443\u043D\u043A\u0446\u0438\u0438:\nSpeed, CFrame, Keybinds, Fly, Teleport, Characters, Automations, Dashes, Attack, Wall Combo, ESP, Tracers, Commands, Settings, Fling Type, Anti-Ban, Animations, Misc",
+      "code": "loadstring(game:HttpGet(\u0022https://raw.githubusercontent.com/ATrainz/Phantasm/refs/heads/main/Games/TSB.lua\u0022))()",
+      "game": "The Strongest Battlegrounds",
+      "keyless": false,
+      "serversided": true,
+      "date": "2026-04-18"
     }
   }
 }
