@@ -7,6 +7,14 @@
       "game": "Build A Boat",
       "keyless": false,
       "date": "2026-04-18"
+    },
+    "script_1776522368": {
+      "name": "Face Animation",
+      "description": "\uD83C\uDDF7\uD83C\uDDFA: FD \u0441\u043A\u0440\u0438\u043F\u0442 \u043D\u0430 \u0430\u043D\u0438\u043C\u0430\u0446\u0438\u0438 \u043B\u0438\u0446\u0430\n\uD83C\uDDFA\uD83C\uDDF2: FD script for a mood animations",
+      "code": "loadstring(game:HttpGet(\\\\u0027https://raw.githubusercontent.com/Gazer-Ha/Gaze-stuff/refs/heads/main/Mood\\\\u0027))()",
+      "game": "Universal",
+      "keyless": true,
+      "date": "2026-04-18"
     }
   }
 }
