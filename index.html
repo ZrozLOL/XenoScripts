@@ -251,8 +251,12 @@ let interval = setInterval(() => {
 }, 1000);
 
 function getScript() {
-    // ⚠️ ЗАМІНИ ЦЕ ПОСИЛАННЯ НА СВОЄ!
-    window.location.href = "https://твоє-посилання-на-скрипт.com";
+    // Отримуємо ID скрипта з URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const scriptId = urlParams.get('id'); // script_12345
+    
+    // Перенаправляємо на сторінку зі скриптом
+    window.location.href = `script.html?id=${scriptId}`;
 }
 </script>
 </body>
