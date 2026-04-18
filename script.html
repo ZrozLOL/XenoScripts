@@ -96,7 +96,23 @@ h1 {
     font-size: 13px;
     font-weight: 600;
 }
+.server-badge {
+    display: inline-block;
+    background: rgba(255, 165, 0, 0.25);
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
 
+.client-badge {
+    display: inline-block;
+    background: rgba(0, 150, 255, 0.25);
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
 .script-box {
     background: rgba(0, 0, 0, 0.4);
     padding: 20px;
@@ -270,10 +286,14 @@ async function loadScript() {
         const gameBadge = script.game === 'Universal'
             ? `<div class="game-badge">(Universal)</div>`
             : `<div class="game-badge">🎮 ${script.game}</div>`;
-
+        
         const keyBadge = script.keyless
             ? `<div class="keyless-badge">Keyless 🔑🚫</div>`
             : `<div class="haskey-badge">Have key 🔑</div>`;
+        
+        const sideBadge = script.serversided
+            ? `<div class="server-badge">ServerSided 🖥️</div>`
+            : `<div class="client-badge">ClientSided 💻</div>`;
 
         container.innerHTML = `
             <h1>✅ ${script.name}</h1>
@@ -282,6 +302,7 @@ async function loadScript() {
                 <div class="badges">
                     ${gameBadge}
                     ${keyBadge}
+                    ${sideBadge}
                 </div>
                 <p>${script.description}</p>
             </div>
