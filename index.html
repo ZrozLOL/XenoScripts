@@ -255,11 +255,12 @@ let interval = setInterval(() => {
 }, 1000);
 
 function getScript() {
-    // Отримуємо ID скрипта з URL
     const urlParams = new URLSearchParams(window.location.search);
     const scriptId = urlParams.get('id');
     
     if (scriptId) {
+        // Зберігаємо токен що юзер пройшов таймер
+        sessionStorage.setItem('ad_passed_' + scriptId, 'true');
         window.location.href = `script.html?id=${scriptId}`;
     } else {
         alert('Error: No script ID provided');
