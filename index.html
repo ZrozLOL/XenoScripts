@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name='admaven-placement' content='Bajs7rjkE'>
 <title>Get Your Script</title>
-<!-- 🔥 INSERT MY AdMaven CODE HERE -->
-<script>
-/* MY AD CODE HERE */
-</script>
+
+<!-- 🔥 AdMaven Code -->
+<script data-cfasync="false" src="//dcbbwymp1bhlf.cloudfront.net/?wbbcd=1253824"></script>
+
 <style>
 * {
     margin: 0;
@@ -159,7 +159,6 @@ button.show {
     color: #e0e0e0;
 }
 
-/* Animated background particles */
 .particle {
     position: absolute;
     background: rgba(255, 255, 255, 0.5);
@@ -198,7 +197,7 @@ button.show {
         <div class="progress-fill"></div>
     </div>
     <p class="subtitle">Your script is being prepared</p>
-    <button id="btn" onclick="getScript()">Get Script</button>
+    <button id="btn" onclick="getScript()">Get Script Now</button>
 </div>
 
 <script>
@@ -247,12 +246,13 @@ let interval = setInterval(() => {
         clearInterval(interval);
         timer.innerText = "✓";
         btn.classList.add('show');
-        document.querySelector('.subtitle').innerText = "Ready to copy!!";
+        document.querySelector('.subtitle').innerText = "Ready to download!";
     }
 }, 1000);
 
 function getScript() {
-    window.location.href = "https://YOUR_SCRIPT_LINK_HERE";
+    // ⚠️ ЗАМІНИ ЦЕ ПОСИЛАННЯ НА СВОЄ!
+    window.location.href = "https://твоє-посилання-на-скрипт.com";
 }
 </script>
 </body>
