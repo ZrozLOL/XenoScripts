@@ -149,6 +149,16 @@
       "key_difficulty": "none",
       "script_side": "both",
       "date": "2026-04-18"
+    },
+    "script_1776544891": {
+      "name": "Infinite Yield",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Bruh\n\uD83C\uDDF7\uD83C\uDDFA : \u0411\u0440\u0443\u0445",
+      "code": "loadstring(game:HttpGet(\u0027https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source\u0027))()",
+      "game": "Universal",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "both",
+      "date": "2026-04-18"
     }
   }
 }
