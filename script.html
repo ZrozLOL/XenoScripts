@@ -6,15 +6,10 @@
 <meta name='admaven-placement' content='Bajs7rjkE'>
 <title>Get Your Script - XenoScripts</title>
 
-<!-- AdMaven Code -->
 <script data-cfasync="false" src="//dcbbwymp1bhlf.cloudfront.net/?wbbcd=1253824"></script>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -42,14 +37,8 @@ body {
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 h1 {
@@ -73,12 +62,37 @@ h1 {
     font-size: 15px;
 }
 
+.badges {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10px 0;
+}
+
 .game-badge {
     display: inline-block;
     background: rgba(102, 126, 234, 0.3);
     padding: 6px 18px;
     border-radius: 20px;
-    margin: 8px 0;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.keyless-badge {
+    display: inline-block;
+    background: rgba(0, 210, 100, 0.25);
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.haskey-badge {
+    display: inline-block;
+    background: rgba(255, 100, 100, 0.25);
+    padding: 6px 18px;
+    border-radius: 20px;
     font-size: 13px;
     font-weight: 600;
 }
@@ -98,19 +112,9 @@ h1 {
     text-align: left;
 }
 
-.script-box::-webkit-scrollbar {
-    width: 8px;
-}
-
-.script-box::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-}
-
-.script-box::-webkit-scrollbar-thumb {
-    background: rgba(102, 126, 234, 0.6);
-    border-radius: 10px;
-}
+.script-box::-webkit-scrollbar { width: 8px; }
+.script-box::-webkit-scrollbar-track { background: rgba(255,255,255,0.1); border-radius: 10px; }
+.script-box::-webkit-scrollbar-thumb { background: rgba(102,126,234,0.6); border-radius: 10px; }
 
 .button-group {
     display: flex;
@@ -134,23 +138,15 @@ button {
     letter-spacing: 0.5px;
 }
 
-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 40px rgba(0, 210, 255, 0.6);
-}
-
-button:active {
-    transform: translateY(-1px);
-}
+button:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(0, 210, 255, 0.6); }
+button:active { transform: translateY(-1px); }
 
 .btn-secondary {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
 }
 
-.btn-secondary:hover {
-    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
-}
+.btn-secondary:hover { box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6); }
 
 .copied-msg {
     color: #00ff88;
@@ -163,28 +159,12 @@ button:active {
 }
 
 @keyframes bounceIn {
-    0% {
-        opacity: 0;
-        transform: scale(0.5);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
+    0% { opacity: 0; transform: scale(0.5); }
+    100% { opacity: 1; transform: scale(1); }
 }
 
-.loading {
-    text-align: center;
-    font-size: 20px;
-    padding: 30px;
-}
-
-.error {
-    text-align: center;
-    color: #ff6b6b;
-    padding: 20px;
-    font-size: 17px;
-}
+.loading { text-align: center; font-size: 20px; padding: 30px; }
+.error { text-align: center; color: #ff6b6b; padding: 20px; font-size: 17px; }
 
 .particle {
     position: absolute;
@@ -194,23 +174,10 @@ button:active {
 }
 
 @media (max-width: 600px) {
-    .script-container {
-        padding: 40px 25px;
-    }
-
-    h1 {
-        font-size: 24px;
-    }
-
-    button {
-        padding: 14px 28px;
-        font-size: 15px;
-        width: 100%;
-    }
-
-    .button-group {
-        flex-direction: column;
-    }
+    .script-container { padding: 40px 25px; }
+    h1 { font-size: 24px; }
+    button { padding: 14px 28px; font-size: 15px; width: 100%; }
+    .button-group { flex-direction: column; }
 }
 </style>
 </head>
@@ -221,7 +188,6 @@ button:active {
 </div>
 
 <script>
-// Particles — як в index.html
 function createParticles() {
     for (let i = 0; i < 30; i++) {
         const particle = document.createElement('div');
@@ -246,7 +212,6 @@ style.textContent = `
 document.head.appendChild(style);
 createParticles();
 
-// Перевірка чи пройшов юзер таймер
 const urlParams = new URLSearchParams(window.location.search);
 const scriptId = urlParams.get('id');
 
@@ -302,14 +267,22 @@ async function loadScript() {
             return;
         }
 
+        const gameBadge = script.game === 'Universal'
+            ? `<div class="game-badge">(Universal)</div>`
+            : `<div class="game-badge">🎮 ${script.game}</div>`;
+
+        const keyBadge = script.keyless
+            ? `<div class="keyless-badge">Keyless 🔑🚫</div>`
+            : `<div class="haskey-badge">Have key 🔑</div>`;
+
         container.innerHTML = `
             <h1>✅ ${script.name}</h1>
 
             <div class="script-info">
-                ${script.game === 'Universal'
-                    ? `<div class="game-badge">(Universal)</div>`
-                    : `<div class="game-badge">🎮 ${script.game}</div>`
-                }
+                <div class="badges">
+                    ${gameBadge}
+                    ${keyBadge}
+                </div>
                 <p>${script.description}</p>
             </div>
 
@@ -317,7 +290,7 @@ async function loadScript() {
 
             <div class="button-group">
                 <button onclick="copyScript()">📋 Copy Script</button>
-                <button class="btn-secondary" onclick="window.open('https://t.me/YOUR_CHANNEL', '_blank')">📢 Join Channel</button>
+                <button class="btn-secondary" onclick="window.open('https://t.me/XenoScriptsSupported', '_blank')">📢 Join Channel</button>
             </div>
 
             <p class="copied-msg" id="copiedMsg">✓ Copied to clipboard!</p>
