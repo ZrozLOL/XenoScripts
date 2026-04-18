@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "script_001": {
+      "name": "Build A Boat AutoFarm",
+      "description": "Auto-farming script for Build A Boat For Treasure",
+      "code": "loadstring(game:HttpGet(\"https://raw.githubusercontent.com/Hm5011/hussain/refs/heads/main/Naval%20Warfare\"))()",
+      "game": "Build A Boat",
+      "date": "2026-04-18"
+    }
+  }
+}
