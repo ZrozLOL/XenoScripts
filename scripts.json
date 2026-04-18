@@ -80,6 +80,15 @@
       "keyless": false,
       "serversided": true,
       "date": "2026-04-18"
+    },
+    "script_1776532545": {
+      "name": "Bite by night",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : New, OP script that bypasses anticheat, many features.\nKey system is very bad\uD83D\uDE2C\n\uD83C\uDDF7\uD83C\uDDFA : \u041D\u043E\u0432\u044B\u0439, \u0441\u0438\u043B\u044C\u043D\u044B\u0439 \u0441\u043A\u0440\u0438\u043F\u0442 \u043A\u043E\u0442\u043E\u0440\u044B\u0439 \u043E\u0431\u0445\u043E\u0434\u0438\u0442 \u0430\u043D\u0442\u0438\u0447\u0438\u0442, \u043C\u043D\u043E\u0433\u043E \u0444\u0443\u043D\u043A\u0446\u0438\u0439\n\u041A\u041B\u042E\u0427 \u0421\u0418\u0421\u0422\u0415\u041C\u0410 \u0423\u0416\u0410\u0421\u041D\u0410\u042F\uD83D\uDE2C",
+      "code": "loadstring(game:HttpGet(\u0022https://raw.githubusercontent.com/Floppa1x1/Floppa-Hub/refs/heads/main/lua.lua\u0022))()",
+      "game": "Bite by night",
+      "keyless": false,
+      "serversided": false,
+      "date": "2026-04-18"
     }
   }
 }
