@@ -306,7 +306,10 @@ async function loadScript() {
             <h1>✅ ${script.name}</h1>
 
             <div class="script-info">
-                <div class="game-badge">🎮 ${script.game}</div>
+                ${script.game === 'Universal'
+                    ? `<div class="game-badge">(Universal)</div>`
+                    : `<div class="game-badge">🎮 ${script.game}</div>`
+                }
                 <p>${script.description}</p>
             </div>
 
