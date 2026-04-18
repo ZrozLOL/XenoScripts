@@ -7,7 +7,7 @@
       "game": "Universal",
       "keyless": true,
       "key_difficulty": "none",
-      "serversided": false,
+      "script_side": "client",
       "date": "2026-04-18"
     },
     "script_1776522911": {
@@ -17,7 +17,7 @@
       "game": "Ray\u0027s mod",
       "keyless": true,
       "key_difficulty": "none",
-      "serversided": false,
+      "script_side": "client",
       "date": "2026-04-18"
     },
     "script_1776524141": {
@@ -27,7 +27,7 @@
       "game": "Universal",
       "keyless": true,
       "key_difficulty": "none",
-      "serversided": false,
+      "script_side": "client",
       "date": "2026-04-18"
     },
     "script_1776524479": {
@@ -37,7 +37,7 @@
       "game": "Build a Boat for Treasure",
       "keyless": true,
       "key_difficulty": "none",
-      "serversided": false,
+      "script_side": "client",
       "date": "2026-04-18"
     },
     "script_1776524705": {
@@ -47,7 +47,7 @@
       "game": "Blocks n\u0027 Props",
       "keyless": true,
       "key_difficulty": "none",
-      "serversided": false,
+      "script_side": "client",
       "date": "2026-04-18"
     },
     "script_1776525009": {
@@ -57,7 +57,7 @@
       "game": "Break In (Story)",
       "keyless": true,
       "key_difficulty": "none",
-      "serversided": false,
+      "script_side": "client",
       "date": "2026-04-18"
     },
     "script_1776526297": {
@@ -67,7 +67,7 @@
       "game": "Rivals",
       "keyless": true,
       "key_difficulty": "none",
-      "serversided": false,
+      "script_side": "client",
       "date": "2026-04-18"
     },
     "script_1776530259": {
@@ -77,7 +77,7 @@
       "game": "Universal",
       "keyless": true,
       "key_difficulty": "none",
-      "serversided": false,
+      "script_side": "client",
       "date": "2026-04-18"
     },
     "script_1776531447": {
@@ -87,7 +87,7 @@
       "game": "Universal",
       "keyless": true,
       "key_difficulty": "none",
-      "serversided": false,
+      "script_side": "client",
       "date": "2026-04-18"
     },
     "script_1776532545": {
@@ -97,7 +97,7 @@
       "game": "Bite by night",
       "keyless": false,
       "key_difficulty": "none",
-      "serversided": false,
+      "script_side": "client",
       "date": "2026-04-18"
     },
     "script_1776540005": {
@@ -107,7 +107,7 @@
       "game": "The Strongest Battlegrounds",
       "keyless": true,
       "key_difficulty": "none",
-      "serversided": true,
+      "script_side": "client",
       "date": "2026-04-18"
     },
     "script_1776542416": {
@@ -117,7 +117,7 @@
       "game": "Funky Friday",
       "keyless": true,
       "key_difficulty": "none",
-      "serversided": false,
+      "script_side": "client",
       "date": "2026-04-18"
     },
     "script_1776543689": {
@@ -127,7 +127,17 @@
       "game": "Bite by night",
       "keyless": false,
       "key_difficulty": "easy",
-      "serversided": true,
+      "script_side": "client",
+      "date": "2026-04-18"
+    },
+    "script_1776544562": {
+      "name": "TSB script",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 :  Script - The Strongest Battlegrounds\nAdvanced visual enhancements \u0026 utility features.\n\n\uD83D\uDD27 Features:\nFOV, Color Correction, Aspect Ratio, Camera Blur, Infinite Zoom, Camera Strafe, Fog, Sky, Rendering, Player Arrows, Overlay, Alt\u002BTab Blur, Keystrokes, Server Info, Player Info, Core Info, Server Hop, Join by Job ID, Luau API, Marketplace\n\n\u26A0\uFE0F (Client-Sided / Not FE):\nSpoof Leaderboards, Fake Kills, Kill Streak, Avatar Changer, Auras, China Hat, Fake Headless / Korblox\n\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 - The Strongest Battlegrounds\n\u041F\u0440\u043E\u0434\u0432\u0438\u043D\u0443\u0442\u044B\u0435 \u0432\u0438\u0437\u0443\u0430\u043B\u044C\u043D\u044B\u0435 \u043D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438 \u0438 \u043F\u043E\u043B\u0435\u0437\u043D\u044B\u0435 \u0444\u0443\u043D\u043A\u0446\u0438\u0438.\n\n\uD83D\uDD27 \u0424\u0443\u043D\u043A\u0446\u0438\u0438:\nFOV, Color Correction, Aspect Ratio, Camera Blur, Infinite Zoom, Camera Strafe, Fog, Sky, Rendering, Player Arrows, Overlay, Alt\u002BTab Blur, Keystrokes, Server Info, Player Info, Core Info, Server Hop, Join by Job ID, Luau API, Marketplace\n\n\u26A0\uFE0F (\u041A\u043B\u0438\u0435\u043D\u0442\u0441\u043A\u0430\u044F \u0447\u0430\u0441\u0442\u044C / \u041D\u0435 FE):\nSpoof Leaderboards, Fake Kills, Kill Streak, Avatar Changer, Auras, China Hat, Fake Headless / Korblox",
+      "code": "loadstring(game:HttpGet(\u0027https://pastebin.com/raw/BeQktd9u\u0027))()",
+      "game": "The Strongest Battlegrounds",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "both",
       "date": "2026-04-18"
     }
   }
