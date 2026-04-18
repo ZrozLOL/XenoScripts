@@ -6,6 +6,7 @@
       "code": "loadstring(game:HttpGet(\\\\u0027https://raw.githubusercontent.com/Gazer-Ha/Gaze-stuff/refs/heads/main/Mood\\\\u0027))()",
       "game": "Universal",
       "keyless": true,
+      "serversided": false,
       "date": "2026-04-18"
     },
     "script_1776522911": {
@@ -14,6 +15,7 @@
       "code": "--WAIT 20~ SECONDS IF NOT LAUNCHING TRY AGAIN\nloadstring(game:HttpGet(\u0027https://raw.githubusercontent.com/ZrozLOL/TDH-V2/refs/heads/main/TDH_RaysMod\u0027))()",
       "game": "Ray\u0027s mod",
       "keyless": true,
+      "serversided": false,
       "date": "2026-04-18"
     },
     "script_1776524141": {
@@ -22,6 +24,7 @@
       "code": "--WAIT ~20 SECONDS! IF NOT LAUNCHING TRY AGAIN\nloadstring(game:HttpGet(\u0027https://raw.githubusercontent.com/ZrozLOL/TDH-V2/refs/heads/main/TubersDestructHub\u0027))()",
       "game": "Universal",
       "keyless": true,
+      "serversided": false,
       "date": "2026-04-18"
     },
     "script_1776524479": {
@@ -30,6 +33,7 @@
       "code": "--WAIT ~20 SECONDS IF SCRIPT DON\u0027T LAUCNHING TRY AGAIN!\nloadstring(game:HttpGet(\u0027https://raw.githubusercontent.com/ZrozLOL/TDH-V2/refs/heads/main/BABFT\u0027))()",
       "game": "Build a Boat for Treasure",
       "keyless": true,
+      "serversided": false,
       "date": "2026-04-18"
     },
     "script_1776524705": {
@@ -38,6 +42,7 @@
       "code": "--WAIT ~20 SECONDS! IF NOT LAUNCHING TRY AGAIN!\nloadstring(game:HttpGet(\u0027https://raw.githubusercontent.com/ZrozLOL/TDH-V2/refs/heads/main/TDH_blocks-n-props\u0027))()",
       "game": "Blocks n\u0027 Props",
       "keyless": true,
+      "serversided": false,
       "date": "2026-04-18"
     },
     "script_1776525009": {
@@ -46,6 +51,7 @@
       "code": "--WAIT ~20 SECONDS! IF NOT LAUNCHING TRY AGAIN\nloadstring(game:HttpGet(\u0027https://raw.githubusercontent.com/ZrozLOL/TDH-V2/refs/heads/main/TDH_BreakIn1\u0027))()",
       "game": "Break In (Story)",
       "keyless": true,
+      "serversided": false,
       "date": "2026-04-18"
     },
     "script_1776526297": {
@@ -54,6 +60,7 @@
       "code": "loadstring(game:HttpGet(\u0027https://raw.githubusercontent.com/men-cofing-roblox/Addons/refs/heads/main/Script.txt\u0027))()",
       "game": "Rivals",
       "keyless": true,
+      "serversided": false,
       "date": "2026-04-18"
     },
     "script_1776530259": {
@@ -62,6 +69,16 @@
       "code": "loadstring(game:HttpGet(\u0022https://mois7.xyz/loader\u0022))()",
       "game": "Universal",
       "keyless": true,
+      "serversided": false,
+      "date": "2026-04-18"
+    },
+    "script_1776531447": {
+      "name": "Aim",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Nice, OP, Universal Aim Assist, looks like it was taken from an external!\n\uD83C\uDDF7\uD83C\uDDFA : \u0425\u043E\u0440\u043E\u0448\u0438\u0439, \u0441\u0438\u043B\u044C\u043D\u044B\u0439, \u0443\u043D\u0438\u0432\u0435\u0440\u0441\u0430\u043B\u044C\u043D\u044B\u0439 \u0430\u0438\u043C \u0430\u0441\u0441\u0438\u0441\u0442, \u0432\u044B\u0433\u043B\u044F\u0434\u0438\u0442 \u043A\u0430\u043A \u0431\u0443\u0434\u0442\u043E \u0435\u0433\u043E \u0432\u0437\u044F\u043B\u0438 \u0441 \u044D\u043A\u0441\u0442\u0435\u0440\u043D\u0430\u043B\u0430!",
+      "code": "loadstring(game:HttpGet(\u0022https://pastebin.com/raw/jaSKX7XB\u0022))()",
+      "game": "Universal",
+      "keyless": false,
+      "serversided": true,
       "date": "2026-04-18"
     }
   }
