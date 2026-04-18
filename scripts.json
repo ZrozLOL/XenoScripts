@@ -23,6 +23,14 @@
       "game": "Ray\u0027s mod",
       "keyless": true,
       "date": "2026-04-18"
+    },
+    "script_1776524141": {
+      "name": "Tubers Destruct Hub UNIVERSAL",
+      "description": "\uD83C\uDDF7\uD83C\uDDFA: \u0421\u043A\u0440\u0438\u043F\u0442 \u043D\u0430 \u043B\u044E\u0431\u0443\u044E \u0438\u0433\u0440\u0443 \u0441 \u0444\u0443\u043D\u043A\u0446\u0438\u044F\u043C\u0438 \u043F\u043E \u0442\u0438\u043F\u0443 X-Ray\u0027\u044F. \u0414\u043E\u0441\u0442\u0430\u0442\u043E\u0447\u043D\u043E \u0444\u0443\u043D\u043A\u0446\u0438\u0439, \u043F\u043E\u0434\u0445\u043E\u0434\u0438\u0442 \u043F\u043E\u0434 \u043C\u043D\u043E\u0433\u0438\u0435 \u0438\u0433\u0440\u044B.\n\uD83C\uDDFA\uD83C\uDDF8: A script for any game with functions like X-Ray. Enough features, suitable for almost any game.",
+      "code": "--WAIT ~20 SECONDS! IF NOT LAUNCHING TRY AGAIN\nloadstring(game:HttpGet(\u0027https://raw.githubusercontent.com/ZrozLOL/TDH-V2/refs/heads/main/TubersDestructHub\u0027))()",
+      "game": "Universal",
+      "keyless": true,
+      "date": "2026-04-18"
     }
   }
 }
