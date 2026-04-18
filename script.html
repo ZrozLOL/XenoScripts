@@ -352,76 +352,89 @@ function copyScript() {
 loadScript();
 </script>
 <script>
-// Перевірка AdBlock при завантаженні сторінки
-window.addEventListener('load', function() {
-    setTimeout(function() {
-        let adBlockDetected = false;
-        
-        // Метод 1: Перевірка через тестовий div
-        const testAd = document.createElement('div');
-        testAd.className = 'adsbox ad-banner';
-        testAd.style.cssText = 'position:absolute;left:-9999px;width:1px;height:1px;';
-        document.body.appendChild(testAd);
-        
-        if (testAd.offsetHeight === 0 || window.getComputedStyle(testAd).display === 'none') {
-            adBlockDetected = true;
-        }
-        testAd.remove();
-        
-        // Метод 2: Перевірка чи рекламні скрипти завантажилися
-        const adScripts = document.querySelectorAll('script[data-cfasync="false"]');
-        if (adScripts.length > 0) {
-            let anyLoaded = false;
-            adScripts.forEach(function(script) {
-                // Перевіряємо чи є window властивості від AdMaven
-                if (window.addEventListener && !adBlockDetected) {
-                    // Якщо скрипт завантажився, він створює глобальні змінні
-                    anyLoaded = true;
-                }
-            });
-        }
-        
-        // Показати попередження якщо виявлено AdBlock
-        if (adBlockDetected) {
-            document.body.innerHTML = `
-                <div style="
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-                    min-height: 100vh;
-                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                    color: white;
-                    font-family: 'Segoe UI', sans-serif;
-                    text-align: center;
-                    padding: 20px;
+// Багаторівнева детекція AdBlock
+(function() {
+    var adBlockDetected = false;
+    
+    // Метод 1: Множинні приманки
+    var baits = [];
+    var baitClasses = ['ad', 'ads', 'adsbox', 'adsbygoogle', 'ad-placement', 'doubleclick', 'ad-banner'];
+    
+    baitClasses.forEach(function(className) {
+        var bait = document.createElement('div');
+        bait.className = className;
+        bait.style.cssText = 'height:1px!important;width:1px!important;position:absolute!important;left:-999px!important;';
+        bait.innerHTML = '&nbsp;';
+        document.body.appendChild(bait);
+        baits.push(bait);
+    });
+    
+    function showAdBlockWarning() {
+        document.body.innerHTML = `
+            <div style="
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                min-height: 100vh;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                font-family: 'Segoe UI', sans-serif;
+                text-align: center;
+                padding: 20px;
+            ">
+                <div style="font-size: 80px; margin-bottom: 20px;">🚫</div>
+                <h1 style="font-size: 32px; margin-bottom: 15px;">
+                    Please Disable AdBlock
+                </h1>
+                <p style="font-size: 16px; opacity: 0.9; margin-bottom: 30px; max-width: 400px;">
+                    We detected that you're using an ad blocker. 
+                    Please disable it and refresh the page to continue.
+                </p>
+                <button onclick="location.reload()" style="
+                    padding: 18px 45px;
+                    font-size: 18px;
+                    background: white;
+                    color: #667eea;
+                    border: none;
+                    border-radius: 50px;
+                    cursor: pointer;
+                    font-weight: 600;
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
                 ">
-                    <div style="font-size: 80px; margin-bottom: 20px;">🚫</div>
-                    <h1 style="font-size: 32px; margin-bottom: 15px;">
-                        Please Disable AdBlock
-                    </h1>
-                    <p style="font-size: 16px; opacity: 0.9; margin-bottom: 30px; max-width: 400px;">
-                        We detected that you're using an ad blocker. 
-                        Please disable it and refresh the page to continue.
-                    </p>
-                    <button onclick="location.reload()" style="
-                        padding: 18px 45px;
-                        font-size: 18px;
-                        background: white;
-                        color: #667eea;
-                        border: none;
-                        border-radius: 50px;
-                        cursor: pointer;
-                        font-weight: 600;
-                        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-                    ">
-                        🔄 Refresh Page
-                    </button>
-                </div>
-            `;
+                    🔄 Refresh Page
+                </button>
+            </div>
+        `;
+    }
+    
+    setTimeout(function() {
+        var blockedCount = 0;
+        
+        baits.forEach(function(bait) {
+            if (bait.offsetHeight === 0 || 
+                bait.offsetWidth === 0 || 
+                window.getComputedStyle(bait).display === 'none' ||
+                window.getComputedStyle(bait).visibility === 'hidden') {
+                blockedCount++;
+            }
+            bait.remove();
+        });
+        
+        // Якщо хоча б 2 приманки заблоковані
+        if (blockedCount >= 2) {
+            showAdBlockWarning();
         }
-    }, 1500);
-});
+    }, 200);
+    
+    // Метод 2: Перевірка через fetch Google Ads
+    fetch('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', {
+        method: 'HEAD',
+        mode: 'no-cors'
+    }).catch(function() {
+        setTimeout(showAdBlockWarning, 300);
+    });
+})();
 </script>
 </body>
 </html>
