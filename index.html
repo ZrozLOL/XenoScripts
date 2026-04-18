@@ -1,52 +1,252 @@
-
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Get Script</title>
-
-<!-- 🔥 ВСТАВ СЮДИ КОД AdMaven -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get Your Script</title>
+<!-- 🔥 INSERT YOUR AdMaven CODE HERE -->
 <script>
-/* ТУТ ВСТАВ СВІЙ AD CODE */
+/* YOUR AD CODE HERE */
 </script>
-
 <style>
-body {
-    background: #0f0f0f;
-    color: white;
-    font-family: Arial;
-    text-align: center;
-    padding-top: 100px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 60px 40px;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    max-width: 500px;
+    width: 90%;
+    animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+.timer-container {
+    margin: 40px 0;
+}
+
+#timer {
+    font-size: 80px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 4px 20px rgba(255, 255, 255, 0.3);
+    animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 30px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
+    width: 100%;
+    animation: progressAnimation 10s linear forwards;
+    border-radius: 10px;
+}
+
+@keyframes progressAnimation {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 0%;
+    }
+}
+
 button {
-    padding: 15px 30px;
-    font-size: 18px;
-    background: purple;
+    padding: 18px 45px;
+    font-size: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     border: none;
     color: white;
     cursor: pointer;
+    border-radius: 50px;
+    font-weight: 600;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+    transition: all 0.3s ease;
+    display: none;
+    margin-top: 20px;
+    letter-spacing: 0.5px;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+}
+
+button:active {
+    transform: translateY(-1px);
+}
+
+button.show {
+    display: inline-block;
+    animation: bounceIn 0.6s ease-out;
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.subtitle {
+    margin-top: 20px;
+    font-size: 16px;
+    opacity: 0.9;
+    color: #e0e0e0;
+}
+
+/* Animated background particles */
+.particle {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 40px 30px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+    
+    #timer {
+        font-size: 60px;
+    }
+    
+    button {
+        padding: 15px 35px;
+        font-size: 18px;
+    }
 }
 </style>
 </head>
-
 <body>
 
-<h1>⏳ Почекай 10 секунд...</h1>
-<p id="timer">10</p>
-
-<button id="btn" style="display:none;" onclick="getScript()">Отримати скрипт</button>
+<div class="container">
+    <h1>⏳ Please Wait...</h1>
+    <div class="timer-container">
+        <p id="timer">10</p>
+    </div>
+    <div class="progress-bar">
+        <div class="progress-fill"></div>
+    </div>
+    <p class="subtitle">Your script is being prepared</p>
+    <button id="btn" onclick="getScript()">Get Script Now</button>
+</div>
 
 <script>
+// Create animated particles
+function createParticles() {
+    for (let i = 0; i < 30; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.width = Math.random() * 5 + 2 + 'px';
+        particle.style.height = particle.style.width;
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.top = Math.random() * 100 + '%';
+        particle.style.animation = `float ${Math.random() * 10 + 5}s linear infinite`;
+        document.body.appendChild(particle);
+    }
+}
+
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes float {
+        0%, 100% {
+            transform: translateY(0) translateX(0);
+            opacity: 0;
+        }
+        50% {
+            opacity: 0.5;
+        }
+        100% {
+            transform: translateY(-100vh) translateX(${Math.random() * 200 - 100}px);
+        }
+    }
+`;
+document.head.appendChild(style);
+createParticles();
+
+// Timer logic
 let time = 10;
 let timer = document.getElementById("timer");
+let btn = document.getElementById("btn");
 
 let interval = setInterval(() => {
     time--;
     timer.innerText = time;
-
+    
     if (time <= 0) {
         clearInterval(interval);
-        document.getElementById("btn").style.display = "inline-block";
+        timer.innerText = "✓";
+        btn.classList.add('show');
+        document.querySelector('.subtitle').innerText = "Ready to download!";
     }
 }, 1000);
 
@@ -54,6 +254,5 @@ function getScript() {
     window.location.href = "https://YOUR_SCRIPT_LINK_HERE";
 }
 </script>
-
 </body>
 </html>
