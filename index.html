@@ -271,7 +271,17 @@ function getScript() {
 (function() {
     document.body.style.visibility = 'hidden';
 
+    const SCRIPT_ID = new URLSearchParams(window.location.search).get('id') || "default";
+    const STORAGE_KEY = "ad_passed_" + SCRIPT_ID;
+
+    // ✅ якщо вже проходив — одразу пускаємо
+    if (sessionStorage.getItem(STORAGE_KEY) === "true") {
+        document.body.style.visibility = 'visible';
+        return;
+    }
+
     let blocked = false;
+    let checks = 0;
 
     function blockPage() {
         if (blocked) return;
@@ -287,9 +297,9 @@ function getScript() {
                 text-align:center;padding:20px;
             ">
                 <div style="font-size:80px;margin-bottom:20px;">🚫</div>
-                <h1 style="font-size:32px;margin-bottom:15px;">Disable AdBlock</h1>
+                <h1 style="font-size:32px;margin-bottom:15px;">AdBlock Detected</h1>
                 <p style="opacity:0.9;margin-bottom:30px;">
-                    Turn off your AdBlock and refresh the page.
+                    Disable AdBlock and refresh page
                 </p>
                 <button onclick="location.reload()" style="
                     padding:15px 40px;font-size:18px;background:white;
@@ -300,53 +310,60 @@ function getScript() {
         `;
     }
 
-    function allowPage() {
-        if (!blocked) {
+    function passCheck() {
+        checks++;
+
+        // 🔥 якщо всі перевірки пройшли
+        if (checks >= 2 && !blocked) {
+            sessionStorage.setItem(STORAGE_KEY, "true");
             document.body.style.visibility = 'visible';
         }
     }
 
-    let detections = 0;
-
-    function detect(result) {
-        if (result) detections++;
-
-        // 🔥 якщо ХОЧА Б 1 тригер — блокуємо
-        if (detections >= 1) {
-            blockPage();
-        }
+    function failCheck() {
+        blockPage();
     }
 
-    // ===== 1. Bait element (сильний) =====
+    // ===== 1. REAL BAIT (як у LootLabs) =====
     (function() {
         let bait = document.createElement('div');
-        bait.className = 'ads ad adsbox doubleclick ad-placement carbon-ads';
-        bait.style.cssText = 'position:absolute;left:-9999px;height:1px;width:1px;';
+        bait.className = 'ads ad adsbox ad-banner ad-placement doubleclick';
+        bait.style.cssText = 'position:absolute;left:-9999px;width:1px;height:1px;';
         document.body.appendChild(bait);
+
+        setTimeout(() => {
+            let style = window.getComputedStyle(bait);
+            let blockedAd = (
+                style.display === 'none' ||
+                style.visibility === 'hidden' ||
+                bait.offsetParent === null
+            );
+
+            bait.remove();
+
+            if (blockedAd) failCheck();
+            else passCheck();
+        }, 500);
     })();
 
-    // ===== 2. Image ad check =====
+    // ===== 2. SCRIPT LOAD CHECK (реальний) =====
     (function() {
-        let img = new Image();
-        img.src = "https://www.google.com/images/branding/googlelogo/1x/googlelogo_light_color_272x92dp.png";
-    
-        img.onload = () => detect(false);
-        img.onerror = () => detect(false); // НЕ блокуємо тут!
+        let script = document.createElement('script');
+        script.src = "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+        script.async = true;
+
+        script.onload = () => passCheck();
+        script.onerror = () => failCheck();
+
+        document.head.appendChild(script);
     })();
 
-    // ===== 3. adsbygoogle check =====
+    // ===== SAFE FAIL (щоб не зависло) =====
     setTimeout(() => {
-        if (typeof window.adsbygoogle === "undefined") {
-            detect(true);
-        } else {
-            detect(false);
+        if (!blocked && checks < 2) {
+            document.body.style.visibility = 'visible';
         }
-    }, 300);
-
-    // ===== Фінал =====
-    setTimeout(() => {
-        if (!blocked) allowPage();
-    }, 1000);
+    }, 2000);
 
 })();
 </script>
