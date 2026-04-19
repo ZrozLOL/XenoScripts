@@ -209,6 +209,16 @@
       "key_difficulty": "easy",
       "script_side": "client",
       "date": "2026-04-19"
+    },
+    "script_1776609201": {
+      "name": "Super rings",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script - Natural Disaster\nWhen enabled, parts spin around you. You can adjust the radius.\n\n\uD83D\uDD27 Features:\nPart Spin, Adjustable Radius, Fun Effect\n\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 - Natural Disaster\n\u041F\u0440\u0438 \u0432\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u0438 \u0447\u0430\u0441\u0442\u0438 \u043A\u0440\u0443\u0442\u044F\u0442\u0441\u044F \u0432\u043E\u043A\u0440\u0443\u0433 \u0442\u0435\u0431\u044F. \u041C\u043E\u0436\u043D\u043E \u043C\u0435\u043D\u044F\u0442\u044C \u0440\u0430\u0434\u0438\u0443\u0441.\n\n\uD83D\uDD27 \u0424\u0443\u043D\u043A\u0446\u0438\u0438:\n\u041A\u0440\u0443\u0442\u044F\u0449\u0438\u0435\u0441\u044F \u0447\u0430\u0441\u0442\u0438, \u043D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0430 \u0440\u0430\u0434\u0438\u0443\u0441\u0430, \u0444\u0430\u043D \u044D\u0444\u0444\u0435\u043A\u0442",
+      "code": "loadstring(game:HttpGet(\u0022https://rscripts.net/raw/super-ring-parts-v4-by-lukas_1741980981842_td0ummjymf.txt\u0022,true))()",
+      "game": "Universal",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "server",
+      "date": "2026-04-19"
     }
   }
 }
