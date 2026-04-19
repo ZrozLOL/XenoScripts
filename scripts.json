@@ -199,6 +199,16 @@
       "key_difficulty": "none",
       "script_side": "both",
       "date": "2026-04-19"
+    },
+    "script_1776597131": {
+      "name": "State of Anarchy script",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script - State of Anarchy\n\n\u26A0\uFE0F Requirement:\nWorks only with downgraded Neo script (select in menu)\n\n\uD83D\uDD27 Features:\nHitbox Expander, ESP, Teleport, Perk Unlock\n\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 - State of Anarchy\n\n\u26A0\uFE0F \u0422\u0440\u0435\u0431\u043E\u0432\u0430\u043D\u0438\u0435:\n\u0420\u0430\u0431\u043E\u0442\u0430\u0435\u0442 \u0442\u043E\u043B\u044C\u043A\u043E \u0441 \u0434\u0430\u0443\u043D\u0433\u0440\u0435\u0439\u0434\u043D\u0443\u0442\u044B\u043C Neo \u0441\u043A\u0440\u0438\u043F\u0442\u043E\u043C (\u0432\u044B\u0431\u0440\u0430\u0442\u044C \u0432 \u043C\u0435\u043D\u044E)\n\n\uD83D\uDD27 \u0424\u0443\u043D\u043A\u0446\u0438\u0438:\n\u0420\u0430\u0441\u0448\u0438\u0440\u0435\u043D\u0438\u0435 \u0445\u0438\u0442\u0431\u043E\u043A\u0441\u0430, ESP, \u0422\u0435\u043B\u0435\u043F\u043E\u0440\u0442, \u041E\u0442\u043A\u0440\u044B\u0442\u0438\u0435 \u043F\u0435\u0440\u043A\u043E\u0432",
+      "code": "loadstring(game:HttpGet(\u0022https://raw.githubusercontent.com/vasliz/x/refs/heads/main/loader.luau\u0022))()",
+      "game": "State of Anarchy l Survival Shooter",
+      "keyless": false,
+      "key_difficulty": "easy",
+      "script_side": "client",
+      "date": "2026-04-19"
     }
   }
 }
