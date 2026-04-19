@@ -6,11 +6,11 @@
 
     document.body.style.visibility = 'hidden';
 
-    var detectionsPassed = 0;
-    var requiredDetections = 1; // Достатньо 1 з 3
     var blocked = false;
     var checksDone = 0;
-    var totalChecks = 3;
+    var totalChecks = 2;
+    var detectionsPassed = 0;
+    var requiredDetections = 1;
 
     function blockPage() {
         if (blocked) return;
@@ -53,64 +53,38 @@
         }
     }
 
-    // ✅ 1. Bait div
+    // ✅ 1. Bait div — перевіряємо тільки display:none або visibility:hidden
+    // НЕ перевіряємо offsetHeight бо він може бути 0 і без адблоку
     (function () {
         var bait = document.createElement('div');
         bait.className = 'ad-banner ads adsbox adsbygoogle';
-        bait.style.cssText = 'height:1px!important;width:1px!important;position:absolute!important;left:-10000px!important;top:-1000px!important;';
+        bait.style.cssText = 'position:fixed;top:0;left:0;width:10px;height:10px;opacity:0;pointer-events:none;';
         document.body.appendChild(bait);
 
         setTimeout(function () {
-            var style = window.getComputedStyle(bait);
-            var hidden = (
-                bait.offsetHeight === 0 ||
-                bait.offsetWidth === 0 ||
-                style.display === 'none' ||
-                style.visibility === 'hidden' ||
-                style.opacity === '0'
+            var s = window.getComputedStyle(bait);
+            var detected = (
+                s.display === 'none' ||
+                s.visibility === 'hidden' ||
+                s.opacity === '0' && bait.offsetHeight === 0
             );
             try { bait.remove(); } catch (e) {}
-            onCheckDone(hidden);
-        }, 300);
-    })();
-
-    // ✅ 2. MutationObserver
-    (function () {
-        var fakeAd = document.createElement('ins');
-        fakeAd.className = 'adsbygoogle';
-        fakeAd.style.cssText = 'display:block;width:1px;height:1px;position:absolute;left:-9999px;';
-        document.body.appendChild(fakeAd);
-
-        var removed = false;
-        var observer = new MutationObserver(function (mutations) {
-            mutations.forEach(function (mutation) {
-                mutation.removedNodes.forEach(function (node) {
-                    if (node === fakeAd) removed = true;
-                });
-            });
-        });
-        observer.observe(document.body, { childList: true, subtree: true });
-
-        setTimeout(function () {
-            observer.disconnect();
-            var detected = removed || fakeAd.offsetHeight === 0;
-            try { fakeAd.remove(); } catch (e) {}
             onCheckDone(detected);
-        }, 400);
+        }, 500);
     })();
 
-    // ✅ 3. Fetch до AdMaven — саме той домен який AdBlock блокує на твоєму сайті
+    // ✅ 2. Fetch до AdMaven — спрацьовує бо ERR_BLOCKED_BY_CLIENT вже є в консолі
     fetch('https://dcbbwymp1bhlf.cloudfront.net/favicon.ico', {
         method: 'HEAD',
         mode: 'no-cors',
         cache: 'no-store'
     }).then(function () {
-        onCheckDone(false); // не заблоковано
+        onCheckDone(false); // запит пройшов — адблоку немає
     }).catch(function () {
-        onCheckDone(true);  // заблоковано — ERR_BLOCKED_BY_CLIENT
+        onCheckDone(true);  // заблоковано
     });
 
-    // Fallback
+    // Fallback — якщо щось зависло
     setTimeout(function () {
         if (!blocked && checksDone < totalChecks) {
             document.body.style.visibility = 'visible';
