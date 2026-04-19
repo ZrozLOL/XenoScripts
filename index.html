@@ -12,6 +12,8 @@
 <!-- AdMaven Interstitial -->
 <script data-cfasync="false" src="//dcbbwymp1bhlf.cloudfront.net/?wbbcd=1253835"></script>
 
+<!-- ✅ Якщо AdBlock НЕ заблокував скрипти вище — ця змінна стане true -->
+<script>window._adLoaded = true;</script>
 
 <style>
 * {
@@ -259,7 +261,6 @@ function getScript() {
     const scriptId = urlParams.get('id');
     
     if (scriptId) {
-        // Зберігаємо токен що юзер пройшов таймер
         sessionStorage.setItem('ad_passed_' + scriptId, 'true');
         window.location.href = `script.html?id=${scriptId}`;
     } else {
@@ -267,6 +268,7 @@ function getScript() {
     }
 }
 </script>
+
 <script>
 (function() {
     document.body.style.visibility = 'hidden';
@@ -281,6 +283,7 @@ function getScript() {
 
     let blocked = false;
     let passed = 0;
+    const CHECKS_NEEDED = 2;
 
     function blockPage() {
         if (blocked) return;
@@ -288,16 +291,21 @@ function getScript() {
 
         document.body.style.visibility = 'visible';
         document.body.innerHTML = `
-            <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;background:#111;color:white;text-align:center;">
-                <h1>🚫 Disable AdBlock</h1>
-                <button onclick="location.reload()">Refresh</button>
+            <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;background:#111;color:white;text-align:center;gap:20px;">
+                <h1 style="font-size:48px;">🚫</h1>
+                <h2 style="font-size:24px;">Please Disable AdBlock</h2>
+                <p style="opacity:0.6;max-width:320px;">This site relies on ads to function. Please whitelist us and refresh.</p>
+                <button onclick="location.reload()" style="margin-top:10px;padding:14px 36px;font-size:16px;background:#667eea;border:none;color:white;border-radius:50px;cursor:pointer;font-weight:600;">
+                    🔄 Refresh Page
+                </button>
             </div>
         `;
     }
 
     function pass() {
+        if (blocked) return;
         passed++;
-        if (passed >= 1 && !blocked) {
+        if (passed >= CHECKS_NEEDED) {
             sessionStorage.setItem(STORAGE_KEY, "true");
             document.body.style.visibility = 'visible';
         }
@@ -307,7 +315,7 @@ function getScript() {
         blockPage();
     }
 
-    // ✅ 1. Bait (основа)
+    // ✅ 1. Bait element — перевірка CSS-блокування
     (function() {
         let bait = document.createElement('div');
         bait.className = 'ads ad adsbox ad-banner';
@@ -320,7 +328,6 @@ function getScript() {
                 style.display === 'none' ||
                 bait.offsetParent === null
             );
-
             bait.remove();
 
             if (detected) fail();
@@ -328,13 +335,14 @@ function getScript() {
         }, 500);
     })();
 
-    // ✅ 2. Перевірка що AdMaven реально щось вставив
+    // ✅ 2. Перевірка що AdMaven скрипти не заблоковані (через window._adLoaded)
     setTimeout(() => {
-        let hasAds = document.querySelectorAll("iframe, script[src*='cloudfront']").length > 0;
-
-        if (!hasAds) fail();
-        else pass();
-    }, 1000);
+        if (!window._adLoaded) {
+            fail();
+        } else {
+            pass();
+        }
+    }, 1500);
 
 })();
 </script>
