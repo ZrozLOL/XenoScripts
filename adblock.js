@@ -24,21 +24,30 @@ console.log('🔍 adblock.js v2.0 loaded - ALWAYS CHECK');
             <div style="
                 display:flex;flex-direction:column;align-items:center;
                 justify-content:center;min-height:100vh;
-                background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
+                background:linear-gradient(135deg,#1a1a1a 0%,#000000 100%);
                 color:white;font-family:'Segoe UI',sans-serif;
                 text-align:center;padding:20px;
             ">
-                <div style="font-size:80px;margin-bottom:20px;">🚫</div>
-                <h1 style="font-size:32px;margin-bottom:15px;">Please Disable AdBlock</h1>
-                <p style="font-size:16px;opacity:0.9;margin-bottom:30px;max-width:400px;">
+                <div style="font-size:80px;margin-bottom:20px;filter:grayscale(100%) brightness(2);">🚫</div>
+                <h1 style="
+                    font-size:32px;margin-bottom:15px;font-weight:600;
+                    background:linear-gradient(135deg,#ffffff 0%,#cccccc 100%);
+                    -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+                    background-clip:text;
+                ">Please Disable AdBlock</h1>
+                <p style="font-size:16px;color:#cccccc;margin-bottom:30px;max-width:400px;line-height:1.6;">
                     We detected that you're using an ad blocker.<br>
                     Please disable it and refresh the page to continue.
                 </p>
                 <button onclick="location.reload()" style="
-                    padding:18px 45px;font-size:18px;background:white;
-                    color:#667eea;border:none;border-radius:50px;cursor:pointer;
-                    font-weight:600;box-shadow:0 10px 30px rgba(0,0,0,0.3);
-                ">🔄 Refresh Page</button>
+                    padding:18px 45px;font-size:18px;
+                    background:linear-gradient(135deg,#ffffff 0%,#cccccc 100%);
+                    color:#000000;border:none;border-radius:50px;cursor:pointer;
+                    font-weight:600;box-shadow:0 10px 30px rgba(255,255,255,0.2);
+                    transition:all 0.3s ease;
+                " onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 15px 40px rgba(255,255,255,0.4)';"
+                   onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 10px 30px rgba(255,255,255,0.2)';">
+                🔄 Refresh Page</button>
             </div>
         `;
     }
