@@ -1,4 +1,7 @@
-console.log('adblock.js loaded');
+// ============================================
+// ADBLOCK DETECTOR v2.0 - UPDATED VERSION
+// ============================================
+console.log('🔍 adblock.js v2.0 loaded - ALWAYS CHECK');
 (function () {
     const SCRIPT_ID = new URLSearchParams(window.location.search).get('id') || "default";
     const ADBLOCK_KEY = "adblock_ok_" + SCRIPT_ID;
@@ -6,7 +9,7 @@ console.log('adblock.js loaded');
     // ❌ ЗАВЖДИ перевіряємо AdBlock — скидаємо старий результат
     sessionStorage.removeItem(ADBLOCK_KEY);
     
-    console.log('Running AdBlock detection for script:', SCRIPT_ID);
+    console.log('🔍 Running AdBlock detection for script:', SCRIPT_ID);
     document.body.style.visibility = 'hidden';
     var blocked = false;
     var checkCompleted = false;
@@ -57,7 +60,7 @@ console.log('adblock.js loaded');
     xhr.onreadystatechange = function () {
         if (xhr.readyState !== 4) return;
         var elapsed = Date.now() - startTime;
-        console.log('XHR completed: status=' + xhr.status + ', elapsed=' + elapsed + 'ms');
+        console.log('📡 XHR completed: status=' + xhr.status + ', elapsed=' + elapsed + 'ms');
         
         if (xhr.status === 0) {
             // Запит заблоковано
@@ -75,13 +78,13 @@ console.log('adblock.js loaded');
     };
     
     xhr.ontimeout = function () {
-        console.log('XHR timeout - allowing page (slow network)');
+        console.log('⏱️ XHR timeout - allowing page (slow network)');
         allowPage();
     };
     
     xhr.onerror = function () {
         var elapsed = Date.now() - startTime;
-        console.log('XHR error, elapsed=' + elapsed + 'ms');
+        console.log('⚠️ XHR error, elapsed=' + elapsed + 'ms');
         if (elapsed < 200) {
             blockPage();
         } else {
@@ -97,7 +100,7 @@ console.log('adblock.js loaded');
         
         // Якщо рекламні скрипти встигли завантажитись
         if (typeof window._adsLoaded !== 'undefined') {
-            console.log('_adsLoaded detected - ads are loading');
+            console.log('📢 _adsLoaded detected - ads are loading');
             allowPage();
         }
     }, 1000);
@@ -105,7 +108,7 @@ console.log('adblock.js loaded');
     // Fallback: якщо через 6 секунд нічого не сталося - дозволяємо доступ
     setTimeout(function () {
         if (!checkCompleted) {
-            console.log('⏱️ Timeout reached - allowing page (network issues)');
+            console.log('⏰ Timeout reached - allowing page (network issues)');
             allowPage();
         }
     }, 6000);
