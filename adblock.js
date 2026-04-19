@@ -3,21 +3,19 @@ console.log('adblock.js loaded');
     const SCRIPT_ID = new URLSearchParams(window.location.search).get('id') || "default";
     const ADBLOCK_KEY = "adblock_ok_" + SCRIPT_ID;
     
-    // ✅ Якщо вже пройшли перевірку в цій сесії — не перевіряємо повторно
-    if (sessionStorage.getItem(ADBLOCK_KEY) === "true") {
-        console.log('AdBlock check already passed in this session');
-        document.body.style.visibility = 'visible';
-        return;
-    }
+    // ❌ ЗАВЖДИ перевіряємо AdBlock — скидаємо старий результат
+    sessionStorage.removeItem(ADBLOCK_KEY);
     
-    console.log('Running AdBlock detection...');
+    console.log('Running AdBlock detection for script:', SCRIPT_ID);
     document.body.style.visibility = 'hidden';
     var blocked = false;
+    var checkCompleted = false;
     
     function blockPage() {
-        if (blocked) return;
+        if (blocked || checkCompleted) return;
         blocked = true;
-        console.log('AdBlock detected - blocking page');
+        checkCompleted = true;
+        console.log('❌ AdBlock detected - blocking page');
         document.body.style.visibility = 'visible';
         document.body.innerHTML = `
             <div style="
@@ -43,13 +41,14 @@ console.log('adblock.js loaded');
     }
     
     function allowPage() {
-        if (!blocked) {
-            sessionStorage.setItem(ADBLOCK_KEY, "true");
-            document.body.style.visibility = 'visible';
-            console.log('AdBlock check passed - page allowed');
-        }
+        if (blocked || checkCompleted) return;
+        checkCompleted = true;
+        sessionStorage.setItem(ADBLOCK_KEY, "true");
+        document.body.style.visibility = 'visible';
+        console.log('✅ AdBlock check passed - page allowed');
     }
     
+    // Метод 1: XHR запит до рекламного скрипта
     var xhr = new XMLHttpRequest();
     var startTime = Date.now();
     xhr.open('GET', 'https://dcbbwymp1bhlf.cloudfront.net/?wbbcd=1253824&t=' + Date.now(), true);
@@ -76,13 +75,13 @@ console.log('adblock.js loaded');
     };
     
     xhr.ontimeout = function () {
-        console.log('XHR timeout - allowing page');
+        console.log('XHR timeout - allowing page (slow network)');
         allowPage();
     };
     
     xhr.onerror = function () {
-        console.log('XHR error - checking elapsed time');
         var elapsed = Date.now() - startTime;
+        console.log('XHR error, elapsed=' + elapsed + 'ms');
         if (elapsed < 200) {
             blockPage();
         } else {
@@ -92,10 +91,21 @@ console.log('adblock.js loaded');
     
     xhr.send();
     
+    // Метод 2: Перевірка чи завантажилась змінна _adsLoaded
+    setTimeout(function() {
+        if (checkCompleted) return;
+        
+        // Якщо рекламні скрипти встигли завантажитись
+        if (typeof window._adsLoaded !== 'undefined') {
+            console.log('_adsLoaded detected - ads are loading');
+            allowPage();
+        }
+    }, 1000);
+    
     // Fallback: якщо через 6 секунд нічого не сталося - дозволяємо доступ
     setTimeout(function () {
-        if (!blocked) {
-            console.log('Timeout reached - allowing page');
+        if (!checkCompleted) {
+            console.log('⏱️ Timeout reached - allowing page (network issues)');
             allowPage();
         }
     }, 6000);
