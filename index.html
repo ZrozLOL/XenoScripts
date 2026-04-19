@@ -270,11 +270,13 @@ function getScript() {
 <script>
 // МАКСИМАЛЬНА детекція AdBlock
 (function() {
-    var detectionMethods = 0;
     var detectionsPassed = 0;
-    var requiredDetections = 1; // Достатньо 1 спрацювання
-    
+    var requiredDetections = 2; // Потрібно мінімум 2 спрацювання щоб уникнути false positive
+    var blocked = false;
+
     function blockPage() {
+        if (blocked) return;
+        blocked = true;
         document.body.innerHTML = `
             <div style="
                 display: flex;
@@ -289,9 +291,7 @@ function getScript() {
                 padding: 20px;
             ">
                 <div style="font-size: 80px; margin-bottom: 20px;">🚫</div>
-                <h1 style="font-size: 32px; margin-bottom: 15px;">
-                    Please Disable AdBlock
-                </h1>
+                <h1 style="font-size: 32px; margin-bottom: 15px;">Please Disable AdBlock</h1>
                 <p style="font-size: 16px; opacity: 0.9; margin-bottom: 30px; max-width: 400px;">
                     We detected that you're using an ad blocker. 
                     Please disable it and refresh the page to continue.
@@ -305,122 +305,103 @@ function getScript() {
                     border-radius: 50px;
                     cursor: pointer;
                     font-weight: 600;
-                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-                ">
-                    🔄 Refresh Page
-                </button>
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+                ">🔄 Refresh Page</button>
             </div>
         `;
     }
-    
-    // Метод 1: Множинні bait елементи
-    var baitNames = [
-        'ad', 'ads', 'adsbox', 'adsbygoogle', 'ad-placement', 
-        'doubleclick', 'ad-banner', 'advert', 'advertisement',
-        'ad-container', 'ad-wrapper', 'sponsored', 'sponsor-ad'
-    ];
-    
-    baitNames.forEach(function(name) {
+
+    // Метод 1: Bait елемент — перевіряємо висоту/видимість
+    function checkBaitElement() {
         var bait = document.createElement('div');
-        bait.className = name;
-        bait.id = name + '-bait';
+        bait.className = 'ad-banner';
         bait.style.cssText = 'height:1px!important;width:1px!important;position:absolute!important;left:-10000px!important;top:-1000px!important;';
-        bait.innerHTML = '<ins class="adsbygoogle"></ins>';
         document.body.appendChild(bait);
-        
+
         setTimeout(function() {
-            if (bait.offsetHeight === 0 || 
-                bait.offsetWidth === 0 || 
-                !bait.offsetParent ||
-                window.getComputedStyle(bait).display === 'none' ||
-                window.getComputedStyle(bait).visibility === 'hidden' ||
-                window.getComputedStyle(bait).opacity === '0') {
+            var style = window.getComputedStyle(bait);
+            var hidden = (
+                bait.offsetHeight === 0 ||
+                bait.offsetWidth === 0 ||
+                style.display === 'none' ||
+                style.visibility === 'hidden' ||
+                style.opacity === '0'
+            );
+            try { bait.remove(); } catch(e) {}
+            if (hidden) {
                 detectionsPassed++;
                 if (detectionsPassed >= requiredDetections) blockPage();
             }
-            try { bait.remove(); } catch(e) {}
-        }, 100);
-    });
-    
-    // Метод 2: Перевірка window.canRunAds
-    setTimeout(function() {
-        if (typeof window.canRunAds === 'undefined' || window.canRunAds === false) {
-            detectionsPassed++;
-            if (detectionsPassed >= requiredDetections) blockPage();
-        }
-    }, 150);
-    
-    // Метод 3: Google AdSense script check
-    setTimeout(function() {
-        var adsenseLoaded = false;
-        var scripts = document.getElementsByTagName('script');
-        for (var i = 0; i < scripts.length; i++) {
-            if (scripts[i].src.indexOf('adsbygoogle') !== -1 || 
-                scripts[i].src.indexOf('googlesyndication') !== -1) {
-                adsenseLoaded = true;
-                break;
+        }, 200);
+    }
+
+    // Метод 2: Перевірка чи AdMaven скрипти завантажились
+    // (ті що вже є на сторінці через <script src="...cloudfront...">)
+    function checkAdMaven() {
+        setTimeout(function() {
+            var scripts = document.querySelectorAll('script[src*="cloudfront"]');
+            var loaded = false;
+            scripts.forEach(function(s) {
+                // Якщо скрипт є в DOM і не має ознак блокування
+                if (s.src && !s.dataset.blocked) loaded = true;
+            });
+
+            // Додатково перевіряємо через глобальну змінну яку AdMaven виставляє
+            if (!loaded || typeof window.__adm === 'undefined' && typeof window.admaven === 'undefined') {
+                // Не одразу блокуємо — це лише підозра
+                detectionsPassed += 0.5;
+                if (detectionsPassed >= requiredDetections) blockPage();
             }
-        }
-        if (!adsenseLoaded) {
+        }, 800); // Даємо більше часу на завантаження
+    }
+
+    // Метод 3: Fetch реального рекламного ресурсу
+    function checkFetch() {
+        fetch('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', {
+            method: 'HEAD',
+            mode: 'no-cors',
+            cache: 'no-store'
+        }).then(function() {
+            // Запит пройшов — реклама не блокується
+        }).catch(function() {
+            // Запит заблокований
             detectionsPassed++;
             if (detectionsPassed >= requiredDetections) blockPage();
-        }
-    }, 200);
-    
-    // Метод 4: Fetch Google Ads
-    fetch('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', {
-        method: 'HEAD',
-        mode: 'no-cors',
-        cache: 'no-store'
-    }).catch(function() {
-        detectionsPassed++;
-        if (detectionsPassed >= requiredDetections) blockPage();
-    });
-    
-    // Метод 5: Перевірка AdMaven скриптів
-    setTimeout(function() {
-        var scripts = document.querySelectorAll('script[src*="cloudfront"]');
-        if (scripts.length === 0) {
-            detectionsPassed++;
-            if (detectionsPassed >= requiredDetections) blockPage();
-        }
-    }, 250);
-    
-    // Метод 6: Створення fake ad елемента та перевірка через MutationObserver
-    var fakeAd = document.createElement('div');
-    fakeAd.className = 'adsbygoogle';
-    fakeAd.style.cssText = 'display:block;width:1px;height:1px;';
-    document.body.appendChild(fakeAd);
-    
-    var observer = new MutationObserver(function(mutations) {
-        mutations.forEach(function(mutation) {
-            if (mutation.removedNodes.length > 0) {
-                Array.from(mutation.removedNodes).forEach(function(node) {
+        });
+    }
+
+    // Метод 4: MutationObserver — чи видаляє адблок рекламні елементи
+    function checkMutation() {
+        var fakeAd = document.createElement('ins');
+        fakeAd.className = 'adsbygoogle';
+        fakeAd.style.cssText = 'display:block;width:1px;height:1px;position:absolute;left:-9999px;';
+        document.body.appendChild(fakeAd);
+
+        var observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                mutation.removedNodes.forEach(function(node) {
                     if (node === fakeAd) {
                         detectionsPassed++;
                         if (detectionsPassed >= requiredDetections) blockPage();
                     }
                 });
-            }
+            });
         });
-    });
-    
-    observer.observe(document.body, { childList: true });
-    
-    setTimeout(function() {
-        if (fakeAd.offsetHeight === 0 || !document.body.contains(fakeAd)) {
-            detectionsPassed++;
-            if (detectionsPassed >= requiredDetections) blockPage();
-        }
-        observer.disconnect();
-    }, 300);
-    
-    // Фінальна перевірка через 500ms
-    setTimeout(function() {
-        if (detectionsPassed >= requiredDetections) {
-            blockPage();
-        }
-    }, 500);
+
+        observer.observe(document.body, { childList: true, subtree: true });
+
+        setTimeout(function() {
+            observer.disconnect();
+            try { fakeAd.remove(); } catch(e) {}
+        }, 600);
+    }
+
+    // Запускаємо всі методи
+    checkBaitElement();
+    checkFetch();
+    checkMutation();
+    checkAdMaven();
+
 })();
 </script>
 </body>
