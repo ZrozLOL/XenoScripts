@@ -7,10 +7,6 @@
     document.body.style.visibility = 'hidden';
 
     var blocked = false;
-    var checksDone = 0;
-    var totalChecks = 2;
-    var detectionsPassed = 0;
-    var requiredDetections = 1;
 
     function blockPage() {
         if (blocked) return;
@@ -39,55 +35,35 @@
         `;
     }
 
-    function onCheckDone(detected) {
-        if (blocked) return;
-        if (detected) detectionsPassed++;
-        checksDone++;
-
-        if (detectionsPassed >= requiredDetections) {
-            blockPage();
-            return;
-        }
-        if (checksDone >= totalChecks) {
+    function allowPage() {
+        if (!blocked) {
             document.body.style.visibility = 'visible';
         }
     }
 
-    // ✅ 1. Bait div — перевіряємо тільки display:none або visibility:hidden
-    // НЕ перевіряємо offsetHeight бо він може бути 0 і без адблоку
-    (function () {
-        var bait = document.createElement('div');
-        bait.className = 'ad-banner ads adsbox adsbygoogle';
-        bait.style.cssText = 'position:fixed;top:0;left:0;width:10px;height:10px;opacity:0;pointer-events:none;';
-        document.body.appendChild(bait);
+    // Завантажуємо файл-приманку ads.js з нашого репо
+    // AdBlock блокує його бо він називається "ads.js"
+    // Якщо завантажився — window._adsLoaded = true
+    // Якщо заблокований — залишається undefined
+    var script = document.createElement('script');
+    script.src = 'ads.js?t=' + Date.now();
 
-        setTimeout(function () {
-            var s = window.getComputedStyle(bait);
-            var detected = (
-                s.display === 'none' ||
-                s.visibility === 'hidden' ||
-                s.opacity === '0' && bait.offsetHeight === 0
-            );
-            try { bait.remove(); } catch (e) {}
-            onCheckDone(detected);
-        }, 500);
-    })();
+    script.onload = function () {
+        // Файл завантажився — AdBlock не активний
+        allowPage();
+    };
 
-    // ✅ 2. Fetch до AdMaven — спрацьовує бо ERR_BLOCKED_BY_CLIENT вже є в консолі
-    fetch('https://dcbbwymp1bhlf.cloudfront.net/favicon.ico', {
-        method: 'HEAD',
-        mode: 'no-cors',
-        cache: 'no-store'
-    }).then(function () {
-        onCheckDone(false); // запит пройшов — адблоку немає
-    }).catch(function () {
-        onCheckDone(true);  // заблоковано
-    });
+    script.onerror = function () {
+        // Файл заблокований — AdBlock активний
+        blockPage();
+    };
 
-    // Fallback — якщо щось зависло
+    document.head.appendChild(script);
+
+    // Fallback — якщо скрипт завис
     setTimeout(function () {
-        if (!blocked && checksDone < totalChecks) {
-            document.body.style.visibility = 'visible';
+        if (!blocked) {
+            allowPage();
         }
     }, 3000);
 
