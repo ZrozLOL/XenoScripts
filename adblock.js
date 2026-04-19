@@ -1,3 +1,5 @@
+console.log('adblock.js loaded');
+
 (function () {
     const SCRIPT_ID = new URLSearchParams(window.location.search).get('id') || "default";
     const STORAGE_KEY = "ad_passed_" + SCRIPT_ID;
@@ -41,30 +43,48 @@
         }
     }
 
-    // Завантажуємо файл-приманку ads.js з нашого репо
-    // AdBlock блокує його бо він називається "ads.js"
-    // Якщо завантажився — window._adsLoaded = true
-    // Якщо заблокований — залишається undefined
-    var script = document.createElement('script');
-    script.src = 'ads.js?t=' + Date.now();
+    // XHR до cloudfront — AdBlock дає status=0 і readyState=4
+    // Звичайна мережева помилка теж дає status=0, але ERR_BLOCKED_BY_CLIENT
+    // відрізняється тим що відповідь приходить МИТТЄВО (< 50ms)
+    var xhr = new XMLHttpRequest();
+    var startTime = Date.now();
 
-    script.onload = function () {
-        // Файл завантажився — AdBlock не активний
+    xhr.open('GET', 'https://dcbbwymp1bhlf.cloudfront.net/?wbbcd=1253824&t=' + Date.now(), true);
+    xhr.timeout = 5000;
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState !== 4) return;
+
+        var elapsed = Date.now() - startTime;
+
+        if (xhr.status === 0) {
+            // status=0 може бути AdBlock АБО мережева помилка
+            // AdBlock блокує МИТТЄВО (< 100ms), мережева помилка займає час
+            if (elapsed < 200) {
+                console.log('AdBlock detected! Blocked in ' + elapsed + 'ms');
+                blockPage();
+            } else {
+                console.log('Network error (not AdBlock), elapsed: ' + elapsed + 'ms');
+                allowPage();
+            }
+        } else {
+            // Запит пройшов — AdBlock не блокує
+            console.log('Ad request passed, status: ' + xhr.status);
+            allowPage();
+        }
+    };
+
+    xhr.ontimeout = function () {
+        // Таймаут — скоріш за все не AdBlock, просто повільна мережа
+        console.log('XHR timeout — allowing page');
         allowPage();
     };
 
-    script.onerror = function () {
-        // Файл заблокований — AdBlock активний
-        blockPage();
-    };
+    xhr.send();
 
-    document.head.appendChild(script);
-
-    // Fallback — якщо скрипт завис
+    // Fallback на випадок якщо XHR завис
     setTimeout(function () {
-        if (!blocked) {
-            allowPage();
-        }
-    }, 3000);
+        if (!blocked) allowPage();
+    }, 6000);
 
 })();
