@@ -189,6 +189,16 @@
       "key_difficulty": "none",
       "script_side": "client",
       "date": "2026-04-19"
+    },
+    "script_1776596591": {
+      "name": "Bridger: WESTERN Script",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script - Bridger: WESTERN\nUseful features, farming \u0026 ESP for better gameplay.\n\n\uD83D\uDD27 Features:\nTeleport to Holy Corpse, Auto Collect, Auto Fishing, ESP, Aimbot (Not Working), Misc Features\n\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 - Bridger: WESTERN\n\u041F\u043E\u043B\u0435\u0437\u043D\u044B\u0435 \u0444\u0443\u043D\u043A\u0446\u0438\u0438, \u0444\u0430\u0440\u043C \u0438 ESP \u0434\u043B\u044F \u0443\u0434\u043E\u0431\u043D\u043E\u0439 \u0438\u0433\u0440\u044B.\n\n\uD83D\uDD27 \u0424\u0443\u043D\u043A\u0446\u0438\u0438:\n\u0422\u0435\u043B\u0435\u043F\u043E\u0440\u0442 \u043A \u0441\u0432\u044F\u0442\u043E\u043C\u0443 \u0442\u0440\u0443\u043F\u0443, \u0430\u0432\u0442\u043E \u0441\u0431\u043E\u0440, \u0430\u0432\u0442\u043E \u0440\u044B\u0431\u0430\u043B\u043A\u0430, ESP, Aimbot (\u043D\u0435 \u0440\u0430\u0431\u043E\u0442\u0430\u0435\u0442), \u0440\u0430\u0437\u043D\u044B\u0435 \u043F\u043B\u044E\u0448\u043A\u0438\n\n\uD83C\uDDFA\uD83C\uDDF8\uD83C\uDDF7\uD83C\uDDFA : \u041A\u043B\u044E\u0447/Key-fentiloaderHOLY",
+      "code": "loadstring(game:HttpGet(\u0022https://api.luarmor.net/files/v4/loaders/d9d05b5ba93d372f6c9dfe19473bbe62.lua\u0022))()",
+      "game": "bridger: WESTERN",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "both",
+      "date": "2026-04-19"
     }
   }
 }
