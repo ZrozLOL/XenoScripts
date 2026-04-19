@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name='admaven-placement' content='Bajs7rjkE'>
 <title>Get Your Script - XenoScripts</title>
 
 <script data-cfasync="false" src="//dcbbwymp1bhlf.cloudfront.net/?wbbcd=1253824"></script>
@@ -206,33 +205,33 @@ function createParticles() {
     for (let i = 0; i < 60; i++) {
         const particle = document.createElement('div');
         particle.className = 'particle';
-        particle.style.width = Math.random() * 6 + 3 + 'px';
-        particle.style.height = particle.style.width;
+        const size = Math.random() * 6 + 3;
+        particle.style.width = size + 'px';
+        particle.style.height = size + 'px';
         particle.style.left = Math.random() * 100 + '%';
-        particle.style.top = Math.random() * 100 + '%';
-        particle.style.animation = `float ${Math.random() * 8 + 4}s linear infinite`;
-        particle.style.animationDelay = Math.random() * 5 + 's';
+        particle.style.top = '100%';
+        const duration = Math.random() * 8 + 6;
+        const delay = Math.random() * 10;
+        const drift = Math.random() * 200 - 100;
+        particle.style.animation = `float-${i} ${duration}s linear ${delay}s infinite`;
+        
+        const keyframes = `
+            @keyframes float-${i} {
+                0% { transform: translateY(0) translateX(0); opacity: 0; }
+                10% { opacity: 0.8; }
+                90% { opacity: 0.8; }
+                100% { transform: translateY(-120vh) translateX(${drift}px); opacity: 0; }
+            }
+        `;
+        const style = document.createElement('style');
+        style.textContent = keyframes;
+        document.head.appendChild(style);
+        
         document.body.appendChild(particle);
     }
 }
 
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes float {
-        0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
-        50% { opacity: 0.8; }
-        100% { transform: translateY(-100vh) translateX(${Math.random() * 200 - 100}px); }
-    }
-`;
-document.head.appendChild(style);
 createParticles();
-
-// Refresh particles every 10 seconds
-setInterval(() => {
-    const particles = document.querySelectorAll('.particle');
-    particles.forEach(p => p.remove());
-    createParticles();
-}, 10000);
 
 const urlParams = new URLSearchParams(window.location.search);
 const scriptId = urlParams.get('id');
