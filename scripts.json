@@ -219,6 +219,16 @@
       "key_difficulty": "none",
       "script_side": "server",
       "date": "2026-04-19"
+    },
+    "script_1776609658": {
+      "name": "NFT script",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script - NFT Battle\nVery basic script with limited features.\n\n\uD83D\uDD27 Features:\nAuto Open Cases, Auto Sell\n\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 - NFT Battle\n\u041E\u0447\u0435\u043D\u044C \u043F\u0440\u043E\u0441\u0442\u043E\u0439 \u0441\u043A\u0440\u0438\u043F\u0442 \u0441 \u043C\u0430\u043B\u044B\u043C \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E\u043C \u0444\u0443\u043D\u043A\u0446\u0438\u0439.\n\n\uD83D\uDD27 \u0424\u0443\u043D\u043A\u0446\u0438\u0438:\n\u0410\u0432\u0442\u043E \u043E\u0442\u043A\u0440\u044B\u0442\u0438\u0435 \u043A\u0435\u0439\u0441\u043E\u0432, \u0430\u0432\u0442\u043E \u043F\u0440\u043E\u0434\u0430\u0436\u0430",
+      "code": "loadstring(game:HttpGet(\u0022https://raw.githubusercontent.com/MidnightBro404/NFT-Hub/refs/heads/main/NFT%20Hub.lua\u0022))()",
+      "game": "NFT Battle",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "client",
+      "date": "2026-04-19"
     }
   }
 }
