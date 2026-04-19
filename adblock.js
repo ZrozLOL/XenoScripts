@@ -2,9 +2,11 @@ console.log('adblock.js loaded');
 
 (function () {
     const SCRIPT_ID = new URLSearchParams(window.location.search).get('id') || "default";
-    const STORAGE_KEY = "ad_passed_" + SCRIPT_ID;
+    // Окремий ключ для адблок перевірки (не плутати з bypass ключем)
+    const ADBLOCK_KEY = "adblock_ok_" + SCRIPT_ID;
 
-    if (sessionStorage.getItem(STORAGE_KEY) === "true") return;
+    // Завжди перевіряємо — скидаємо попередній результат
+    sessionStorage.removeItem(ADBLOCK_KEY);
 
     document.body.style.visibility = 'hidden';
 
@@ -39,13 +41,11 @@ console.log('adblock.js loaded');
 
     function allowPage() {
         if (!blocked) {
+            sessionStorage.setItem(ADBLOCK_KEY, "true");
             document.body.style.visibility = 'visible';
         }
     }
 
-    // XHR до cloudfront — AdBlock дає status=0 і readyState=4
-    // Звичайна мережева помилка теж дає status=0, але ERR_BLOCKED_BY_CLIENT
-    // відрізняється тим що відповідь приходить МИТТЄВО (< 50ms)
     var xhr = new XMLHttpRequest();
     var startTime = Date.now();
 
@@ -56,33 +56,25 @@ console.log('adblock.js loaded');
         if (xhr.readyState !== 4) return;
 
         var elapsed = Date.now() - startTime;
+        console.log('XHR status=' + xhr.status + ' elapsed=' + elapsed + 'ms');
 
         if (xhr.status === 0) {
-            // status=0 може бути AdBlock АБО мережева помилка
-            // AdBlock блокує МИТТЄВО (< 100ms), мережева помилка займає час
             if (elapsed < 200) {
-                console.log('AdBlock detected! Blocked in ' + elapsed + 'ms');
                 blockPage();
             } else {
-                console.log('Network error (not AdBlock), elapsed: ' + elapsed + 'ms');
                 allowPage();
             }
         } else {
-            // Запит пройшов — AdBlock не блокує
-            console.log('Ad request passed, status: ' + xhr.status);
             allowPage();
         }
     };
 
     xhr.ontimeout = function () {
-        // Таймаут — скоріш за все не AdBlock, просто повільна мережа
-        console.log('XHR timeout — allowing page');
         allowPage();
     };
 
     xhr.send();
 
-    // Fallback на випадок якщо XHR завис
     setTimeout(function () {
         if (!blocked) allowPage();
     }, 6000);
