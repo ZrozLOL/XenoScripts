@@ -249,6 +249,16 @@
       "key_difficulty": "none",
       "script_side": "both",
       "date": "2026-04-19"
+    },
+    "script_1776618153": {
+      "name": "Fling things Script",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script - Fling Things and People\nVERY OP script, use at your own risk.\n\n\uD83D\uDD11 Key:\nbash\n\n\uD83D\uDD27 Features:\nToo many to list\n\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 - Fling Things and People\n\u041E\u0427\u0415\u041D\u042C \u0418\u041C\u0411\u041E\u0412\u042B\u0419 \u0441\u043A\u0440\u0438\u043F\u0442, \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0439\u0442\u0435 \u043D\u0430 \u0441\u0432\u043E\u0439 \u0440\u0438\u0441\u043A.\n\n\uD83D\uDD11 \u041A\u043B\u044E\u0447:\nbash\n\n\uD83D\uDD27 \u0424\u0443\u043D\u043A\u0446\u0438\u0438:\n\u0421\u043B\u0438\u0448\u043A\u043E\u043C \u043C\u043D\u043E\u0433\u043E \u0447\u0442\u043E\u0431\u044B \u043F\u0435\u0440\u0435\u0447\u0438\u0441\u043B\u0438\u0442\u044C",
+      "code": "loadstring(game:HttpGet(\u0022https://raw.githubusercontent.com/blueEa1532/thechosenone/refs/heads/main/The_Chosen_One_Lite\u0022))()",
+      "game": "Fling Things and People",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "server",
+      "date": "2026-04-19"
     }
   }
 }
