@@ -1,7 +1,7 @@
 (function () {
     const SCRIPT_ID = new URLSearchParams(window.location.search).get('id') || "default";
     const STORAGE_KEY = "ad_passed_" + SCRIPT_ID;
-
+    console.log('adblock.js loaded');
     if (sessionStorage.getItem(STORAGE_KEY) === "true") return;
 
     document.body.style.visibility = 'hidden';
