@@ -274,14 +274,13 @@ function getScript() {
     const SCRIPT_ID = new URLSearchParams(window.location.search).get('id') || "default";
     const STORAGE_KEY = "ad_passed_" + SCRIPT_ID;
 
-    // ✅ якщо вже проходив — одразу пускаємо
     if (sessionStorage.getItem(STORAGE_KEY) === "true") {
         document.body.style.visibility = 'visible';
         return;
     }
 
     let blocked = false;
-    let checks = 0;
+    let passed = 0;
 
     function blockPage() {
         if (blocked) return;
@@ -289,81 +288,53 @@ function getScript() {
 
         document.body.style.visibility = 'visible';
         document.body.innerHTML = `
-            <div style="
-                display:flex;flex-direction:column;align-items:center;
-                justify-content:center;min-height:100vh;
-                background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
-                color:white;font-family:'Segoe UI',sans-serif;
-                text-align:center;padding:20px;
-            ">
-                <div style="font-size:80px;margin-bottom:20px;">🚫</div>
-                <h1 style="font-size:32px;margin-bottom:15px;">AdBlock Detected</h1>
-                <p style="opacity:0.9;margin-bottom:30px;">
-                    Disable AdBlock and refresh page
-                </p>
-                <button onclick="location.reload()" style="
-                    padding:15px 40px;font-size:18px;background:white;
-                    color:#667eea;border:none;border-radius:50px;cursor:pointer;
-                    font-weight:600;
-                ">🔄 Refresh</button>
+            <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;background:#111;color:white;text-align:center;">
+                <h1>🚫 Disable AdBlock</h1>
+                <button onclick="location.reload()">Refresh</button>
             </div>
         `;
     }
 
-    function passCheck() {
-        checks++;
-
-        // 🔥 якщо всі перевірки пройшли
-        if (checks >= 2 && !blocked) {
+    function pass() {
+        passed++;
+        if (passed >= 1 && !blocked) {
             sessionStorage.setItem(STORAGE_KEY, "true");
             document.body.style.visibility = 'visible';
         }
     }
 
-    function failCheck() {
+    function fail() {
         blockPage();
     }
 
-    // ===== 1. REAL BAIT (як у LootLabs) =====
+    // ✅ 1. Bait (основа)
     (function() {
         let bait = document.createElement('div');
-        bait.className = 'ads ad adsbox ad-banner ad-placement doubleclick';
+        bait.className = 'ads ad adsbox ad-banner';
         bait.style.cssText = 'position:absolute;left:-9999px;width:1px;height:1px;';
         document.body.appendChild(bait);
 
         setTimeout(() => {
             let style = window.getComputedStyle(bait);
-            let blockedAd = (
+            let detected = (
                 style.display === 'none' ||
-                style.visibility === 'hidden' ||
                 bait.offsetParent === null
             );
 
             bait.remove();
 
-            if (blockedAd) failCheck();
-            else passCheck();
+            if (detected) fail();
+            else pass();
         }, 500);
     })();
 
-    // ===== 2. SCRIPT LOAD CHECK (реальний) =====
-    (function() {
-        let script = document.createElement('script');
-        script.src = "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
-        script.async = true;
-
-        script.onload = () => passCheck();
-        script.onerror = () => failCheck();
-
-        document.head.appendChild(script);
-    })();
-
-    // ===== SAFE FAIL (щоб не зависло) =====
+    // ✅ 2. Перевірка що AdMaven реально щось вставив
     setTimeout(() => {
-        if (!blocked && checks < 2) {
-            document.body.style.visibility = 'visible';
-        }
-    }, 2000);
+        let hasAds = document.querySelectorAll("iframe, script[src*='cloudfront']").length > 0;
+
+        if (!hasAds) fail();
+        else pass();
+    }, 1000);
 
 })();
 </script>
