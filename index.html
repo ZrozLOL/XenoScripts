@@ -323,26 +323,15 @@ function getScript() {
         bait.className = 'ads ad adsbox doubleclick ad-placement carbon-ads';
         bait.style.cssText = 'position:absolute;left:-9999px;height:1px;width:1px;';
         document.body.appendChild(bait);
-
-        setTimeout(() => {
-            let style = window.getComputedStyle(bait);
-            let detected = (
-                style.display === 'none' ||
-                style.visibility === 'hidden' ||
-                bait.offsetParent === null
-            );
-            bait.remove();
-            detect(detected);
-        }, 500);
     })();
 
     // ===== 2. Image ad check =====
     (function() {
         let img = new Image();
-        img.src = "https://pagead2.googlesyndication.com/pagead/imgad?id=" + Math.random();
-
+        img.src = "https://www.google.com/images/branding/googlelogo/1x/googlelogo_light_color_272x92dp.png";
+    
         img.onload = () => detect(false);
-        img.onerror = () => detect(true);
+        img.onerror = () => detect(false); // НЕ блокуємо тут!
     })();
 
     // ===== 3. adsbygoogle check =====
