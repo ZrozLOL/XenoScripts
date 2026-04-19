@@ -271,15 +271,12 @@ function getScript() {
 (function() {
     document.body.style.visibility = 'hidden';
 
-    var detectionsPassed = 0;
-    var requiredDetections = 2;
-    var blocked = false;
-    var checksDone = 0;
-    var totalChecks = 3;
+    let blocked = false;
 
     function blockPage() {
         if (blocked) return;
         blocked = true;
+
         document.body.style.visibility = 'visible';
         document.body.innerHTML = `
             <div style="
@@ -290,99 +287,78 @@ function getScript() {
                 text-align:center;padding:20px;
             ">
                 <div style="font-size:80px;margin-bottom:20px;">🚫</div>
-                <h1 style="font-size:32px;margin-bottom:15px;">Please Disable AdBlock</h1>
-                <p style="font-size:16px;opacity:0.9;margin-bottom:30px;max-width:400px;">
-                    We detected that you're using an ad blocker.
-                    Please disable it and refresh the page to continue.
+                <h1 style="font-size:32px;margin-bottom:15px;">Disable AdBlock</h1>
+                <p style="opacity:0.9;margin-bottom:30px;">
+                    Turn off your AdBlock and refresh the page.
                 </p>
                 <button onclick="location.reload()" style="
-                    padding:18px 45px;font-size:18px;background:white;
+                    padding:15px 40px;font-size:18px;background:white;
                     color:#667eea;border:none;border-radius:50px;cursor:pointer;
-                    font-weight:600;box-shadow:0 10px 30px rgba(0,0,0,0.3);
-                ">🔄 Refresh Page</button>
+                    font-weight:600;
+                ">🔄 Refresh</button>
             </div>
         `;
     }
 
-    function onCheckDone(detected) {
-        if (blocked) return;
-        if (detected) detectionsPassed++;
-        checksDone++;
-
-        if (detectionsPassed >= requiredDetections) {
-            blockPage();
-            return;
-        }
-        if (checksDone >= totalChecks) {
-            // Всі перевірки пройдено — адблоку немає
+    function allowPage() {
+        if (!blocked) {
             document.body.style.visibility = 'visible';
         }
     }
 
-    // Метод 1: Bait елемент
+    let detections = 0;
+
+    function detect(result) {
+        if (result) detections++;
+
+        // 🔥 якщо ХОЧА Б 1 тригер — блокуємо
+        if (detections >= 1) {
+            blockPage();
+        }
+    }
+
+    // ===== 1. Bait element (сильний) =====
     (function() {
-        var bait = document.createElement('div');
-        bait.className = 'ad-banner';
-        bait.style.cssText = 'height:1px!important;width:1px!important;position:absolute!important;left:-10000px!important;top:-1000px!important;';
+        let bait = document.createElement('div');
+        bait.className = 'ads ad adsbox doubleclick ad-placement carbon-ads';
+        bait.style.cssText = 'position:absolute;left:-9999px;height:1px;width:1px;';
         document.body.appendChild(bait);
 
-        setTimeout(function() {
-            var style = window.getComputedStyle(bait);
-            var hidden = (
-                bait.offsetHeight === 0 ||
-                bait.offsetWidth === 0 ||
+        setTimeout(() => {
+            let style = window.getComputedStyle(bait);
+            let detected = (
                 style.display === 'none' ||
                 style.visibility === 'hidden' ||
-                style.opacity === '0'
+                bait.offsetParent === null
             );
-            try { bait.remove(); } catch(e) {}
-            onCheckDone(hidden);
-        }, 300);
+            bait.remove();
+            detect(detected);
+        }, 500);
     })();
 
-    // Метод 2: MutationObserver
+    // ===== 2. Image ad check =====
     (function() {
-        var fakeAd = document.createElement('ins');
-        fakeAd.className = 'adsbygoogle';
-        fakeAd.style.cssText = 'display:block;width:1px;height:1px;position:absolute;left:-9999px;';
-        document.body.appendChild(fakeAd);
+        let img = new Image();
+        img.src = "https://pagead2.googlesyndication.com/pagead/imgad?id=" + Math.random();
 
-        var removed = false;
-        var observer = new MutationObserver(function(mutations) {
-            mutations.forEach(function(mutation) {
-                mutation.removedNodes.forEach(function(node) {
-                    if (node === fakeAd) removed = true;
-                });
-            });
-        });
-
-        observer.observe(document.body, { childList: true, subtree: true });
-
-        setTimeout(function() {
-            observer.disconnect();
-            var detected = removed || fakeAd.offsetHeight === 0;
-            try { fakeAd.remove(); } catch(e) {}
-            onCheckDone(detected);
-        }, 400);
+        img.onload = () => detect(false);
+        img.onerror = () => detect(true);
     })();
 
-    // Метод 3: Fetch рекламного URL
-    fetch('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', {
-        method: 'HEAD',
-        mode: 'no-cors',
-        cache: 'no-store'
-    }).then(function() {
-        onCheckDone(false); // запит пройшов — не заблоковано
-    }).catch(function() {
-        onCheckDone(true); // заблоковано
-    });
-
-    // Fallback: якщо fetch завис — через 2 секунди показуємо сторінку
-    setTimeout(function() {
-        if (!blocked && checksDone < totalChecks) {
-            document.body.style.visibility = 'visible';
+    // ===== 3. adsbygoogle check =====
+    setTimeout(() => {
+        if (typeof window.adsbygoogle === "undefined") {
+            detect(true);
+        } else {
+            detect(false);
         }
-    }, 2000);
+    }, 300);
+
+    // ===== Фінал =====
+    setTimeout(() => {
+        if (!blocked) allowPage();
+    }, 1000);
+
 })();
 </script>
 </body>
