@@ -1,20 +1,23 @@
 console.log('adblock.js loaded');
-
 (function () {
     const SCRIPT_ID = new URLSearchParams(window.location.search).get('id') || "default";
-    // Окремий ключ для адблок перевірки (не плутати з bypass ключем)
     const ADBLOCK_KEY = "adblock_ok_" + SCRIPT_ID;
-
-    // Завжди перевіряємо — скидаємо попередній результат
-    sessionStorage.removeItem(ADBLOCK_KEY);
-
+    
+    // ✅ Якщо вже пройшли перевірку в цій сесії — не перевіряємо повторно
+    if (sessionStorage.getItem(ADBLOCK_KEY) === "true") {
+        console.log('AdBlock check already passed in this session');
+        document.body.style.visibility = 'visible';
+        return;
+    }
+    
+    console.log('Running AdBlock detection...');
     document.body.style.visibility = 'hidden';
-
     var blocked = false;
-
+    
     function blockPage() {
         if (blocked) return;
         blocked = true;
+        console.log('AdBlock detected - blocking page');
         document.body.style.visibility = 'visible';
         document.body.innerHTML = `
             <div style="
@@ -38,45 +41,62 @@ console.log('adblock.js loaded');
             </div>
         `;
     }
-
+    
     function allowPage() {
         if (!blocked) {
             sessionStorage.setItem(ADBLOCK_KEY, "true");
             document.body.style.visibility = 'visible';
+            console.log('AdBlock check passed - page allowed');
         }
     }
-
+    
     var xhr = new XMLHttpRequest();
     var startTime = Date.now();
-
     xhr.open('GET', 'https://dcbbwymp1bhlf.cloudfront.net/?wbbcd=1253824&t=' + Date.now(), true);
     xhr.timeout = 5000;
-
+    
     xhr.onreadystatechange = function () {
         if (xhr.readyState !== 4) return;
-
         var elapsed = Date.now() - startTime;
-        console.log('XHR status=' + xhr.status + ' elapsed=' + elapsed + 'ms');
-
+        console.log('XHR completed: status=' + xhr.status + ', elapsed=' + elapsed + 'ms');
+        
         if (xhr.status === 0) {
+            // Запит заблоковано
             if (elapsed < 200) {
+                // Швидка блокування = AdBlock активний
                 blockPage();
             } else {
+                // Повільна блокування = мережева помилка, не AdBlock
                 allowPage();
             }
+        } else {
+            // Успішний запит = AdBlock вимкнено
+            allowPage();
+        }
+    };
+    
+    xhr.ontimeout = function () {
+        console.log('XHR timeout - allowing page');
+        allowPage();
+    };
+    
+    xhr.onerror = function () {
+        console.log('XHR error - checking elapsed time');
+        var elapsed = Date.now() - startTime;
+        if (elapsed < 200) {
+            blockPage();
         } else {
             allowPage();
         }
     };
-
-    xhr.ontimeout = function () {
-        allowPage();
-    };
-
+    
     xhr.send();
-
+    
+    // Fallback: якщо через 6 секунд нічого не сталося - дозволяємо доступ
     setTimeout(function () {
-        if (!blocked) allowPage();
+        if (!blocked) {
+            console.log('Timeout reached - allowing page');
+            allowPage();
+        }
     }, 6000);
-
 })();
