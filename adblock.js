@@ -2,13 +2,12 @@
     const SCRIPT_ID = new URLSearchParams(window.location.search).get('id') || "default";
     const STORAGE_KEY = "ad_passed_" + SCRIPT_ID;
 
-    // Якщо вже пройшов — не перевіряємо
     if (sessionStorage.getItem(STORAGE_KEY) === "true") return;
 
     document.body.style.visibility = 'hidden';
 
     var detectionsPassed = 0;
-    var requiredDetections = 2;
+    var requiredDetections = 1; // Достатньо 1 з 3
     var blocked = false;
     var checksDone = 0;
     var totalChecks = 3;
@@ -54,7 +53,7 @@
         }
     }
 
-    // ✅ 1. Bait div — AdBlock ховає елементи з такими класами
+    // ✅ 1. Bait div
     (function () {
         var bait = document.createElement('div');
         bait.className = 'ad-banner ads adsbox adsbygoogle';
@@ -75,7 +74,7 @@
         }, 300);
     })();
 
-    // ✅ 2. MutationObserver — AdBlock видаляє фейкові рекламні елементи
+    // ✅ 2. MutationObserver
     (function () {
         var fakeAd = document.createElement('ins');
         fakeAd.className = 'adsbygoogle';
@@ -90,7 +89,6 @@
                 });
             });
         });
-
         observer.observe(document.body, { childList: true, subtree: true });
 
         setTimeout(function () {
@@ -101,22 +99,22 @@
         }, 400);
     })();
 
-    // ✅ 3. Fetch до відомого рекламного URL — AdBlock блокує мережевий запит
-    fetch('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', {
+    // ✅ 3. Fetch до AdMaven — саме той домен який AdBlock блокує на твоєму сайті
+    fetch('https://dcbbwymp1bhlf.cloudfront.net/favicon.ico', {
         method: 'HEAD',
         mode: 'no-cors',
         cache: 'no-store'
     }).then(function () {
-        onCheckDone(false); // запит пройшов — адблоку немає
+        onCheckDone(false); // не заблоковано
     }).catch(function () {
-        onCheckDone(true);  // заблоковано
+        onCheckDone(true);  // заблоковано — ERR_BLOCKED_BY_CLIENT
     });
 
-    // Fallback: якщо щось зависло — через 2.5 сек показуємо сторінку
+    // Fallback
     setTimeout(function () {
         if (!blocked && checksDone < totalChecks) {
             document.body.style.visibility = 'visible';
         }
-    }, 2500);
+    }, 3000);
 
 })();
