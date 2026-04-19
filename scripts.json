@@ -229,6 +229,16 @@
       "key_difficulty": "none",
       "script_side": "client",
       "date": "2026-04-19"
+    },
+    "script_1776610398": {
+      "name": "MM2 OP script",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script - MM2\nVERY OP script with too many features to count.\n\n\uD83D\uDD27 Features:\nToo many to list\n\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 - MM2\n\u041E\u0427\u0415\u041D\u042C \u0418\u041C\u0411\u041E\u0412\u042B\u0419 \u0441\u043A\u0440\u0438\u043F\u0442, \u0441\u043B\u0438\u0448\u043A\u043E\u043C \u043C\u043D\u043E\u0433\u043E \u0444\u0443\u043D\u043A\u0446\u0438\u0439 \u0447\u0442\u043E\u0431\u044B \u043F\u043E\u0441\u0447\u0438\u0442\u0430\u0442\u044C.\n\n\uD83D\uDD27 \u0424\u0443\u043D\u043A\u0446\u0438\u0438:\n\u0421\u043B\u0438\u0448\u043A\u043E\u043C \u043C\u043D\u043E\u0433\u043E \u0447\u0442\u043E\u0431\u044B \u043F\u0435\u0440\u0435\u0447\u0438\u0441\u043B\u0438\u0442\u044C",
+      "code": "--[WARNING: You are using a very OP script! This script is keyless and may result in a ban!]--\nloadstring(game:HttpGet(\u0027https://raw.smokingscripts.org/vertex.lua\u0027))()",
+      "game": "Murder mystery 2",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "both",
+      "date": "2026-04-19"
     }
   }
 }
