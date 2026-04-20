@@ -289,6 +289,16 @@
       "key_difficulty": "none",
       "script_side": "server",
       "date": "2026-04-20"
+    },
+    "script_1776672174": {
+      "name": "Steal a fucking brainrot",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script - Steal a Brainrot\nSimple script with basic functionality.\n\n\uD83D\uDD27 Features:\nAuto Play\n\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 - Steal a Brainrot\n\u041F\u0440\u043E\u0441\u0442\u043E\u0439 \u0441\u043A\u0440\u0438\u043F\u0442 \u0441 \u043E\u0434\u043D\u043E\u0439 \u0444\u0443\u043D\u043A\u0446\u0438\u0435\u0439.\n\n\uD83D\uDD27 \u0424\u0443\u043D\u043A\u0446\u0438\u0438:\n\u0410\u0432\u0442\u043E \u0438\u0433\u0440\u0430",
+      "code": "loadstring(game:HttpGet(\u0022https://codeberg.org/hubs/sab/raw/branch/main/palkuhub\u0022))()",
+      "game": "Steal a brainrot",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "client",
+      "date": "2026-04-20"
     }
   }
 }
