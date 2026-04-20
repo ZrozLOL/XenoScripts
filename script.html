@@ -260,7 +260,24 @@ if (!sessionStorage.getItem('ad_passed_' + scriptId)) {
     `;
     throw new Error('bypass detected');
 }
-
+function renderScriptLines(code) {
+    const MAX_LINES = 6;
+    const MAX_LINE_LEN = 60;
+    const lines = code.split('\n');
+    const visible = lines.slice(0, MAX_LINES);
+    let html = visible.map(line => {
+        const safe = line.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        const trimmed = safe.length > MAX_LINE_LEN
+            ? safe.slice(0, MAX_LINE_LEN) + '...'
+            : safe;
+        return `<div style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${trimmed}</div>`;
+    }).join('');
+    if (lines.length > MAX_LINES) {
+        const remaining = lines.slice(MAX_LINES).join('\n').length;
+        html += `<div style="color:rgba(255,255,255,0.5);font-style:italic;margin-top:6px;">(...${remaining} symbols more...)</div>`;
+    }
+    return html;
+}
 async function loadScript() {
     const container = document.getElementById('container');
 
@@ -313,13 +330,14 @@ async function loadScript() {
                     ${sideBadge}
                 </div>
             </div>
-            <div class="script-box" id="scriptCode">${script.code}</div>
+            <div class="script-box" id="scriptCode">${renderScriptLines(script.code)}</div>
             <div class="button-group">
                 <button onclick="copyScript()">📋 Copy Script</button>
                 <button class="btn-secondary" onclick="window.open('https://t.me/XenoScriptsSupported', '_blank')">📢 Join Channel</button>
             </div>
             <p class="copied-msg" id="copiedMsg">✓ Copied to clipboard!</p>
         `;
+        document.getElementById('scriptCode').dataset.raw = script.code;
 
     } catch (error) {
         container.innerHTML = `
@@ -333,8 +351,10 @@ async function loadScript() {
 }
 
 function copyScript() {
-    const scriptText = document.getElementById('scriptCode').innerText;
-    navigator.clipboard.writeText(scriptText).then(() => {
+    // Зберігаємо оригінальний код у data-атрибуті при рендері
+    const box = document.getElementById('scriptCode');
+    const raw = box.dataset.raw;
+    navigator.clipboard.writeText(raw).then(() => {
         const msg = document.getElementById('copiedMsg');
         msg.style.display = 'block';
         setTimeout(() => { msg.style.display = 'none'; }, 2500);
