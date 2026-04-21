@@ -428,19 +428,17 @@ footer {
   </div>
 </section>
 
-<div class="stats reveal">
-  <div class="stat">
-    <span class="stat-num" data-target="40">0</span>
-    <span class="stat-label">Scripts Available</span>
-  </div>
-  <div class="stat">
-    <span class="stat-num" data-target="500">0</span>
-    <span class="stat-label">Channel Members</span>
-  </div>
-  <div class="stat">
-    <span class="stat-num" data-target="100">0</span>
-    <span class="stat-label">% Free</span>
-  </div>
+<div class="stat">
+      <span class="stat-num" id="stat-scripts">0+</span>
+      <span class="stat-label">Scripts Available</span>
+</div>
+<div class="stat">
+      <span class="stat-num" id="stat-members">0+</span>
+      <span class="stat-label">Channel Members</span>
+</div>
+<div class="stat">
+      <span class="stat-num">100%</span>
+      <span class="stat-label">% Free</span>
 </div>
 
 <section class="about">
@@ -529,10 +527,7 @@ const io = new IntersectionObserver(entries => {
 }, { threshold: 0.1 });
 reveals.forEach(r => io.observe(r));
 
-function animateCount(el, target) {
-  const isPercent = el.dataset.target === '100';
-  const isMembers = parseInt(el.dataset.target) >= 500;
-  const suffix = isPercent ? '%' : '+';
+function animateCount(el, target, suffix) {
   let start = null;
   const step = ts => {
     if(!start) start = ts;
@@ -544,19 +539,27 @@ function animateCount(el, target) {
   requestAnimationFrame(step);
 }
 
-const statsIO = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if(e.isIntersecting) {
-      document.querySelectorAll('[data-target]').forEach(el => {
-        animateCount(el, parseInt(el.dataset.target));
-      });
-      statsIO.disconnect();
-    }
-  });
-}, { threshold: 0.2 });
+async function loadStats() {
+  try {
+    const [scriptsRes, statsRes] = await Promise.all([
+      fetch('https://raw.githubusercontent.com/ZrozLOL/XenoScripts/main/scripts.json?t=' + Date.now()),
+      fetch('https://raw.githubusercontent.com/ZrozLOL/XenoScripts/main/stats.json?t=' + Date.now())
+    ]);
+    const scriptsData = await scriptsRes.json();
+    const statsData = await statsRes.json();
 
-const statsEl = document.querySelector('.stats');
-if(statsEl) statsIO.observe(statsEl);
+    const scriptCount = Object.keys(scriptsData.scripts).length;
+    const memberCount = statsData.members;
+
+    animateCount(document.getElementById('stat-scripts'), scriptCount, '+');
+    animateCount(document.getElementById('stat-members'), memberCount, '+');
+  } catch(e) {
+    document.getElementById('stat-scripts').textContent = '?';
+    document.getElementById('stat-members').textContent = '?';
+  }
+}
+
+loadStats();
 </script>
 </body>
 </html>
