@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XenoScripts — Home</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #080808;
+  --surface: rgba(255,255,255,0.04);
+  --border: rgba(255,255,255,0.08);
+  --text: #f0f0f0;
+  --muted: rgba(255,255,255,0.45);
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Syne', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body::before {
+  content:'';
+  position:fixed; inset:0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events:none; z-index:0;
+}
+
+body::after {
+  content:'';
+  position:fixed; inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events:none; z-index:0;
+}
+
+nav {
+  position:fixed; top:0; left:0; right:0;
+  display:flex; align-items:center; justify-content:space-between;
+  padding: 22px 40px;
+  background: rgba(8,8,8,0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  z-index: 100;
+}
+
+.logo {
+  font-family: 'Space Mono', monospace;
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+}
+.logo span { opacity:0.35; }
+
+.nav-btn {
+  display:inline-flex; align-items:center; gap:8px;
+  padding: 10px 22px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  cursor:pointer;
+  border-radius: 8px;
+  text-decoration:none;
+  transition: all 0.2s ease;
+  letter-spacing: 0.5px;
+}
+.nav-btn:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.2);
+  transform: translateY(-1px);
+}
+
+.hero {
+  position:relative; z-index:1;
+  min-height: 100vh;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  padding: 120px 40px 80px;
+  text-align:center;
+}
+
+.blob {
+  position:absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events:none;
+  animation: drift 12s ease-in-out infinite alternate;
+}
+.blob-1 { width:500px; height:500px; background:rgba(255,255,255,0.035); top:-100px; left:-100px; }
+.blob-2 { width:400px; height:400px; background:rgba(255,255,255,0.025); bottom:-100px; right:-80px; animation-delay:-5s; }
+@keyframes drift { from{transform:translate(0,0)} to{transform:translate(40px,30px)} }
+
+.tag {
+  display:inline-flex; align-items:center; gap:8px;
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--muted);
+  text-transform:uppercase;
+  border: 1px solid var(--border);
+  padding: 7px 16px;
+  border-radius: 4px;
+  margin-bottom: 40px;
+  animation: fadeUp 0.6s ease both;
+}
+.tag-dot { width:6px; height:6px; background:#fff; border-radius:50%; opacity:0.5; animation: blink 2s infinite; }
+@keyframes blink { 0%,100%{opacity:0.5} 50%{opacity:0.1} }
+
+.hero h1 {
+  font-size: clamp(52px, 9vw, 108px);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -3px;
+  margin-bottom: 30px;
+  animation: fadeUp 0.6s 0.1s ease both;
+}
+
+.hero h1 em {
+  font-style:normal;
+  -webkit-text-stroke: 1.5px rgba(255,255,255,0.45);
+  color: transparent;
+}
+
+.hero-sub {
+  font-size: 17px;
+  color: var(--muted);
+  max-width: 460px;
+  line-height: 1.75;
+  margin-bottom: 50px;
+  animation: fadeUp 0.6s 0.2s ease both;
+}
+
+.hero-cta {
+  display:flex; gap:14px; flex-wrap:wrap; justify-content:center;
+  animation: fadeUp 0.6s 0.3s ease both;
+}
+
+.btn-primary {
+  padding: 16px 36px;
+  background: #fff;
+  color: #000;
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  border:none; cursor:pointer;
+  border-radius: 8px;
+  text-decoration:none;
+  letter-spacing: 0.5px;
+  transition: all 0.25s ease;
+  display:inline-block;
+}
+.btn-primary:hover { background: #ddd; transform: translateY(-2px); box-shadow: 0 12px 40px rgba(255,255,255,0.15); }
+
+.btn-ghost {
+  padding: 16px 36px;
+  background: transparent;
+  color: var(--text);
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  border: 1px solid var(--border);
+  cursor:pointer;
+  border-radius: 8px;
+  text-decoration:none;
+  letter-spacing: 0.5px;
+  transition: all 0.25s ease;
+  display:inline-block;
+}
+.btn-ghost:hover { border-color: rgba(255,255,255,0.28); background: var(--surface); transform: translateY(-2px); }
+
+/* STATS */
+.stats {
+  position:relative; z-index:1;
+  display:grid; grid-template-columns: repeat(3, 1fr);
+  background: var(--border);
+  gap: 1px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.stat {
+  background: var(--bg);
+  padding: 40px 30px;
+  text-align:center;
+  transition: background 0.2s;
+}
+.stat:hover { background: rgba(255,255,255,0.025); }
+.stat-num {
+  font-family: 'Space Mono', monospace;
+  font-size: 38px;
+  font-weight: 700;
+  display:block;
+  margin-bottom: 8px;
+}
+.stat-label { font-size: 13px; color: var(--muted); letter-spacing: 0.5px; }
+
+/* ABOUT */
+.about {
+  position:relative; z-index:1;
+  display:grid; grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 100px 40px;
+  align-items:center;
+}
+
+.about-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform:uppercase;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.about h2 {
+  font-size: clamp(30px, 4vw, 46px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  margin-bottom: 24px;
+}
+
+.about p {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.channel-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 36px;
+  position:relative;
+  overflow:hidden;
+}
+.channel-card::before {
+  content:'';
+  position:absolute; inset:0;
+  background: radial-gradient(circle at top right, rgba(255,255,255,0.05), transparent 60%);
+  pointer-events:none;
+}
+
+.channel-icon {
+  width: 52px; height:52px;
+  background: rgba(255,255,255,0.07);
+  border-radius: 14px;
+  display:flex; align-items:center; justify-content:center;
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+.channel-name { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 6px; }
+.channel-handle {
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.channel-desc {
+  font-size: 14px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.channel-link {
+  display:inline-flex; align-items:center; gap:8px;
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  color: var(--text);
+  text-decoration:none;
+  border: 1px solid var(--border);
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+.channel-link:hover { background:rgba(255,255,255,0.07); border-color:rgba(255,255,255,0.2); }
+
+/* JOIN */
+.join {
+  position:relative; z-index:1;
+  border-top: 1px solid var(--border);
+  padding: 100px 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.join-header {
+  display:flex; align-items:flex-end; justify-content:space-between;
+  gap:40px; flex-wrap:wrap;
+  margin-bottom: 60px;
+}
+
+.join h2 {
+  font-size: clamp(34px, 5vw, 60px);
+  font-weight: 800;
+  line-height: 1.0;
+  letter-spacing: -2px;
+  max-width: 520px;
+}
+.join h2 span { color: var(--muted); }
+
+.join-sub {
+  font-size: 15px;
+  color: var(--muted);
+  max-width: 280px;
+  line-height: 1.75;
+}
+
+.roles {
+  display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 14px;
+  margin-bottom: 50px;
+}
+
+.role-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 26px;
+  transition: all 0.2s ease;
+}
+.role-card:hover {
+  background: rgba(255,255,255,0.065);
+  border-color: rgba(255,255,255,0.15);
+  transform: translateY(-3px);
+}
+
+.role-emoji { font-size: 28px; margin-bottom: 14px; display:block; }
+.role-title { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+.role-desc { font-size: 13px; color: var(--muted); line-height: 1.65; }
+
+.join-cta { display:flex; align-items:center; gap:24px; flex-wrap:wrap; }
+
+.join-note {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* FOOTER */
+footer {
+  position:relative; z-index:1;
+  border-top: 1px solid var(--border);
+  padding: 36px 40px;
+  display:flex; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; gap:20px;
+}
+
+.footer-logo {
+  font-family: 'Space Mono', monospace;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.footer-links {
+  display:flex; gap:24px;
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+}
+.footer-links a { color: var(--muted); text-decoration:none; transition: color 0.2s; }
+.footer-links a:hover { color: #fff; }
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(24px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+.reveal {
+  opacity:0; transform:translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible { opacity:1; transform:translateY(0); }
+
+@media(max-width:800px) {
+  nav { padding:18px 24px; }
+  .hero { padding:100px 24px 60px; }
+  .stats { grid-template-columns:1fr; }
+  .about { grid-template-columns:1fr; gap:40px; padding:60px 24px; }
+  .join { padding:60px 24px; }
+  footer { padding:28px 24px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Xeno<span>/</span>Scripts</div>
+  <a href="index.html" class="nav-btn">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+    </svg>
+    Scripts
+  </a>
+</nav>
+
+<section class="hero">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+
+  <div class="tag">
+    <span class="tag-dot"></span>
+    Roblox Script Hub
+  </div>
+
+  <h1>Scripts that<br><em>actually</em><br>work.</h1>
+
+  <p class="hero-sub">
+    XenoScripts delivers clean, tested Roblox scripts — mostly keyless and straight to the point. No fluff, no scams, no ads (well, almost).
+  </p>
+
+  <div class="hero-cta">
+    <a href="index.html" class="btn-primary">Browse Scripts →</a>
+    <a href="https://t.me/XenoScriptsSupported" target="_blank" class="btn-ghost">Join Telegram</a>
+  </div>
+</section>
+
+<div class="stats reveal">
+  <div class="stat">
+    <span class="stat-num" data-target="40">0</span>
+    <span class="stat-label">Scripts Available</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num" data-target="500">0</span>
+    <span class="stat-label">Channel Members</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num" data-target="100">0</span>
+    <span class="stat-label">% Free</span>
+  </div>
+</div>
+
+<section class="about">
+  <div class="reveal">
+    <div class="about-label">// About</div>
+    <h2>What's going on here?</h2>
+    <p>
+      XenoScripts is a growing Telegram community dedicated to sharing high-quality Roblox scripts. We post updates regularly — new scripts, patches for broken ones, and general announcements.
+    </p>
+    <p>
+      Everything is free. No paywalls, no required payments. Most scripts are keyless so you can copy and run in seconds on any supported executor.
+    </p>
+    <p>
+      We're still small but growing. The goal is to build the cleanest, most organized script hub on Telegram.
+    </p>
+  </div>
+
+  <div class="reveal" style="transition-delay:0.15s">
+    <div class="channel-card">
+      <div class="channel-icon">✈️</div>
+      <div class="channel-name">XenoScripts</div>
+      <div class="channel-handle">@XenoScriptsSupported</div>
+      <div class="channel-desc">
+        Our main Telegram channel — script drops, announcements, updates, and community news. New scripts get posted here first, plus changelogs and hotfixes when things break.
+      </div>
+      <a href="https://t.me/XenoScriptsSupported" target="_blank" class="channel-link">
+        Open Channel →
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="join">
+  <div class="join-header reveal">
+    <h2>We're looking<br>for <span>people.</span></h2>
+    <p class="join-sub">
+      Whether you write Lua, make content, or just want to hang around — there's a place for you here.
+    </p>
+  </div>
+
+  <div class="roles reveal" style="transition-delay:0.1s">
+    <div class="role-card">
+      <span class="role-emoji">💻</span>
+      <div class="role-title">Script Developer</div>
+      <div class="role-desc">You know Lua and love making things work? Write scripts for the hub. Your name on every script you ship.</div>
+    </div>
+    <div class="role-card">
+      <span class="role-emoji">📢</span>
+      <div class="role-title">Promoter</div>
+      <div class="role-desc">Help spread the word — YouTube, TikTok, Discord, wherever. Every new member you bring matters.</div>
+    </div>
+    <div class="role-card">
+      <span class="role-emoji">🛡️</span>
+      <div class="role-title">Moderator</div>
+      <div class="role-desc">Keep the community clean and friendly. Answer questions, guide newcomers, handle reports.</div>
+    </div>
+    <div class="role-card">
+      <span class="role-emoji">👾</span>
+      <div class="role-title">Just a Member</div>
+      <div class="role-desc">No role needed. Join, use the scripts, drop feedback, suggest games. You're the reason this thing exists.</div>
+    </div>
+  </div>
+
+  <div class="join-cta reveal" style="transition-delay:0.2s">
+    <a href="https://t.me/XenoScriptsSupported" target="_blank" class="btn-primary">
+      You can help! Join now →
+    </a>
+    <span class="join-note">No requirements to join as a member.<br>DM us in the channel for staff roles.</span>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">XenoScripts © 2025</div>
+  <div class="footer-links">
+    <a href="index.html">Scripts</a>
+    <a href="https://t.me/XenoScriptsSupported" target="_blank">Telegram</a>
+  </div>
+</footer>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+  });
+}, { threshold: 0.1 });
+reveals.forEach(r => io.observe(r));
+
+function animateCount(el, target) {
+  const isPercent = el.dataset.target === '100';
+  const isMembers = parseInt(el.dataset.target) >= 500;
+  const suffix = isPercent ? '%' : '+';
+  let start = null;
+  const step = ts => {
+    if(!start) start = ts;
+    const p = Math.min((ts - start) / 1600, 1);
+    const ease = 1 - Math.pow(1 - p, 3);
+    el.textContent = Math.floor(ease * target) + suffix;
+    if(p < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+
+const statsIO = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting) {
+      document.querySelectorAll('[data-target]').forEach(el => {
+        animateCount(el, parseInt(el.dataset.target));
+      });
+      statsIO.disconnect();
+    }
+  });
+}, { threshold: 0.2 });
+
+const statsEl = document.querySelector('.stats');
+if(statsEl) statsIO.observe(statsEl);
+</script>
+</body>
+</html>
