@@ -379,6 +379,16 @@
       "key_difficulty": "none",
       "script_side": "server",
       "date": "2026-04-21"
+    },
+    "script_1776771442": {
+      "name": "Fish race Script",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script - Train Your Fish to Race\nDecent script with basic farming features.\n\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 - Train Your Fish to Race\n\u041D\u043E\u0440\u043C\u0430\u043B\u044C\u043D\u044B\u0439 \u0441\u043A\u0440\u0438\u043F\u0442 \u0441 \u0431\u0430\u0437\u043E\u0432\u044B\u043C\u0438 \u0444\u0443\u043D\u043A\u0446\u0438\u044F\u043C\u0438 \u0444\u0430\u0440\u043C\u0430.\n\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438:\nWins Farm, Power Farm, Auto Rebirth",
+      "code": "loadstring(game:HttpGet(\u0022https://raw.githubusercontent.com/gumanba/Scripts/main/TrainYourFishtoRace\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "Train Your Fish to Race",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "client",
+      "date": "2026-04-21"
     }
   }
 }
