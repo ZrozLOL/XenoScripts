@@ -389,6 +389,16 @@
       "key_difficulty": "none",
       "script_side": "client",
       "date": "2026-04-21"
+    },
+    "script_1776850306": {
+      "name": "BedWars",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 BedWars (OP)\nVERY OP script with tons of combat \u0026 utility features.\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 BedWars (OP)\n\u041E\u0427\u0415\u041D\u042C \u0418\u041C\u0411\u041E\u0412\u042B\u0419 \u0441\u043A\u0440\u0438\u043F\u0442 \u0441 \u043A\u0443\u0447\u0435\u0439 \u0444\u0443\u043D\u043A\u0446\u0438\u0439.\n\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438:\nFly, KillAura, ESP (Tracers, Chams, Arrows), Auto Bed Breaks, Utility, Animations, Chat Spammer, Staff Detector, Auto Clicker, Triggerbot, Aim Assist, Reach, Mouse TP, Anti Fall, Phase, Queue App Editor, Nightmare Emote, Time Changer, Breadcrumbs, Safe Walk, Freecam",
+      "code": "loadstring(game:HttpGet(\u0022https://raw.githubusercontent.com/VapeVoidware/VWRewrite/master/NewMainScript.lua\u0022, true))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "BedWars",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "server",
+      "date": "2026-04-22"
     }
   }
 }
