@@ -459,6 +459,16 @@
       "key_difficulty": "none",
       "script_side": "both",
       "date": "2026-04-27"
+    },
+    "script_1777318302": {
+      "name": "Toastyxd hub",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Toastyxd hub\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Toastyxd hub\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: Enable Auto attack, Instant Reload, Weapon type, Ultra kill, Auto range, Reload time, Trees",
+      "code": "loadstring(game:HttpGet(\u0022https://raw.githubusercontent.com/nouralddin-abdullah/99-night/refs/heads/main/main-en.lua\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "99 Nights in the Forest \uD83D\uDD26",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "client",
+      "date": "2026-04-27"
     }
   }
 }
