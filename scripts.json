@@ -489,6 +489,16 @@
       "key_difficulty": "none",
       "script_side": "both",
       "date": "2026-04-27"
+    },
+    "script_1777318723": {
+      "name": "Steal A Brainrot script",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Steal A Brainrot script\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Steal A Brainrot script\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: Auto Buy",
+      "code": "loadstring(game:HttpGet(\u0022https://pandadevelopment.net/virtual/file/4a118e47c02f0d57\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "[\uD83E\uDD16] Steal a Brainrot",
+      "keyless": false,
+      "key_difficulty": "easy",
+      "script_side": "server",
+      "date": "2026-04-27"
     }
   }
 }
