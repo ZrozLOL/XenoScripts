@@ -519,6 +519,16 @@
       "key_difficulty": "easy",
       "script_side": "server",
       "date": "2026-04-27"
+    },
+    "script_1777319682": {
+      "name": "Ringta Scripts Dead Rails Script",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Ringta Scripts Dead Rails Script\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Ringta Scripts Dead Rails Script\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: free auto bond, auto hit, weapon, gun aura, train kill aura, Teleport, bring items, towns, ESP",
+      "code": "loadstring(game:HttpGet(\u0022https://raw.githubusercontent.com/erewe23/deadrailsring.github.io/refs/heads/main/ringta.lua\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "Dead Rails [STRANGER THINGS \u002785]",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "server",
+      "date": "2026-04-27"
     }
   }
 }
