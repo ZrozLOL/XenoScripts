@@ -409,6 +409,16 @@
       "key_difficulty": "easy",
       "script_side": "server",
       "date": "2026-04-22"
+    },
+    "script_1777315313": {
+      "name": "Jailbreak Aimbot",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 JailBreak Aimbot\nOP aimbot script with visual enhancements.\n\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 JailBreak Aimbot\n\u0418\u043C\u0431\u043E\u0432\u044B\u0439 \u0430\u0438\u043C\u0431\u043E\u0442 \u0441 \u0432\u0438\u0437\u0443\u0430\u043B\u044C\u043D\u044B\u043C\u0438 \u0444\u0443\u043D\u043A\u0446\u0438\u044F\u043C\u0438.\n\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438:\nAimbot, Show FOV, FOV Radius, Smoothness, Hitbox Expander, Head Size, Player Chams",
+      "code": "loadstring(game:HttpGet(\u0022https://raw.githubusercontent.com/Benmuhammed7/Hexiron/refs/heads/main/Jailbird/Main.lua\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "Jailbreak",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "server",
+      "date": "2026-04-27"
     }
   }
 }
