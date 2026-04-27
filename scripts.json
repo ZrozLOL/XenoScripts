@@ -469,6 +469,16 @@
       "key_difficulty": "none",
       "script_side": "client",
       "date": "2026-04-27"
+    },
+    "script_1777318427": {
+      "name": "Solara hub (XENO SUPPORT)",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Solara hub (XENO SUPPORT)\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Solara hub (XENO SUPPORT)\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: 30\u002B FE Scripts, 60\u002B Universal Scripts, 6 Admin Scripts, 3 Chat Bypass Scripts",
+      "code": "loadstring(game:HttpGet(\u0027https://raw.githubusercontent.com/samuraa1/Solara-Hub/refs/heads/main/SH.lua\u0027))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "Universal",
+      "keyless": false,
+      "key_difficulty": "medium",
+      "script_side": "both",
+      "date": "2026-04-27"
     }
   }
 }
