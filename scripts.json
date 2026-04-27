@@ -449,6 +449,16 @@
       "key_difficulty": "none",
       "script_side": "client",
       "date": "2026-04-27"
+    },
+    "script_1777318194": {
+      "name": "Baritone Pro",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Baritone Pro\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Baritone Pro\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: Auto farm protocol, Anti AFK bypass, Auto rest, Movement overide, Show zone visual",
+      "code": "loadstring(game:HttpGet(\u0022https://raw.githubusercontent.com/S1dors/Baritone-Pro/refs/heads/main/main.lua\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "Sol\u0027s RNG [ Eon1 - 20\uD83E\uDE90]",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "both",
+      "date": "2026-04-27"
     }
   }
 }
