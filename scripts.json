@@ -419,6 +419,16 @@
       "key_difficulty": "none",
       "script_side": "server",
       "date": "2026-04-27"
+    },
+    "script_1777315531": {
+      "name": "Adopt me autofarm",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Adopt Me!\nSimple auto farm script.\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Adopt Me!\n\u041F\u0440\u043E\u0441\u0442\u043E\u0439 \u0430\u0432\u0442\u043E \u0444\u0430\u0440\u043C \u0441\u043A\u0440\u0438\u043F\u0442.\n\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438:\nAuto Farm, Eggs",
+      "code": "loadstring(game:HttpGet(\u0022https://raw.githubusercontent.com/bytelaunch-germany/adoptme-candyegg-farmer2026/main/loader.lua\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "Adopt me!",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "client",
+      "date": "2026-04-27"
     }
   }
 }
