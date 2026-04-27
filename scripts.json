@@ -509,6 +509,16 @@
       "key_difficulty": "none",
       "script_side": "client",
       "date": "2026-04-27"
+    },
+    "script_1777319207": {
+      "name": "Blox Fruit Script Solix Hub",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Blox Fruit Script Solix Hub\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Blox Fruit Script Solix Hub\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: Fast Attack Selection, Weapon Selection, Auto Level, Auto Farm Candy, Kill Near/Mob Aura, Auto Castle Raid, Auto Chest, Redeem All Codes, FPS Booster, Mastery Farm, Boss Farm, Material Farm, Fast Attack, Bring Mob/Magnet, Bypass TP, Remove Dame Text, Remove All Notify, White Screen, Skill Mastery (Z, X, C, V, F), Distance Farm Controls, Select Fruit, Buy Fruit Sniper, Store Fruit, Random Fruit, Collect Devil Fruit (TP), Collect Devil Fruit (Tween), ESP Player, ESP Devil Fruit, ESP Island, ESP Flower, Select Chip, Buy Chip, Start Raid, Kill Aura, Next Island, Auto Awake, Get Fruit Low Bely, Auto Law",
+      "code": "loadstring(game:HttpGet(\u0022https://raw.githubusercontent.com/debunked69/Solixreworkkeysystem/refs/heads/main/solix%20new%20keyui.lua\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "Blox Fruits",
+      "keyless": false,
+      "key_difficulty": "easy",
+      "script_side": "server",
+      "date": "2026-04-27"
     }
   }
 }
