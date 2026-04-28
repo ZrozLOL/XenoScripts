@@ -559,6 +559,16 @@
       "key_difficulty": "none",
       "script_side": "both",
       "date": "2026-04-28"
+    },
+    "script_1777382547": {
+      "name": "CuongOutLook Aimbot HUB Magic Bullet V5",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 CuongOutLook Aimbot HUB Magic Bullet V5\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 CuongOutLook Aimbot HUB Magic Bullet V5\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: Protect System tab, Aimbot Tab, Esp tab, Reality Tab, Movement tab, World tab, Item stealer tab, Players Tab, Auto Chat tab, MP3 player tab",
+      "code": "loadstring(game:HttpGet(\u0022https://cuongoutlook.chauchicuong-172005.workers.dev/download\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "[\uD83D\uDD79GAMEMODE] Sniper Arena",
+      "keyless": false,
+      "key_difficulty": "hard",
+      "script_side": "both",
+      "date": "2026-04-28"
     }
   }
 }
