@@ -549,6 +549,16 @@
       "key_difficulty": "none",
       "script_side": "server",
       "date": "2026-04-28"
+    },
+    "script_1777381994": {
+      "name": "Dive Down script [OPEN SOURCE]",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Dive Down script [OPEN SOURCE]\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Dive Down script [OPEN SOURCE]\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: Auto best fish and get money",
+      "code": "local fishes = workspace.Game.Fishes\r\nlocal player = game.Players.LocalPlayer\r\nlocal character = player.Character or player.CharacterAdded:Wait()\r\nlocal rootPart = character:WaitForChild(\u0022HumanoidRootPart\u0022)\r\nlocal RunService = game:GetService(\u0022RunService\u0022)\r\n\r\nRunService.RenderStepped:Connect(function()\r\n    local highest = 0\r\n    local highestFish = nil\r\n\r\n    for _, fish in ipairs(fishes:GetChildren()) do\r\n        local cash = fish:GetAttribute(\u0022CashPerSec\u0022)\r\n        local owner = fish:GetAttribute(\u0022Owner\u0022)\r\n        if cash and not owner and cash \u003E highest then\r\n            highest = cash\r\n            highestFish = fish\r\n        end\r\n    end\r\n\r\n    if highestFish then\r\n        local fishPosition = highestFish:GetPivot().Position\r\n        rootPart.CFrame = CFrame.new(fishPosition)\r\n\r\n        local prompt = highestFish.RootPart:FindFirstChild(\u0022ProximityPrompt\u0022)\r\n        if prompt then\r\n            fireproximityprompt(prompt)\r\n            local args = {\r\n                buffer.fromstring(\u0022\\003\\001\u0022)\r\n            }\r\n            game:GetService(\u0022ReplicatedStorage\u0022):WaitForChild(\u0022Packets\u0022):WaitForChild(\u0022Packet\u0022):WaitForChild(\u0022RemoteEvent\u0022):FireServer(unpack(args))\r\n        end\r\n    end\r\nend)\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "Dive Down \uD83E\uDD88",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "both",
+      "date": "2026-04-28"
     }
   }
 }
