@@ -539,6 +539,16 @@
       "key_difficulty": "none",
       "script_side": "both",
       "date": "2026-04-27"
+    },
+    "script_1777381552": {
+      "name": "Kaizen Auto Farm",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Kaizen Auto Farm\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Kaizen Auto Farm\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: Auto server hop, Auto farm chests, Auto farm collectibles, Auto equip, Auto M1, Movement method, Auto farm methods, Auto quest, Auto grab quest, Main farm Boss",
+      "code": "getgenv().SCRIPT_KEY = \u0022KEYLESS\u0022\r\nloadstring(game:HttpGet(\u0022https://api.jnkie.com/api/v1/luascripts/public/29745f9fed5cde5f99f7b86c9cc5b3385b93b28ed3ed9e1d6ae4054c88b15052/download\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "[\uD83D\uDD25DOMAIN CLASHING] KAIZEN",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "server",
+      "date": "2026-04-28"
     }
   }
 }
