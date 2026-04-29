@@ -569,6 +569,16 @@
       "key_difficulty": "hard",
       "script_side": "both",
       "date": "2026-04-28"
+    },
+    "script_1777465633": {
+      "name": "Polo MVS Script OP (No Keys) - Auto shoot",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Polo MVS Script OP (No Keys) - Auto shoot\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Polo MVS Script OP (No Keys) - Auto shoot\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: Team check, Tracer lines, Noclip walk through walls, Enable fly, Fly speed, Player ESP and distance, Hitbox size, Black hitbox",
+      "code": "loadstring(game:HttpGet(\u0022https://raw.githubusercontent.com/polo242c/mvs/main/mvs\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "Murderers VS Sheriffs DUELS",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "client",
+      "date": "2026-04-29"
     }
   }
 }
