@@ -589,6 +589,16 @@
       "key_difficulty": "none",
       "script_side": "both",
       "date": "2026-04-29"
+    },
+    "script_1777575075": {
+      "name": "Basketball Legends Anti ankle breaker script keyless",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Basketball Legends Anti ankle breaker script keyless\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Basketball Legends Anti ankle breaker script keyless\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: Anti contact, Anti screen, Auto speed restore, No steal cooldown, No block cooldown, Reach, Auto claim all season packs, Auto green, Shot feedback, Post aimbot, Auto guard, Auto block, Auto contest, ESP",
+      "code": "loadstring(game:HttpGet(\u0022https://scripts.getascendify.lol/sportsclub.luau\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "\uD83C\uDFC0Basketball Legends\uD83C\uDFC0",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "client",
+      "date": "2026-04-30"
     }
   }
 }
