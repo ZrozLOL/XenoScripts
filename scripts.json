@@ -629,6 +629,16 @@
       "key_difficulty": "none",
       "script_side": "both",
       "date": "2026-04-30"
+    },
+    "script_1777575272": {
+      "name": "Ninja Legends Karma Farms OP Script (No Keys)",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Ninja Legends Karma Farms OP Script (No Keys)\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Ninja Legends Karma Farms OP Script (No Keys)\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: Auto-Good Karma, Auto-Bad Karma, Auto-Swing, Auto-Sell, Auto-Full Sell, Auto-Chi, Auto-Robot Boss, Auto-Eternal Boss, Auto-Ancient Boss, Auto-Santa Boss, Auto-All Bosses, Auto-Pet Levels, \u003E Auto-Buy:, - Auto-Rank, - Auto-Sword, - Auto-Belt, - Auto-Skills, - Auto-Shurikens, \u003E Pet Stuff:, - Crystals Dropdown (Egg Selector), - Open Eggs, - Auto-Evolve, - Auto-Eternalise, - Auto-Immortalize, - Auto-Legend, - Auto-Elementalize, - Sell All Basic, - Sell All Advanced, - Sell All Rare, - Sell All Epic, - Sell All Unique, - Sell All Omega, - Sell All Elite, - Sell All Infinity, \u003E Misc:, - Fast Shuriken, - Slow Shuriken, - Invisibility, - Collect All Chest, - Collect Light Chest, - Collect Evil Chest, - Unlock Islands, - Max Jumps, - Hide Name, - ESP, - Toggle Popups (Chi/Coin effects), - Toggle GUI Key, - Destroy GUI, \u003E Teleports:, - Island Teleport Dropdown, - Teleport to Shop, - Teleport to Skills Shop, - Teleport to Light Skills, - Teleport to Dark Skills, - Teleport to KOTH, - Mystical Waters (Good), - Sword of Legends (Good), - Elemental Tornado (Good), - Lava Pit (Bad), - Tornado (Bad), - Swords of Ancients (Bad), \u003E More Teleports:, -Teleport: Mystical Waters, -Teleport: Sword of Legends, -Teleport: Elemental Tornado, -Teleport: Lava Pit, -Teleport: Tornado, -Teleport: Swords of Ancients",
+      "code": "loadstring(game:HttpGet(\u0022https://raw.githubusercontent.com/Flanut/Ninja-Legend-script/refs/heads/main/Ninja%20Legends%20Scrip%20Op.lua\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "\u26A1Ninja Legends",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "client",
+      "date": "2026-04-30"
     }
   }
 }
