@@ -8,7 +8,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "client",
-      "date": "2026-04-18"
+      "date": "2026-04-18",
+      "reports": 0,
+      "message_id": "98"
     },
     "script_1776522911": {
       "name": "Ray\u0027s mod",
@@ -18,7 +20,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "client",
-      "date": "2026-04-18"
+      "date": "2026-04-18",
+      "reports": 0,
+      "message_id": "97"
     },
     "script_1776524141": {
       "name": "Tubers Destruct Hub UNIVERSAL",
@@ -28,7 +32,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "client",
-      "date": "2026-04-18"
+      "date": "2026-04-18",
+      "reports": 0,
+      "message_id": null
     },
     "script_1776524479": {
       "name": "Build A Boat AutoFarm",
@@ -38,7 +44,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "client",
-      "date": "2026-04-18"
+      "date": "2026-04-18",
+      "reports": 0,
+      "message_id": null
     },
     "script_1776524705": {
       "name": "Blocks n\u0027 Props (VERY OP)",
@@ -48,7 +56,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "client",
-      "date": "2026-04-18"
+      "date": "2026-04-18",
+      "reports": 0,
+      "message_id": null
     },
     "script_1776525009": {
       "name": "Break In (Story) Script",
@@ -58,7 +68,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "client",
-      "date": "2026-04-18"
+      "date": "2026-04-18",
+      "reports": 0,
+      "message_id": null
     },
     "script_1776526297": {
       "name": "Rivals Script",
@@ -68,7 +80,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "client",
-      "date": "2026-04-18"
+      "date": "2026-04-18",
+      "reports": 0,
+      "message_id": null
     },
     "script_1776530259": {
       "name": "UnMuter",
@@ -78,7 +92,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "client",
-      "date": "2026-04-18"
+      "date": "2026-04-18",
+      "reports": 0,
+      "message_id": null
     },
     "script_1776531447": {
       "name": "Aim",
@@ -88,7 +104,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "client",
-      "date": "2026-04-18"
+      "date": "2026-04-18",
+      "reports": 0,
+      "message_id": null
     },
     "script_1776532545": {
       "name": "Bite by night",
@@ -98,7 +116,9 @@
       "keyless": false,
       "key_difficulty": "none",
       "script_side": "client",
-      "date": "2026-04-18"
+      "date": "2026-04-18",
+      "reports": 0,
+      "message_id": null
     },
     "script_1776540005": {
       "name": "Phantasm TSB",
@@ -108,7 +128,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "client",
-      "date": "2026-04-18"
+      "date": "2026-04-18",
+      "reports": 0,
+      "message_id": null
     },
     "script_1776542416": {
       "name": "Funky Friday Script",
@@ -118,7 +140,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "client",
-      "date": "2026-04-18"
+      "date": "2026-04-18",
+      "reports": 0,
+      "message_id": null
     },
     "script_1776543689": {
       "name": "Bite by night Script",
@@ -128,7 +152,9 @@
       "keyless": false,
       "key_difficulty": "easy",
       "script_side": "client",
-      "date": "2026-04-18"
+      "date": "2026-04-18",
+      "reports": 0,
+      "message_id": null
     },
     "script_1776544562": {
       "name": "TSB script",
@@ -138,7 +164,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "both",
-      "date": "2026-04-18"
+      "date": "2026-04-18",
+      "reports": 0,
+      "message_id": null
     },
     "script_1776544758": {
       "name": "Universal Script",
@@ -148,7 +176,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "both",
-      "date": "2026-04-18"
+      "date": "2026-04-18",
+      "reports": 0,
+      "message_id": null
     },
     "script_1776544891": {
       "name": "Infinite Yield",
@@ -158,7 +188,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "both",
-      "date": "2026-04-18"
+      "date": "2026-04-18",
+      "reports": 0,
+      "message_id": null
     },
     "script_1776545957": {
       "name": "Combat initiation script",
@@ -168,7 +200,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "client",
-      "date": "2026-04-18"
+      "date": "2026-04-18",
+      "reports": 0,
+      "message_id": null
     },
     "script_1776546422": {
       "name": "Piano script",
@@ -178,7 +212,9 @@
       "keyless": false,
       "key_difficulty": "medium",
       "script_side": "both",
-      "date": "2026-04-18"
+      "date": "2026-04-18",
+      "reports": 0,
+      "message_id": null
     },
     "script_1776589083": {
       "name": "Kallsaken script\uD83E\uDD22",
@@ -188,7 +224,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "client",
-      "date": "2026-04-19"
+      "date": "2026-04-19",
+      "reports": 0,
+      "message_id": null
     },
     "script_1776596591": {
       "name": "Bridger: WESTERN Script",
@@ -198,7 +236,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "both",
-      "date": "2026-04-19"
+      "date": "2026-04-19",
+      "reports": 0,
+      "message_id": null
     },
     "script_1776597131": {
       "name": "State of Anarchy script",
@@ -208,7 +248,9 @@
       "keyless": false,
       "key_difficulty": "easy",
       "script_side": "client",
-      "date": "2026-04-19"
+      "date": "2026-04-19",
+      "reports": 0,
+      "message_id": null
     },
     "script_1776609201": {
       "name": "Super rings",
@@ -218,7 +260,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "server",
-      "date": "2026-04-19"
+      "date": "2026-04-19",
+      "reports": 0,
+      "message_id": null
     },
     "script_1776609658": {
       "name": "NFT script",
@@ -228,7 +272,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "client",
-      "date": "2026-04-19"
+      "date": "2026-04-19",
+      "reports": 0,
+      "message_id": null
     },
     "script_1776610398": {
       "name": "MM2 OP script",
@@ -238,7 +284,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "both",
-      "date": "2026-04-19"
+      "date": "2026-04-19",
+      "reports": 0,
+      "message_id": null
     },
     "script_1776617650": {
       "name": "99 nights script",
@@ -248,7 +296,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "both",
-      "date": "2026-04-19"
+      "date": "2026-04-19",
+      "reports": 0,
+      "message_id": null
     },
     "script_1776618153": {
       "name": "Fling things Script",
@@ -258,7 +308,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "server",
-      "date": "2026-04-19"
+      "date": "2026-04-19",
+      "reports": 0,
+      "message_id": null
     },
     "script_1776618530": {
       "name": "Voleyball script",
@@ -268,7 +320,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "both",
-      "date": "2026-04-19"
+      "date": "2026-04-19",
+      "reports": 0,
+      "message_id": null
     },
     "script_1776620282": {
       "name": "The forge script",
@@ -278,7 +332,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "client",
-      "date": "2026-04-19"
+      "date": "2026-04-19",
+      "reports": 0,
+      "message_id": null
     },
     "script_1776672174": {
       "name": "Steal a fucking brainrot",
@@ -288,7 +344,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "client",
-      "date": "2026-04-20"
+      "date": "2026-04-20",
+      "reports": 0,
+      "message_id": null
     },
     "script_1776672695": {
       "name": "Dungeon Quest script",
@@ -298,7 +356,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "server",
-      "date": "2026-04-20"
+      "date": "2026-04-20",
+      "reports": 0,
+      "message_id": null
     },
     "script_1776678659": {
       "name": "Rivals OP script",
@@ -308,7 +368,9 @@
       "keyless": false,
       "key_difficulty": "medium",
       "script_side": "server",
-      "date": "2026-04-20"
+      "date": "2026-04-20",
+      "reports": 0,
+      "message_id": null
     },
     "script_1776679798": {
       "name": "Break in OP script",
@@ -318,7 +380,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "both",
-      "date": "2026-04-20"
+      "date": "2026-04-20",
+      "reports": 0,
+      "message_id": null
     },
     "script_1776682941": {
       "name": "CTW script",
@@ -328,7 +392,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "server",
-      "date": "2026-04-20"
+      "date": "2026-04-20",
+      "reports": 0,
+      "message_id": null
     },
     "script_1776708277": {
       "name": "Rivals keyless OP script",
@@ -338,7 +404,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "both",
-      "date": "2026-04-20"
+      "date": "2026-04-20",
+      "reports": 0,
+      "message_id": null
     },
     "script_1776713450": {
       "name": "Govno simulator script",
@@ -348,7 +416,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "server",
-      "date": "2026-04-20"
+      "date": "2026-04-20",
+      "reports": 0,
+      "message_id": null
     },
     "script_1776714293": {
       "name": "Survive the Apocalypse script",
@@ -358,7 +428,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "server",
-      "date": "2026-04-20"
+      "date": "2026-04-20",
+      "reports": 0,
+      "message_id": null
     },
     "script_1776766990": {
       "name": "Sailor Piece script",
@@ -368,7 +440,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "server",
-      "date": "2026-04-21"
+      "date": "2026-04-21",
+      "reports": 0,
+      "message_id": null
     },
     "script_1776770942": {
       "name": "Bake or die script",
@@ -378,7 +452,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "server",
-      "date": "2026-04-21"
+      "date": "2026-04-21",
+      "reports": 0,
+      "message_id": null
     },
     "script_1776771442": {
       "name": "Fish race Script",
@@ -388,7 +464,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "client",
-      "date": "2026-04-21"
+      "date": "2026-04-21",
+      "reports": 0,
+      "message_id": null
     },
     "script_1776850306": {
       "name": "BedWars",
@@ -398,7 +476,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "server",
-      "date": "2026-04-22"
+      "date": "2026-04-22",
+      "reports": 0,
+      "message_id": null
     },
     "script_1776850841": {
       "name": "BABFT script",
@@ -408,7 +488,9 @@
       "keyless": false,
       "key_difficulty": "easy",
       "script_side": "server",
-      "date": "2026-04-22"
+      "date": "2026-04-22",
+      "reports": 0,
+      "message_id": null
     },
     "script_1777315313": {
       "name": "Jailbreak Aimbot",
@@ -418,7 +500,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "server",
-      "date": "2026-04-27"
+      "date": "2026-04-27",
+      "reports": 0,
+      "message_id": null
     },
     "script_1777315531": {
       "name": "Adopt me autofarm",
@@ -428,7 +512,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "client",
-      "date": "2026-04-27"
+      "date": "2026-04-27",
+      "reports": 0,
+      "message_id": null
     },
     "script_1777317104": {
       "name": "(Universal)",
@@ -438,7 +524,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "client",
-      "date": "2026-04-27"
+      "date": "2026-04-27",
+      "reports": 0,
+      "message_id": null
     },
     "script_1777317783": {
       "name": "Dac Cau Hub",
@@ -448,7 +536,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "client",
-      "date": "2026-04-27"
+      "date": "2026-04-27",
+      "reports": 0,
+      "message_id": null
     },
     "script_1777318194": {
       "name": "Baritone Pro",
@@ -458,7 +548,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "both",
-      "date": "2026-04-27"
+      "date": "2026-04-27",
+      "reports": 0,
+      "message_id": null
     },
     "script_1777318302": {
       "name": "Toastyxd hub",
@@ -468,7 +560,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "client",
-      "date": "2026-04-27"
+      "date": "2026-04-27",
+      "reports": 0,
+      "message_id": null
     },
     "script_1777318427": {
       "name": "Solara hub (XENO SUPPORT)",
@@ -478,7 +572,9 @@
       "keyless": false,
       "key_difficulty": "medium",
       "script_side": "both",
-      "date": "2026-04-27"
+      "date": "2026-04-27",
+      "reports": 0,
+      "message_id": null
     },
     "script_1777318541": {
       "name": "Rivals script",
@@ -488,7 +584,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "both",
-      "date": "2026-04-27"
+      "date": "2026-04-27",
+      "reports": 0,
+      "message_id": null
     },
     "script_1777318723": {
       "name": "Steal A Brainrot script",
@@ -498,7 +596,9 @@
       "keyless": false,
       "key_difficulty": "easy",
       "script_side": "server",
-      "date": "2026-04-27"
+      "date": "2026-04-27",
+      "reports": 0,
+      "message_id": null
     },
     "script_1777319002": {
       "name": "Blade Ball script",
@@ -508,7 +608,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "client",
-      "date": "2026-04-27"
+      "date": "2026-04-27",
+      "reports": 0,
+      "message_id": null
     },
     "script_1777319207": {
       "name": "Blox Fruit Script Solix Hub",
@@ -518,7 +620,9 @@
       "keyless": false,
       "key_difficulty": "easy",
       "script_side": "server",
-      "date": "2026-04-27"
+      "date": "2026-04-27",
+      "reports": 0,
+      "message_id": null
     },
     "script_1777319682": {
       "name": "Ringta Scripts Dead Rails Script",
@@ -528,7 +632,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "server",
-      "date": "2026-04-27"
+      "date": "2026-04-27",
+      "reports": 0,
+      "message_id": null
     },
     "script_1777319951": {
       "name": "MM2 Script by Anbu",
@@ -538,7 +644,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "both",
-      "date": "2026-04-27"
+      "date": "2026-04-27",
+      "reports": 0,
+      "message_id": null
     },
     "script_1777381552": {
       "name": "Kaizen Auto Farm",
@@ -548,7 +656,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "server",
-      "date": "2026-04-28"
+      "date": "2026-04-28",
+      "reports": 0,
+      "message_id": null
     },
     "script_1777381994": {
       "name": "Dive Down script [OPEN SOURCE]",
@@ -558,7 +668,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "both",
-      "date": "2026-04-28"
+      "date": "2026-04-28",
+      "reports": 0,
+      "message_id": null
     },
     "script_1777382547": {
       "name": "CuongOutLook Aimbot HUB Magic Bullet V5",
@@ -568,7 +680,9 @@
       "keyless": false,
       "key_difficulty": "hard",
       "script_side": "both",
-      "date": "2026-04-28"
+      "date": "2026-04-28",
+      "reports": 0,
+      "message_id": null
     },
     "script_1777465633": {
       "name": "Polo MVS Script OP (No Keys) - Auto shoot",
@@ -578,7 +692,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "client",
-      "date": "2026-04-29"
+      "date": "2026-04-29",
+      "reports": 0,
+      "message_id": null
     },
     "script_1777488740": {
       "name": "Driving empire OPEN SOURCE script",
@@ -588,7 +704,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "both",
-      "date": "2026-04-29"
+      "date": "2026-04-29",
+      "reports": 0,
+      "message_id": null
     },
     "script_1777575075": {
       "name": "Basketball Legends Anti ankle breaker script keyless",
@@ -598,7 +716,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "client",
-      "date": "2026-04-30"
+      "date": "2026-04-30",
+      "reports": 0,
+      "message_id": null
     },
     "script_1777575117": {
       "name": "Bridger Western level farm and insta kill script",
@@ -608,7 +728,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "client",
-      "date": "2026-04-30"
+      "date": "2026-04-30",
+      "reports": 0,
+      "message_id": null
     },
     "script_1777575155": {
       "name": "Void Hub Sniper Duels Script 2026 - Aimbot, Triggerbot",
@@ -618,7 +740,9 @@
       "keyless": false,
       "key_difficulty": "medium",
       "script_side": "both",
-      "date": "2026-04-30"
+      "date": "2026-04-30",
+      "reports": 0,
+      "message_id": null
     },
     "script_1777575213": {
       "name": "Collect Dinos script (OPEN SOURCE)",
@@ -628,7 +752,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "both",
-      "date": "2026-04-30"
+      "date": "2026-04-30",
+      "reports": 0,
+      "message_id": null
     },
     "script_1777575272": {
       "name": "Ninja Legends Karma Farms OP Script (No Keys)",
@@ -638,7 +764,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "client",
-      "date": "2026-04-30"
+      "date": "2026-04-30",
+      "reports": 0,
+      "message_id": null
     },
     "script_1777575325": {
       "name": "Ninja Legends Karma OP script",
@@ -648,7 +776,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "server",
-      "date": "2026-04-30"
+      "date": "2026-04-30",
+      "reports": 0,
+      "message_id": null
     },
     "script_1777575493": {
       "name": "Baritone Pro Sol\u0027s RNG Auto Farm Script OP (No Keys)",
@@ -658,7 +788,9 @@
       "keyless": true,
       "key_difficulty": "none",
       "script_side": "client",
-      "date": "2026-04-30"
+      "date": "2026-04-30",
+      "reports": 0,
+      "message_id": null
     }
   }
 }
