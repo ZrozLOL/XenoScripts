@@ -791,6 +791,18 @@
       "date": "2026-04-30",
       "reports": 0,
       "message_id": null
+    },
+    "script_1777581652": {
+      "name": "Bite By Night Script 2026 (No Key) - Auto generator",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Bite By Night Script 2026 (No Key) - Auto generator\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Bite By Night Script 2026 (No Key) - Auto generator\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0456\u0457: Auto generator (repair generators automatically) \u002B Instant prompt \u002B Infinite sprint \u002B Allow Jumping \u002B Escape",
+      "code": "loadstring(game:HttpGet(\u0022https://raw.githubusercontent.com/2xrW/return/refs/heads/main/hub\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "[BETA\u2699\uFE0F] Bite By Night",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "client",
+      "date": "2026-04-30",
+      "reports": 0,
+      "message_id": null
     }
   }
 }
