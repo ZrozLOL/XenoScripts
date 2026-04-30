@@ -599,6 +599,16 @@
       "key_difficulty": "none",
       "script_side": "client",
       "date": "2026-04-30"
+    },
+    "script_1777575117": {
+      "name": "Bridger Western level farm and insta kill script",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Bridger Western level farm and insta kill script\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Bridger Western level farm and insta kill script\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: No fog, Full bright, disable 3d rendering, No stun, No ragdoll, Freeze mobs, Insta kill mobs, Farm position, Auto use, Auto buy items, Auto equip, Teleport to npcs, teleport to shop, Teleport to area, Teleport to saint spots, Mobs ESP, Player ESP",
+      "code": "getgenv().SCRIPT_KEY = \u0022KEYLESS\u0022\r\nloadstring(game:HttpGet(\u0022https://api.jnkie.com/api/v1/luascripts/public/a7b42f79e4814d673d291bfe6e35575cc44c54621e19b1a95004bd5daba63f1f/download\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "bridger: WESTERN (UPDATE 1.7)",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "client",
+      "date": "2026-04-30"
     }
   }
 }
