@@ -639,6 +639,16 @@
       "key_difficulty": "none",
       "script_side": "client",
       "date": "2026-04-30"
+    },
+    "script_1777575325": {
+      "name": "Ninja Legends Karma OP script",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Ninja Legends Karma OP script\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Ninja Legends Karma OP script\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: OP",
+      "code": "loadstring(game:HttpGet(\u0022https://raw.githubusercontent.com/Flanut/Ninja-Legend-script/refs/heads/main/Ninja%20Legends%20Scrip%20Op.lua\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "\u26A1Ninja Legends",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "server",
+      "date": "2026-04-30"
     }
   }
 }
