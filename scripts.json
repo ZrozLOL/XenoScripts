@@ -815,6 +815,18 @@
       "date": "2026-04-30",
       "reports": 1,
       "message_id": "107"
+    },
+    "script_1777635967": {
+      "name": "Counter Blox op script",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Counter Blox op script\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Counter Blox op script\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0456\u0457: Aimbot., EPS",
+      "code": "loadstring(game:HttpGet(\u0022https://raw.githubusercontent.com/LyteIce/BloxyHub/refs/heads/main/BloxyHub%20%7C%20CompKiller.txt\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "Counter Blox",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "both",
+      "date": "2026-05-01",
+      "reports": 0,
+      "message_id": null
     }
   }
 }
