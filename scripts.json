@@ -875,6 +875,18 @@
       "date": "2026-05-05",
       "reports": 0,
       "message_id": "115"
+    },
+    "script_1777986241": {
+      "name": "Server Admin Script",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Server Admin Script\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Server Admin Script\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: admin",
+      "code": "loadstring(game:HttpGet(\u0022https://rawscripts.net/raw/Universal-Script-Server-Admin-R6-47020\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "Universal",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "server",
+      "date": "2026-05-05",
+      "reports": 0,
+      "message_id": null
     }
   }
 }
