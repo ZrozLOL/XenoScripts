@@ -851,18 +851,6 @@
       "date": "2026-05-05",
       "reports": 0,
       "message_id": "117"
-    },
-    "script_1777987107": {
-      "name": "Fartez Hub Kick a Lucky Block Keyless Script",
-      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Fartez Hub Kick a Lucky Block Keyless Script\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Fartez Hub Kick a Lucky Block Keyless Script\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: Auto collect money, Auto kick, Instant grab or hatch, Buy speed, Rebirth, Autp upgrade all, Buy weight, Sell all",
-      "code": "loadstring(game:HttpGet(\u0022https://raw.githubusercontent.com/fartez127-design/FARTEZHUB/refs/heads/main/FARTEZHUBXKickaLuckyBlock\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
-      "game": "Kick a Lucky Block",
-      "keyless": true,
-      "key_difficulty": "none",
-      "script_side": "server",
-      "date": "2026-05-05",
-      "reports": 1,
-      "message_id": "118"
     }
   }
 }
