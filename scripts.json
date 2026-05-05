@@ -794,7 +794,7 @@
     },
     "script_1777581652": {
       "name": "Bite By Night Script 2026 (No Key) - Auto generator",
-      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Bite By Night Script 2026 (No Key) - Auto generator\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Bite By Night Script 2026 (No Key) - Auto generator\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0456\u0457: Auto generator (repair generators automatically) \u002B Instant prompt \u002B Infinite sprint \u002B Allow Jumping \u002B Escape",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Bite By Night Script 2026 (No Key) - Auto generator\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Bite By Night Script 2026 (No Key) - Auto generator\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: Auto generator (repair generators automatically) \u002B Instant prompt \u002B Infinite sprint \u002B Allow Jumping \u002B Escape",
       "code": "loadstring(game:HttpGet(\u0022https://raw.githubusercontent.com/2xrW/return/refs/heads/main/hub\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
       "game": "[BETA\u2699\uFE0F] Bite By Night",
       "keyless": true,
@@ -806,7 +806,7 @@
     },
     "script_1777582252": {
       "name": "Get Best fish and Auto sell - inf money",
-      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Get Best fish and Auto sell - inf money\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Get Best fish and Auto sell - inf money\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0456\u0457: Auto best fish and get money",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Get Best fish and Auto sell - inf money\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Get Best fish and Auto sell - inf money\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: Auto best fish and get money",
       "code": "local fishes = workspace.Game.Fishes\r\nlocal player = game.Players.LocalPlayer\r\nlocal character = player.Character or player.CharacterAdded:Wait()\r\nlocal rootPart = character:WaitForChild(\u0022HumanoidRootPart\u0022)\r\nlocal RunService = game:GetService(\u0022RunService\u0022)\r\n\r\nRunService.RenderStepped:Connect(function()\r\n    local highest = 0\r\n    local highestFish = nil\r\n\r\n    for _, fish in ipairs(fishes:GetChildren()) do\r\n        local cash = fish:GetAttribute(\u0022CashPerSec\u0022)\r\n        local owner = fish:GetAttribute(\u0022Owner\u0022)\r\n        if cash and not owner and cash \u003E highest then\r\n            highest = cash\r\n            highestFish = fish\r\n        end\r\n    end\r\n\r\n    if highestFish then\r\n        local fishPosition = highestFish:GetPivot().Position\r\n        rootPart.CFrame = CFrame.new(fishPosition)\r\n\r\n        local prompt = highestFish.RootPart:FindFirstChild(\u0022ProximityPrompt\u0022)\r\n        if prompt then\r\n            fireproximityprompt(prompt)\r\n            local args = {\r\n                buffer.fromstring(\u0022\\003\\001\u0022)\r\n            }\r\n            game:GetService(\u0022ReplicatedStorage\u0022):WaitForChild(\u0022Packets\u0022):WaitForChild(\u0022Packet\u0022):WaitForChild(\u0022RemoteEvent\u0022):FireServer(unpack(args))\r\n        end\r\n    end\r\nend)\n-- // More scripts: t.me/XenoScriptsSupported",
       "game": "Dive Down \uD83E\uDD88",
       "keyless": true,
@@ -818,7 +818,7 @@
     },
     "script_1777635967": {
       "name": "Counter Blox op script",
-      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Counter Blox op script\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Counter Blox op script\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0456\u0457: Aimbot., EPS",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Counter Blox op script\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Counter Blox op script\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: Aimbot., EPS",
       "code": "loadstring(game:HttpGet(\u0022https://raw.githubusercontent.com/LyteIce/BloxyHub/refs/heads/main/BloxyHub%20%7C%20CompKiller.txt\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
       "game": "Counter Blox",
       "keyless": true,
@@ -830,7 +830,7 @@
     },
     "script_1777636993": {
       "name": "Roblox in game Animation Packs",
-      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Roblox in game Animation Packs\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Roblox in game Animation Packs\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0456\u0457: Get all animation packs, 5 min free trial, Permanent 10 Robux buy",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Roblox in game Animation Packs\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Roblox in game Animation Packs\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: Get all animation packs, 5 min free trial, Permanent 10 Robux buy",
       "code": "loadstring(game:HttpGet(\u0022https://pastefy.app/OvLkJhF7/raw\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
       "game": "Universal",
       "keyless": true,
@@ -842,7 +842,7 @@
     },
     "script_1777919537": {
       "name": "Auto Farm Brainrot and Equip Weighs OP (No Keys)",
-      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Auto Farm Brainrot and Equip Weighs OP (No Keys)\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Auto Farm Brainrot and Equip Weighs OP (No Keys)\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0456\u0457: Auto farm, Prediction, Auto rebirth, Auto claim money, Auto place brainrot, Auto sell brainrots, Auto upgrade speed, Auto buy weighs",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Auto Farm Brainrot and Equip Weighs OP (No Keys)\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Auto Farm Brainrot and Equip Weighs OP (No Keys)\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: Auto farm, Prediction, Auto rebirth, Auto claim money, Auto place brainrot, Auto sell brainrots, Auto upgrade speed, Auto buy weighs",
       "code": "loadstring(game:HttpGet(\u0022https://api.luarmor.net/files/v4/loaders/339a2957388227ef58c0d1bffab6de85.lua\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
       "game": "Kick a Lucky Block",
       "keyless": true,
@@ -854,7 +854,7 @@
     },
     "script_1777919574": {
       "name": "\u002B1 Wings For Brainrots Auto Stamina Script",
-      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 \u002B1 Wings For Brainrots Auto Stamina Script\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 \u002B1 Wings For Brainrots Auto Stamina Script\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0456\u0457: Auto God, Auto Cosmic, Auto Stamina, Auto Upgrade Base, Auto Collect Cash",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 \u002B1 Wings For Brainrots Auto Stamina Script\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 \u002B1 Wings For Brainrots Auto Stamina Script\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: Auto God, Auto Cosmic, Auto Stamina, Auto Upgrade Base, Auto Collect Cash",
       "code": "loadstring(game:HttpGet(\u0022https://pastebin.com/raw/H4ZqXM6q\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
       "game": "\u002B1 Wings for Brainrots \uD83E\uDD85",
       "keyless": true,
@@ -866,7 +866,7 @@
     },
     "script_1777984970": {
       "name": "ULTIMATE COMMAND PROMPT",
-      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 ULTIMATE COMMAND PROMPT\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 ULTIMATE COMMAND PROMPT\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0456\u0457: command bar, free admin, cooldown toggle, simple interface",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 ULTIMATE COMMAND PROMPT\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 ULTIMATE COMMAND PROMPT\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: command bar, free admin, cooldown toggle, simple interface",
       "code": "loadstring(game:HttpGet(\u0022https://pastebin.com/embed/VZy0QrxQ\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
       "game": "Cheap Admin Abuse Tower [8 Robux]",
       "keyless": true,
