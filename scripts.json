@@ -839,18 +839,6 @@
       "date": "2026-05-05",
       "reports": 1,
       "message_id": "115"
-    },
-    "script_1777986416": {
-      "name": "Auto Farm Levels Blox Fruits Script - Xeno Supported",
-      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Auto Farm Levels Blox Fruits Script - Xeno Supported\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Auto Farm Levels Blox Fruits Script - Xeno Supported\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: Auto farm levels, Auto farm boss, Auto farm material, Auto use skills, Walk on water, Raid fruit, Auto awaken, Auto use skills, Auto second sea, Auto boss raid, Quest dragon, ESP fruit, First sea, Second sea, Third sea, ESP",
-      "code": "loadstring(game:HttpGet(\u0022https://raw.githubusercontent.com/biokiller59/bf/refs/heads/main/bf.lua\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
-      "game": "Blox Fruits",
-      "keyless": false,
-      "key_difficulty": "medium",
-      "script_side": "both",
-      "date": "2026-05-05",
-      "reports": 1,
-      "message_id": "117"
     }
   }
 }
