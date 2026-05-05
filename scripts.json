@@ -863,18 +863,6 @@
       "date": "2026-05-04",
       "reports": 0,
       "message_id": "111"
-    },
-    "script_1777926478": {
-      "name": "Abyss [BETA] Script keyless BEST OP SCRIPTTTT",
-      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Abyss [BETA] Script keyless BEST OP SCRIPTTTT\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Abyss [BETA] Script keyless BEST OP SCRIPTTTT\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0456\u0457: Auto fish: OFF HOOK, equip GUn, Equip tubes choose sea mine your oxygen will be inf and weight inf, FUlly auto farm needs auto fish: off",
-      "code": "loadstring(game:HttpGet(\u0022https://raw.githubusercontent.com/RetrodedLua/-/refs/heads/main/OP\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
-      "game": "Abyss",
-      "keyless": true,
-      "key_difficulty": "none",
-      "script_side": "client",
-      "date": "2026-05-04",
-      "reports": 1,
-      "message_id": "112"
     }
   }
 }
