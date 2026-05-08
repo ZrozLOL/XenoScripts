@@ -851,6 +851,18 @@
       "date": "2026-05-08",
       "reports": 0,
       "message_id": null
+    },
+    "script_1778229400": {
+      "name": "Dandy\u0027s World Script Keyless 2026 - ESP Twisted, ESP Generators, Fake Cards",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Dandy\u0027s World Script Keyless 2026 - ESP Twisted, ESP Generators, Fake Cards\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Dandy\u0027s World Script Keyless 2026 - ESP Twisted, ESP Generators, Fake Cards\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: OP",
+      "code": "loadstring(game:HttpGet(\u0022https://pastebin.com/raw/H3u62n7D\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "\uD83C\uDF53 Dandy\u0027s World [ALPHA]",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "server",
+      "date": "2026-05-08",
+      "reports": 0,
+      "message_id": null
     }
   }
 }
