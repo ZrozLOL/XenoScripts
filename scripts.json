@@ -839,6 +839,18 @@
       "date": "2026-05-05",
       "reports": 1,
       "message_id": "115"
+    },
+    "script_1778229364": {
+      "name": "Dandy\u0027s World Script Keyless 2026 - ESP Twisted, ESP Generators, Fake Cards",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Dandy\u0027s World Script Keyless 2026 - ESP Twisted, ESP Generators, Fake Cards\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Dandy\u0027s World Script Keyless 2026 - ESP Twisted, ESP Generators, Fake Cards\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: ESP twisteds, ESP generators, ESP items, Special main twisteds ESP, Visual dandy, Remove skill check, Weird twisteds head, inf stamina GUI, Fly reborn, No clip, Notify rare or better items, Notify mains twisteds, Auto play, No fog, Walkspeed, Auto use items, Auto sprout self, Auto shelly boost, Auto use ability, Heal yourself, Show a old gui for 5 seconds, Lobotomy, Delete dev door lobby, Show fps booster, Low health esp, Fake cards, Troll, Spin, Bang players, Flutter ability, Shrimpoo extract, Twisted rizz and dizz, Boxton wave, Tisha clean, Twisted pack, Gigi anims pack, Dandy anims pack, Shrimpo anims pack, Client skins, Plushie dandy, Blue vee, For all toons skins, Bald dandy, Torseless, Free headless, Enable fire effect, Enable sparkles, Enable cupcakes particles, Enable smoke particles, spawn popcorn, Fake characters",
+      "code": "loadstring(game:HttpGet(\u0022https://pastebin.com/raw/H3u62n7D\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "\uD83C\uDF53 Dandy\u0027s World [ALPHA]",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "server",
+      "date": "2026-05-08",
+      "reports": 0,
+      "message_id": null
     }
   }
 }
