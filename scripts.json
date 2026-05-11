@@ -863,18 +863,6 @@
       "date": "2026-05-08",
       "reports": 0,
       "message_id": "119"
-    },
-    "script_1778522952": {
-      "name": "Doors autofarm",
-      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Doors autofarm\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Doors autofarm\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: \u2014",
-      "code": "getgenv().Config = {\n    MinContainers = 10,\n    MinCoins = 50,\n    UseLockpick = false,\n    UseRobuxKnobsBoost = false\n}\nloadstring(game:HttpGet(\u0022https://api.luarmor.net/files/v4/loaders/6e87698669de88a8f81d6348ce368b73.lua\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
-      "game": "Doors",
-      "keyless": false,
-      "key_difficulty": "easy",
-      "script_side": "server",
-      "date": "2026-05-11",
-      "reports": 1,
-      "message_id": "121"
     }
   }
 }
