@@ -875,6 +875,18 @@
       "date": "2026-05-14",
       "reports": 0,
       "message_id": "122"
+    },
+    "script_1778739635": {
+      "name": "Blade Ball OP Auto Parry Levi Hub X Beta",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Blade Ball OP Auto Parry Levi Hub X Beta\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Blade Ball OP Auto Parry Levi Hub X Beta\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: Auto parry, Clash type, Auto clash, ESP, Auto play, Auto vote, Auto ability, Infinity detection, Death slash detection, Time hole detection, Pet enable, Preset pets, Emotes enabled, Custom sky, Ball statet, Ball trail, Ball trail hue, Rainbow trail, Particle emittor, Player speed, speed value, FOV, Hit sounds",
+      "code": "loadstring(game:HttpGet(\u0027https://raw.githubusercontent.com/MriseHubX/main/refs/heads/main/BladeBall\u0027))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "Blade Ball",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "both",
+      "date": "2026-05-14",
+      "reports": 0,
+      "message_id": null
     }
   }
 }
