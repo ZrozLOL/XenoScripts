@@ -887,6 +887,18 @@
       "date": "2026-05-14",
       "reports": 0,
       "message_id": "123"
+    },
+    "script_1778739659": {
+      "name": "The Best TSB Script OP with Xeno Support, Auto techs, auto farm",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 The Best TSB Script OP with Xeno Support, Auto techs, auto farm\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 The Best TSB Script OP with Xeno Support, Auto techs, auto farm\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: Auto loop dash, Auto oreo dash, Auto supa dash, Auto lethal dash, Auto twisted (normal,instant), M1 reset, Back dash cancel, Auto counter, Auto block, Auto flowing \u002B grasp, Auto uppercut\u002Bgrasp, Aimbot, M1 reach, Fling all, Fling selected player, Auto teleport to safe zone, And much more",
+      "code": "loadstring(game:HttpGet(\u0022https://raw.githubusercontent.com/ultimatep568/Spark-Hub/refs/heads/main/SparkHub_Loader.lua\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "The Strongest Battlegrounds",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "both",
+      "date": "2026-05-14",
+      "reports": 0,
+      "message_id": null
     }
   }
 }
