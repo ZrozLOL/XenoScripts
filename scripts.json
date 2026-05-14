@@ -863,6 +863,18 @@
       "date": "2026-05-08",
       "reports": 0,
       "message_id": "119"
+    },
+    "script_1778739610": {
+      "name": "Koala Flee The Facility Script Keyless - Beast Auto farm",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Koala Flee The Facility Script Keyless - Beast Auto farm\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Koala Flee The Facility Script Keyless - Beast Auto farm\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: Auto rejoin, Anti AFK, Survivor auto farm, Beast Auto farm, Manual activation, Speed hack, Infinite jump, Player jump power, Beast ESP, Player ESP, Exit doors ESP, Freeze Pods ESP, Auto remove rope, Enable 3rd person",
+      "code": "loadstring(game:HttpGet(\u0022https://pastebin.com/raw/VBQjCrST\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "Flee the Facility",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "both",
+      "date": "2026-05-14",
+      "reports": 0,
+      "message_id": null
     }
   }
 }
