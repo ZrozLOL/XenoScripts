@@ -911,6 +911,18 @@
       "date": "2026-05-14",
       "reports": 0,
       "message_id": "125"
+    },
+    "script_1779125746": {
+      "name": "Animations fling",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Funny Fling Script\nFun troll script with movement tricks \u0026 animations \uD83D\uDE02\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Funny Fling Script\n\u0424\u0430\u043D\u043E\u0432\u044B\u0439 \u0442\u0440\u043E\u043B\u043B\u0438\u043D\u0433 \u0441\u043A\u0440\u0438\u043F\u0442 \u0441 \u0434\u0432\u0438\u0436\u0435\u043D\u0438\u044F\u043C\u0438 \u0438 \u0430\u043D\u0438\u043C\u0430\u0446\u0438\u044F\u043C\u0438 \uD83D\uDE02\n\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438:\nBackstep, Fling, Funny Animations",
+      "code": "loadstring(game:HttpGet(\u0022https://raw.githubusercontent.com/platinww/CrustyMain/refs/heads/main/universal/DropKick.lua\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "Universal",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "server",
+      "date": "2026-05-18",
+      "reports": 0,
+      "message_id": null
     }
   }
 }
