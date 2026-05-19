@@ -923,6 +923,18 @@
       "date": "2026-05-18",
       "reports": 0,
       "message_id": "143"
+    },
+    "script_1779215503": {
+      "name": "Blox fruit script auto money",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Blox fruit script auto money\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Blox fruit script auto money\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0456\u0457: Auto Money, Server Hop, Keyless, Anti Ban",
+      "code": "loadstring(game:HttpGet(\u0022https://raw.githubusercontent.com/RichKidz-PX/RichKidz/main/FarmMoney.lua\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "Blox fruits",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "server",
+      "date": "2026-05-19",
+      "reports": 0,
+      "message_id": null
     }
   }
 }
