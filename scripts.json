@@ -935,6 +935,18 @@
       "date": "2026-05-19",
       "reports": 0,
       "message_id": "146"
+    },
+    "script_1779216809": {
+      "name": "ECLIPSE Twisted Script OP (Keyless) - Automations \u0026 Exploits",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 ECLIPSE Twisted Script OP (Keyless) - Automations \u0026 Exploits\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 ECLIPSE Twisted Script OP (Keyless) - Automations \u0026 Exploits\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0456\u0457: Home, Visuals, Exploits, Automations, Vehicle, TORNADO C:, STORM INFORMATION, TRACERS, TORNADO PREDICTOR, TORNADO TOUCHDOWN PREDICTOR",
+      "code": "loadstring(game:HttpGet(\u0022https://api.luarmor.net/files/v4/loaders/307e7f7f8ebd2340203c97c3721c5e0e.lua\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "Twisted [BETA]",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "server",
+      "date": "2026-05-19",
+      "reports": 0,
+      "message_id": null
     }
   }
 }
