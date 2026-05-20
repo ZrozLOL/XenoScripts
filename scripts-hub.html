@@ -627,7 +627,7 @@ footer {
 <script>
 // ── CONFIG ────────────────────────────────────────────────────────────
 const GITHUB_RAW = 'https://raw.githubusercontent.com/ZrozLOL/XenoScripts/main/scripts.json';
-const BOT_USERNAME = 'xenoscriptssupported_bot'; // replace with your real bot username
+const SITE_URL = 'https://ZrozLOL.github.io/XenoScripts'; // replace with your real bot username
 const CHANNEL_LINK = 'https://t.me/XenoScriptsSupported';
 const STORAGE_KEY = 'xeno_hub_data';
 
@@ -909,7 +909,7 @@ function openModal(script) {
       </div>
     </div>
     <div class="modal-actions">
-      <a href="https://t.me/${BOT_USERNAME}?start=${script.id}" target="_blank" class="btn-get">
+      <a href="${SITE_URL}/?id=${script.id}" target="_blank" class="btn-get">
         📜 Get Script →
       </a>
       <button class="btn-modal-like ${vote==='like'?'active':''}" id="m-like-btn">
