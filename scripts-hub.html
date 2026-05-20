@@ -867,8 +867,8 @@ function openModal(script) {
   const newBadge = isNew(script.date) ? `<span class="badge badge-new">NEW</span>` : '';
 
   const thumbHtml = script.thumbnail_url
-    ? `<img class="modal-thumb" src="${script.thumbnail_url}" alt="" onerror="this.parentNode.innerHTML='<div class=\\'modal-thumb-placeholder\\'>🎮</div>'">`
-    : `<div class="modal-thumb-placeholder">🎮</div>`;
+    ? `<img class="card-thumb" src="${script.thumbnail_url}" alt="" loading="lazy" data-fallback="true">`
+    : `<div class="card-thumb-placeholder">🎮</div>`;
 
   const featureHtml = features.length
     ? `<div class="modal-features">
@@ -1008,6 +1008,22 @@ document.addEventListener('keydown', e => {
 
 // ── INIT ──────────────────────────────────────────────────────────────
 fetchScripts();
+document.addEventListener('error', function(e) {
+  const img = e.target;
+  if (!img.tagName || img.tagName !== 'IMG') return;
+  if (img.dataset.fallback) {
+    const div = document.createElement('div');
+    div.className = 'card-thumb-placeholder';
+    div.textContent = '🎮';
+    img.parentNode.replaceChild(div, img);
+  }
+  if (img.dataset.modalFallback) {
+    const div = document.createElement('div');
+    div.className = 'modal-thumb-placeholder';
+    div.textContent = '🎮';
+    img.parentNode.replaceChild(div, img);
+  }
+}, true);
 </script>
 </body>
 </html>
