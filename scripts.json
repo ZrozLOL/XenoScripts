@@ -1052,6 +1052,19 @@
       "reports": 0,
       "message_id": "154",
       "thumbnail_url": null
+    },
+    "script_1779474556": {
+      "name": "ADOPT ME Pet \u0026 Toy Spawner Script (Tradeable Pets \u002B Permanent \u002B Mega \u002B Neon \u002B Fly \u002B Ride)",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 ADOPT ME Pet \u0026 Toy Spawner Script (Tradeable Pets \u002B Permanent \u002B Mega \u002B Neon \u002B Fly \u002B Ride)\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 ADOPT ME Pet \u0026 Toy Spawner Script (Tradeable Pets \u002B Permanent \u002B Mega \u002B Neon \u002B Fly \u002B Ride)\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: Pet Spawner, Free, Permanent, Script",
+      "code": "-- Made by NeaovaScripts\r\n-- Have fun! Don\u0027t get caught!\r\n\r\nloadstring(game:HttpGet(\u0022https://cdn.sourceb.in/bins/OydKD3wg8k/0\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "[\uD83E\uDD86] Adopt Me!",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "server",
+      "date": "2026-05-22",
+      "reports": 0,
+      "message_id": null,
+      "thumbnail_url": "https://tr.rbxcdn.com/180DAY-bd9a40566259379bfa6822aece280808/512/512/Image/Png/noFilter"
     }
   }
 }
