@@ -1039,6 +1039,19 @@
       "reports": 0,
       "message_id": "148",
       "thumbnail_url": "https://tr.rbxcdn.com/180DAY-f5b2ea37dc0111fe553dad5e1be3bf58/512/512/Image/Png/noFilter"
+    },
+    "script_1779440588": {
+      "name": "Ultimate Hub Block Spawner OP (No Keys)",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014  Ultimate Hub Block Spawner OP (No Keys)\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Ultimate Hub Block Spawner OP (No Keys)\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: Lucky block, Super block, Diamond block, Rainbow block, Galaxy block, Spawn all blocks, Equip all tools, Walk speed, Jump power, Flight mode",
+      "code": "loadstring(game:HttpGet(\u0022https://raw.githubusercontent.com/luascripting21342/Nexus-Project/refs/heads/main/siqsoq.lua\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "\u2753 LUCKY BLOCKS Battlegrounds",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "server",
+      "date": "2026-05-22",
+      "reports": 0,
+      "message_id": null,
+      "thumbnail_url": null
     }
   }
 }
