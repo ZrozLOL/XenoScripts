@@ -1052,6 +1052,19 @@
       "reports": 0,
       "message_id": "154",
       "thumbnail_url": null
+    },
+    "script_1779440837": {
+      "name": "Slimes vs Brainrot Script Keyless (OPEN SOURCE)",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Slimes vs Brainrot Script Keyless (OPEN SOURCE)\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Slimes vs Brainrot Script Keyless (OPEN SOURCE)\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0456\u0457: Get kitsune, Get zeus",
+      "code": "---BEST PET\r\nlocal args = {\r\n\t\u0022Zeus1\u0022,\r\n\t\u002211\u0022\r\n}\r\ngame:GetService(\u0022ReplicatedStorage\u0022):WaitForChild(\u0022Remotes\u0022):WaitForChild(\u0022CreateSlimeTool\u0022):FireServer(unpack(args))\r\n\r\n---BEST DMG PET\r\nlocal args = {\r\n\t\u0022KitsuneKnight1\u0022,\r\n\t\u002211\u0022\r\n}\r\ngame:GetService(\u0022ReplicatedStorage\u0022):WaitForChild(\u0022Remotes\u0022):WaitForChild(\u0022CreateSlimeTool\u0022):FireServer(unpack(args))\r\n\r\n---SET MONEY\r\nlocal args = {\r\n\t\u0022Money\u0022,\r\n\t783023595783023595\r\n}\r\ngame:GetService(\u0022ReplicatedStorage\u0022):WaitForChild(\u0022Remotes\u0022):WaitForChild(\u0022UpdateDataAttribute\u0022):FireServer(unpack(args))\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "Slimes vs Brainrot",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "server",
+      "date": "2026-05-22",
+      "reports": 0,
+      "message_id": null,
+      "thumbnail_url": "https://tr.rbxcdn.com/180DAY-27921c60b3ff0fad0db984d855c196a4/512/512/Image/Png/noFilter"
     }
   }
 }
