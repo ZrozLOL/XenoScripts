@@ -871,19 +871,6 @@
       "message_id": "109",
       "thumbnail_url": "https://api.telegram.org/file/bot8241253393:AAF1eGFFehKfWyGEa5Qe71o3AIOMsUdJz-4/photos/file_70.jpg"
     },
-    "script_1777919537": {
-      "name": "Auto Farm Brainrot and Equip Weighs OP (No Keys)",
-      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Auto Farm Brainrot and Equip Weighs OP (No Keys)\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Auto Farm Brainrot and Equip Weighs OP (No Keys)\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: Auto farm, Prediction, Auto rebirth, Auto claim money, Auto place brainrot, Auto sell brainrots, Auto upgrade speed, Auto buy weighs",
-      "code": "loadstring(game:HttpGet(\u0022https://api.luarmor.net/files/v4/loaders/339a2957388227ef58c0d1bffab6de85.lua\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
-      "game": "Kick a Lucky Block",
-      "keyless": true,
-      "key_difficulty": "none",
-      "script_side": "client",
-      "date": "2026-05-04",
-      "reports": 1,
-      "message_id": "110",
-      "thumbnail_url": "https://api.telegram.org/file/bot8241253393:AAF1eGFFehKfWyGEa5Qe71o3AIOMsUdJz-4/photos/file_71.jpg"
-    },
     "script_1777985437": {
       "name": "ULTIMATE COMMAND PROMPT",
       "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 ULTIMATE COMMAND PROMPT\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 ULTIMATE COMMAND PROMPT\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: command bar, free admin, cooldown toggle, simple interface",
