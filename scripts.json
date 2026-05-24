@@ -1013,6 +1013,19 @@
       "reports": 0,
       "message_id": "157",
       "thumbnail_url": "https://tr.rbxcdn.com/180DAY-bd9a40566259379bfa6822aece280808/512/512/Image/Png/noFilter"
+    },
+    "script_1779613882": {
+      "name": "Auto Farm Brainrot and Equip Weighs OP (No Keys)",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Auto Farm Brainrot and Equip Weighs OP (No Keys)\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Auto Farm Brainrot and Equip Weighs OP (No Keys)\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: Auto farm, Prediction, Auto rebirth, Auto claim money, Auto place brainrot, Auto sell brainrots, Auto upgrade speed, Auto buy weighs",
+      "code": "loadstring(game:HttpGet(\u0022https://api.luarmor.net/files/v4/loaders/339a2957388227ef58c0d1bffab6de85.lua\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "[\uD83C\uDF0B] Kick a Lucky Block",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "both",
+      "date": "2026-05-24",
+      "reports": 0,
+      "message_id": null,
+      "thumbnail_url": "https://tr.rbxcdn.com/180DAY-5cb9dec4d2f4bba6599cff83886a9d45/512/512/Image/Png/noFilter"
     }
   }
 }
