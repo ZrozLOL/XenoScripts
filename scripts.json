@@ -1026,6 +1026,19 @@
       "reports": 1,
       "message_id": "160",
       "thumbnail_url": "https://tr.rbxcdn.com/180DAY-5cb9dec4d2f4bba6599cff83886a9d45/512/512/Image/Png/noFilter"
+    },
+    "script_1779743716": {
+      "name": "Mpan HUB Violence District New",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Mpan HUB Violence District New\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Mpan HUB Violence District New\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: Kill all, Auto attack, No flash light, Generators, Hooks, Gates, Windows, Pallets, ESP, Walk speed",
+      "code": "loadstring(game:HttpGet(\u0022https://violencedistrict.mpanhub.me/\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "[CURE] Violence District",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "client",
+      "date": "2026-05-25",
+      "reports": 0,
+      "message_id": null,
+      "thumbnail_url": "https://tr.rbxcdn.com/180DAY-24a7fe15374c20384a33ba2f9d4dc362/512/512/Image/Png/noFilter"
     }
   }
 }
