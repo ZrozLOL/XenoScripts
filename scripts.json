@@ -1052,6 +1052,19 @@
       "reports": 0,
       "message_id": "170",
       "thumbnail_url": "https://cdn.jsdelivr.net/gh/ZrozLOL/XenoScripts@main/thumbnails/script_1779878256.jpg"
+    },
+    "script_1779989233": {
+      "name": "Broken Blade Auto Farm Auto Attack M1 Script keyless",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Broken Blade Auto Farm Auto Attack M1 Script keyless\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Broken Blade Auto Farm Auto Attack M1 Script keyless\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: Auto attack m1, Auto Z, delay z ability, Gubby ESP, Collect all guby, Auto farm nearest",
+      "code": "loadstring(game:HttpGet(\u0022https://pastefy.app/5jyLNGpW/raw\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "Broken Blade [Eclipse]",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "both",
+      "date": "2026-05-28",
+      "reports": 0,
+      "message_id": null,
+      "thumbnail_url": "https://tr.rbxcdn.com/180DAY-bd3f86254876d9f3499be36200de6122/512/512/Image/Png/noFilter"
     }
   }
 }
