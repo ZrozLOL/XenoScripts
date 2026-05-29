@@ -1117,6 +1117,19 @@
       "reports": 0,
       "message_id": "180",
       "thumbnail_url": "https://tr.rbxcdn.com/180DAY-89b08672091be47f62d47550737269f5/512/512/Image/Png/noFilter"
+    },
+    "script_1780079447": {
+      "name": "Broken Blade Auto Farm Auto Attack M1 Script keyless",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Broken Blade Auto Farm Auto Attack M1 Script keyless\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Broken Blade Auto Farm Auto Attack M1 Script keyless\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: Auto attack m1, Auto Z, delay z ability, Gubby ESP, Collect all guby, Auto farm nearest",
+      "code": "loadstring(game:HttpGet(\u0022https://pastefy.app/5jyLNGpW/raw\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "Broken Blade [Excalibur]",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "both",
+      "date": "2026-05-29",
+      "reports": 0,
+      "message_id": null,
+      "thumbnail_url": "https://tr.rbxcdn.com/180DAY-17662c4a19b31d1d82915f127d9de9a4/512/512/Image/Png/noFilter"
     }
   }
 }
