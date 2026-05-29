@@ -315,26 +315,41 @@ const urlParams  = new URLSearchParams(window.location.search);
 const scriptId   = urlParams.get('id');
 const isAvoCat   = scriptId === 'script_avocat';
 
-let time     = 15;
 let timerEl  = document.getElementById('timer');
 let btn      = document.getElementById('btn');
 let subtitle = document.getElementById('subtitle');
 let fill     = document.getElementById('progressFill');
-let interval;
+let currentInterval = null; // один глобальний інтервал
+
+function startTimer(seconds, onTick, onDone) {
+    // Зупиняємо будь-який попередній таймер
+    if (currentInterval) {
+        clearInterval(currentInterval);
+        currentInterval = null;
+    }
+    let t = seconds;
+    timerEl.innerText = t;
+    currentInterval = setInterval(() => {
+        t--;
+        timerEl.innerText = t;
+        if (onTick) onTick(t);
+        if (t <= 0) {
+            clearInterval(currentInterval);
+            currentInterval = null;
+            timerEl.innerText = '✓';
+            if (onDone) onDone();
+        }
+    }, 1000);
+}
 
 // kick off progress bar animation
 fill.classList.add('animate');
 
-interval = setInterval(() => {
-    time--;
-    timerEl.innerText = time;
-    if (time <= 0) {
-        clearInterval(interval);
-        timerEl.innerText = '✓';
-        btn.classList.add('show');
-        subtitle.innerText = 'Ready to download!';
-    }
-}, 1000);
+// Запускаємо головний таймер
+startTimer(15, null, () => {
+    btn.classList.add('show');
+    subtitle.innerText = 'Ready to download!';
+});
 
 function onMainBtnClick() {
     if (scriptId) {
@@ -371,31 +386,23 @@ function startKeyFlow() {
     // Hide modal
     document.getElementById('avocatModal').classList.remove('show');
 
-    // Reset container to key-waiting state
-    document.getElementById('mainTitle').innerText   = '⏳ Please Wait...';
+    // Reset UI
+    document.getElementById('mainTitle').innerText = '⏳ Please Wait...';
     subtitle.innerText = 'Preparing your key...';
-    timerEl.innerText  = '15';
     btn.classList.remove('show');
     document.getElementById('keyStage').style.display = 'none';
-
-    // Reset & restart progress bar
-    fill.classList.remove('animate');
-    void fill.offsetWidth; // reflow trick
-    fill.classList.add('animate');
-
     document.getElementById('mainContainer').style.display = '';
 
-    let t = 15;
-    const iv = setInterval(() => {
-        t--;
-        timerEl.innerText = t;
-        if (t <= 0) {
-            clearInterval(iv);
-            timerEl.innerText = '✓';
-            subtitle.innerText = 'Your key is ready!';
-            showKey();
-        }
-    }, 1000);
+    // Reset progress bar
+    fill.classList.remove('animate');
+    void fill.offsetWidth;
+    fill.classList.add('animate');
+
+    // startTimer автоматично зупиняє старий інтервал
+    startTimer(15, null, () => {
+        subtitle.innerText = 'Your key is ready!';
+        showKey();
+    });
 }
 
 function showKey() {
