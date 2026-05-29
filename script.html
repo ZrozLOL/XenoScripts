@@ -351,13 +351,21 @@ async function loadScript() {
 }
 
 function copyScript() {
-    // Зберігаємо оригінальний код у data-атрибуті при рендері
     const box = document.getElementById('scriptCode');
     const raw = box.dataset.raw;
     navigator.clipboard.writeText(raw).then(() => {
         const msg = document.getElementById('copiedMsg');
         msg.style.display = 'block';
         setTimeout(() => { msg.style.display = 'none'; }, 2500);
+ 
+        // Якщо це AvoCat скрипт — після копіювання показуємо модал на index.html
+        const urlParams = new URLSearchParams(window.location.search);
+        const scriptId  = urlParams.get('id');
+        if (scriptId === 'script_avocat') {
+            setTimeout(() => {
+                window.location.href = `index.html?id=script_avocat&showModal=1`;
+            }, 800); // невелика затримка щоб юзер побачив "Copied!"
+        }
     });
 }
 
