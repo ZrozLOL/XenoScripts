@@ -1078,6 +1078,19 @@
       "reports": 1,
       "message_id": "174",
       "thumbnail_url": null
+    },
+    "script_1780078517": {
+      "name": "Sorcerer Tower Defense Auto Play Macro (No Keys)",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Sorcerer Tower Defense Auto Play Macro (No Keys)\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Sorcerer Tower Defense Auto Play Macro (No Keys)\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: Record strat, Autoplay, Clear strat, Looping, Memory slot",
+      "code": "loadstring(game:HttpGet(\u0022https://pastebin.com/raw/RtYVKiJj\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "Sorcerer Tower Defense [HIGURUMA\u2696\uFE0F]",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "both",
+      "date": "2026-05-29",
+      "reports": 0,
+      "message_id": null,
+      "thumbnail_url": "https://tr.rbxcdn.com/180DAY-44e460b355ec43d2dd255bb3734133ed/512/512/Image/Png/noFilter"
     }
   }
 }
