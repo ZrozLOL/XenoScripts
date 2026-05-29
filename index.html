@@ -62,8 +62,10 @@ h1 { font-size: 32px; margin-bottom: 30px; font-weight: 600; letter-spacing: -0.
     height: 100%;
     background: linear-gradient(90deg, #ffffff 0%, #888888 100%);
     width: 100%;
-    animation: progressAnimation 15s linear forwards;
     border-radius: 10px;
+}
+.progress-fill.animate {
+    animation: progressAnimation 15s linear forwards;
 }
 @keyframes progressAnimation {
     from { width: 100%; }
@@ -88,15 +90,141 @@ button.show { display: inline-block; animation: bounceIn 0.6s ease-out; }
 }
 .subtitle { margin-top: 20px; font-size: 16px; opacity: 0.9; color: #cccccc; }
 .particle { position: absolute; background: rgba(255,255,255,0.8); border-radius: 50%; pointer-events: none; }
+
+/* ── AVOCAT MODAL ── */
+.modal-overlay {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.75);
+    backdrop-filter: blur(6px);
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+}
+.modal-overlay.show { display: flex; animation: fadeIn 0.3s ease-out; }
+
+.modal-box {
+    background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 24px;
+    padding: 44px 36px;
+    max-width: 420px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+    animation: slideUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(40px) scale(0.95); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.modal-logo {
+    font-size: 48px;
+    margin-bottom: 16px;
+    display: block;
+    animation: catBounce 2s ease-in-out infinite;
+}
+@keyframes catBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+.modal-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #fff;
+    letter-spacing: -0.5px;
+}
+.modal-sub {
+    font-size: 14px;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 32px;
+    line-height: 1.6;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.btn-ok {
+    padding: 14px 36px;
+    background: linear-gradient(135deg, #ffffff, #d0d0d0);
+    color: #000;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-block !important;
+    margin: 0;
+    box-shadow: 0 8px 24px rgba(255,255,255,0.15);
+    transition: all 0.25s ease;
+}
+.btn-ok:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(255,255,255,0.3); }
+
+.btn-nuh {
+    padding: 14px 36px;
+    background: transparent;
+    color: rgba(255,255,255,0.5);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-block !important;
+    margin: 0;
+    box-shadow: none;
+    transition: all 0.25s ease;
+}
+.btn-nuh:hover { color: rgba(255,255,255,0.8); border-color: rgba(255,255,255,0.3); transform: translateY(-2px); }
+
+/* ── KEY STAGE ── */
+#keyStage { display: none; }
+
+.key-box {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 16px;
+    padding: 18px 24px;
+    font-family: 'Courier New', monospace;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #fff;
+    margin: 20px 0 10px;
+    word-break: break-all;
+}
+
+.key-tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.6);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+}
+
 @media (max-width: 600px) {
     .container { padding: 40px 30px; }
     h1 { font-size: 24px; }
     #timer { font-size: 60px; }
     button { padding: 15px 35px; font-size: 18px; }
+    .modal-box { padding: 36px 24px; }
+    .modal-buttons { flex-direction: column; }
+    .btn-ok, .btn-nuh { width: 100%; }
 }
 </style>
 </head>
 <body>
+
 <a href="home.html" style="
     position: fixed; top: 20px; right: 20px; z-index: 999;
     display: inline-flex; align-items: center; gap: 8px;
@@ -117,16 +245,41 @@ button.show { display: inline-block; animation: bounceIn 0.6s ease-out; }
     </svg>
     Home
 </a>
-<div class="container">
-    <h1>⏳ Please Wait...</h1>
+
+<!-- Main wait container -->
+<div class="container" id="mainContainer">
+    <h1 id="mainTitle">⏳ Please Wait...</h1>
     <div class="timer-container">
         <p id="timer">15</p>
     </div>
     <div class="progress-bar">
-        <div class="progress-fill"></div>
+        <div class="progress-fill" id="progressFill"></div>
     </div>
-    <p class="subtitle">Your script is being prepared</p>
-    <button id="btn" onclick="getScript()">Get Script Now</button>
+    <p class="subtitle" id="subtitle">Your script is being prepared</p>
+    <button id="btn" onclick="onMainBtnClick()">Get Script Now</button>
+
+    <!-- Key stage (inside same container) -->
+    <div id="keyStage">
+        <div class="key-tag">FREE KEY</div>
+        <div class="key-box" id="keyValue">FREE</div>
+        <button id="copyKeyBtn" class="show" onclick="copyKey()" style="margin-top:10px;">
+            📋 Copy Key
+        </button>
+        <p class="subtitle" id="keyCopiedMsg" style="display:none; color:#fff; margin-top:12px;">✓ Key copied!</p>
+    </div>
+</div>
+
+<!-- AvoCat modal -->
+<div class="modal-overlay" id="avocatModal">
+    <div class="modal-box">
+        <span class="modal-logo">🐱</span>
+        <div class="modal-title">AvoCat Hub has a key!</div>
+        <div class="modal-sub">Do you want to get it?<br>It's completely <strong>FREE</strong> 🎉</div>
+        <div class="modal-buttons">
+            <button class="btn-ok" onclick="startKeyFlow()">Ok</button>
+            <button class="btn-nuh" onclick="closeModal()">Nuh</button>
+        </div>
+    </div>
 </div>
 
 <script>
@@ -143,54 +296,128 @@ function createParticles() {
         const delay = Math.random() * 10;
         const drift = Math.random() * 200 - 100;
         particle.style.animation = `float-${i} ${duration}s linear ${delay}s infinite`;
-        
         const keyframes = `
             @keyframes float-${i} {
-                0% { transform: translateY(0) translateX(0); opacity: 0; }
-                10% { opacity: 0.8; }
-                90% { opacity: 0.8; }
+                0%   { transform: translateY(0) translateX(0); opacity: 0; }
+                10%  { opacity: 0.8; }
+                90%  { opacity: 0.8; }
                 100% { transform: translateY(-120vh) translateX(${drift}px); opacity: 0; }
-            }
-        `;
+            }`;
         const style = document.createElement('style');
         style.textContent = keyframes;
         document.head.appendChild(style);
-        
         document.body.appendChild(particle);
     }
 }
-
 createParticles();
 
-let time = 15;
-let timer = document.getElementById("timer");
-let btn = document.getElementById("btn");
+const urlParams  = new URLSearchParams(window.location.search);
+const scriptId   = urlParams.get('id');
+const isAvoCat   = scriptId === 'script_avocat';
 
-let interval = setInterval(() => {
+let time     = 15;
+let timerEl  = document.getElementById('timer');
+let btn      = document.getElementById('btn');
+let subtitle = document.getElementById('subtitle');
+let fill     = document.getElementById('progressFill');
+let interval;
+
+// kick off progress bar animation
+fill.classList.add('animate');
+
+interval = setInterval(() => {
     time--;
-    timer.innerText = time;
+    timerEl.innerText = time;
     if (time <= 0) {
         clearInterval(interval);
-        timer.innerText = "✓";
+        timerEl.innerText = '✓';
         btn.classList.add('show');
-        document.querySelector('.subtitle').innerText = "Ready to download!";
+        subtitle.innerText = 'Ready to download!';
     }
 }, 1000);
 
-function getScript() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const scriptId = urlParams.get('id');
+function onMainBtnClick() {
     if (scriptId) {
         sessionStorage.setItem('ad_passed_' + scriptId, 'true');
+        // redirect to script.html first; AvoCat modal will appear after copy (handled in script.html)
+        // BUT if this page IS the avocat flow (key stage), skip
         window.location.href = `script.html?id=${scriptId}`;
     } else {
         alert('Error: No script ID provided');
     }
 }
+
+/* ── Called from script.html after copy, via postMessage or direct call ──
+   Actually: AvoCat modal is shown on THIS page after the user copies the script
+   on script.html — but since they are separate pages we handle it differently.
+
+   The modal is shown when:
+   - isAvoCat === true  AND
+   - URL has ?showModal=1  (script.html redirects back here with this param after copy)
+*/
+const showModal = urlParams.get('showModal');
+if (isAvoCat && showModal === '1') {
+    // Hide normal wait UI, show modal immediately
+    document.getElementById('mainContainer').style.display = 'none';
+    document.getElementById('avocatModal').classList.add('show');
+}
+
+function closeModal() {
+    document.getElementById('avocatModal').classList.remove('show');
+}
+
+/* ── KEY FLOW ── */
+function startKeyFlow() {
+    // Hide modal
+    document.getElementById('avocatModal').classList.remove('show');
+
+    // Reset container to key-waiting state
+    document.getElementById('mainTitle').innerText   = '⏳ Please Wait...';
+    subtitle.innerText = 'Preparing your key...';
+    timerEl.innerText  = '15';
+    btn.classList.remove('show');
+    document.getElementById('keyStage').style.display = 'none';
+
+    // Reset & restart progress bar
+    fill.classList.remove('animate');
+    void fill.offsetWidth; // reflow trick
+    fill.classList.add('animate');
+
+    document.getElementById('mainContainer').style.display = '';
+
+    let t = 15;
+    const iv = setInterval(() => {
+        t--;
+        timerEl.innerText = t;
+        if (t <= 0) {
+            clearInterval(iv);
+            timerEl.innerText = '✓';
+            subtitle.innerText = 'Your key is ready!';
+            showKey();
+        }
+    }, 1000);
+}
+
+function showKey() {
+    btn.classList.remove('show');
+    document.getElementById('mainTitle').innerText = '🐱 AvoCat Key';
+    document.getElementById('keyStage').style.display = 'block';
+}
+
+function copyKey() {
+    navigator.clipboard.writeText('FREE').then(() => {
+        const msg = document.getElementById('keyCopiedMsg');
+        const copyBtn = document.getElementById('copyKeyBtn');
+        copyBtn.innerText = '✓ Copied!';
+        msg.style.display = 'block';
+        setTimeout(() => {
+            copyBtn.innerText = '📋 Copy Key';
+            msg.style.display = 'none';
+        }, 2500);
+    });
+}
 </script>
 
-<!-- AdBlock detection — окремий файл -->
 <script src="adblock.js?v=2"></script>
-
 </body>
 </html>
