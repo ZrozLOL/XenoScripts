@@ -1091,6 +1091,19 @@
       "reports": 0,
       "message_id": "178",
       "thumbnail_url": "https://tr.rbxcdn.com/180DAY-44e460b355ec43d2dd255bb3734133ed/512/512/Image/Png/noFilter"
+    },
+    "script_1780078665": {
+      "name": "Void Hub Sniper Duels Script 2026 - Aimbot, Triggerbot",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Void Hub Sniper Duels Script 2026 - Aimbot, Triggerbot\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Void Hub Sniper Duels Script 2026 - Aimbot, Triggerbot\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: Enable aimbot, Always on aimbot, Aimbot smoothing, Aimbot key, Enable triggerbot, Enable silent aim, Aim part, Fov circle, Silent aim FOV, Silent aim hit chance, Enable visuals, Boxes, Tracers, Chams, Names, Health bar, Rainbow chams, Weapon chams transparency, Tracer type",
+      "code": "loadstring(game:HttpGet(\u0022https://raw.githubusercontent.com/coldena/voidhuba/refs/heads/main/voidhubload\u0022,true))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "[SKIN CASE #2] SNIPER DUELS",
+      "keyless": false,
+      "key_difficulty": "medium",
+      "script_side": "both",
+      "date": "2026-05-29",
+      "reports": 0,
+      "message_id": null,
+      "thumbnail_url": "https://tr.rbxcdn.com/180DAY-23b4d6331af2282845ab47d0eb27bd59/512/512/Image/Png/noFilter"
     }
   }
 }
