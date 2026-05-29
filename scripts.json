@@ -1130,6 +1130,19 @@
       "reports": 0,
       "message_id": "181",
       "thumbnail_url": "https://tr.rbxcdn.com/180DAY-17662c4a19b31d1d82915f127d9de9a4/512/512/Image/Png/noFilter"
+    },
+    "script_1780080363": {
+      "name": "Build A Boat For Treasure BABFT Script - Auto Farm",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Build A Boat For Treasure BABFT Script - Auto Farm\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Build A Boat For Treasure BABFT Script - Auto Farm\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: Anti afk, Auto Farm, make it silent, elsapsed time, gold blocks, gold gained, gold per hour",
+      "code": "loadstring(game:HttpGet(\u0027https://raw.githubusercontent.com/TheRealAsu/BABFT/refs/heads/main/Loader.lua\u0027))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "Build A Boat For Treasure",
+      "keyless": false,
+      "key_difficulty": "easy",
+      "script_side": "server",
+      "date": "2026-05-29",
+      "reports": 0,
+      "message_id": null,
+      "thumbnail_url": "https://tr.rbxcdn.com/180DAY-a16e27d3d8380da38b43960549590ca2/512/512/Image/Png/noFilter"
     }
   }
 }
