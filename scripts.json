@@ -1143,6 +1143,19 @@
       "reports": 0,
       "message_id": "183",
       "thumbnail_url": "https://tr.rbxcdn.com/180DAY-a16e27d3d8380da38b43960549590ca2/512/512/Image/Png/noFilter"
+    },
+    "script_1780131054": {
+      "name": "ESP lost front",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 The Lost Front (ESP Bypass)\nStrong ESP script that can bypass a powerful anti-cheat system. Use carefully.\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 The Lost Front (ESP Bypass)\n\u041C\u043E\u0449\u043D\u044B\u0439 ESP, \u043A\u043E\u0442\u043E\u0440\u044B\u0439 \u043E\u0431\u0445\u043E\u0434\u0438\u0442 \u0441\u0438\u043B\u044C\u043D\u044B\u0439 \u0430\u043D\u0442\u0438\u0447\u0438\u0442. \u0418\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C \u043E\u0441\u0442\u043E\u0440\u043E\u0436\u043D\u043E.\n\n\u26A0\uFE0F Note/\u041F\u0440\u0438\u043C\u0435\u0447\u0430\u043D\u0438\u0435:\nUse on an alt account, avoid aggressive gameplay to reduce ban risk.",
+      "code": "loadstring(game:HttpGet(\u0022https://raw.githubusercontent.com/danilito222222/THE-LOST-FRONT-ROBLOX/refs/heads/main/THELOSTFRONT\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "Lost front",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "client",
+      "date": "2026-05-30",
+      "reports": 0,
+      "message_id": null,
+      "thumbnail_url": null
     }
   }
 }
