@@ -1156,6 +1156,19 @@
       "reports": 0,
       "message_id": "184",
       "thumbnail_url": null
+    },
+    "script_1780226951": {
+      "name": "TDH script BREAK IN 2",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Tubers Destruct Hub A powerful script for Break In 2 with 4 tabs full of useful features.\n\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Tubers Destruct Hub \u041C\u043E\u0449\u043D\u044B\u0439 \u0441\u043A\u0440\u0438\u043F\u0442 \u0434\u043B\u044F Break In 2 \u0441 4 \u0432\u043A\u043B\u0430\u0434\u043A\u0430\u043C\u0438, \u043F\u043E\u043B\u043D\u044B\u043C\u0438 \u043F\u043E\u043B\u0435\u0437\u043D\u044B\u0445 \u0444\u0443\u043D\u043A\u0446\u0438\u0439.\n\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: Item Giver (Apple, MedKit, Key, GoldKey, GoldenApple, Pizza, GoldPizza, BloxyCola, Battery \u0438 \u0434\u0440.), Weapon Giver (Broom, Wrench, Hammer, Pitchfork, Bat, Crowbar, LinkedSword \u0438 \u0434\u0440.), Custom Amount, \u002B1 Strength, \u002B1 Speed, Fly GUI, Custom WalkSpeed, Kill All Players, Kick All Players, Kick Selected Player, Delete Selected Player, Delete Map, Delete Game",
+      "code": "--WAIT ~20 SECONDS IF SCRIPT DON\u0027T LAUCNHING TRY AGAIN!\nloadstring(game:HttpGet(\u0027https://raw.githubusercontent.com/ZrozLOL/TDH-V2/refs/heads/main/Break%20in%202\u0027))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "Break in 2",
+      "keyless": false,
+      "key_difficulty": "easy",
+      "script_side": "server",
+      "date": "2026-05-31",
+      "reports": 0,
+      "message_id": null,
+      "thumbnail_url": null
     }
   }
 }
