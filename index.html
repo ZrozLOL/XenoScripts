@@ -5,9 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Get Your Script</title>
 
-<!-- AdMaven Pop-Under -->
 <script data-cfasync="false" src="//dcbbwymp1bhlf.cloudfront.net/?wbbcd=1253824"></script>
-<!-- AdMaven Interstitial -->
 <script data-cfasync="false" src="//dcbbwymp1bhlf.cloudfront.net/?wbbcd=1253835"></script>
 
 <style>
@@ -91,7 +89,6 @@ button.show { display: inline-block; animation: bounceIn 0.6s ease-out; }
 .subtitle { margin-top: 20px; font-size: 16px; opacity: 0.9; color: #cccccc; }
 .particle { position: absolute; background: rgba(255,255,255,0.8); border-radius: 50%; pointer-events: none; }
 
-/* ── AVOCAT MODAL ── */
 .modal-overlay {
     display: none;
     position: fixed; inset: 0;
@@ -102,7 +99,6 @@ button.show { display: inline-block; animation: bounceIn 0.6s ease-out; }
     align-items: center;
 }
 .modal-overlay.show { display: flex; animation: fadeIn 0.3s ease-out; }
-
 .modal-box {
     background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
     border: 1px solid rgba(255,255,255,0.15);
@@ -118,100 +114,56 @@ button.show { display: inline-block; animation: bounceIn 0.6s ease-out; }
     from { opacity: 0; transform: translateY(40px) scale(0.95); }
     to   { opacity: 1; transform: translateY(0) scale(1); }
 }
-
 .modal-logo {
-    font-size: 48px;
-    margin-bottom: 16px;
-    display: block;
+    font-size: 48px; margin-bottom: 16px; display: block;
     animation: catBounce 2s ease-in-out infinite;
 }
 @keyframes catBounce {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-6px); }
 }
-
-.modal-title {
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 8px;
-    color: #fff;
-    letter-spacing: -0.5px;
-}
-.modal-sub {
-    font-size: 14px;
-    color: rgba(255,255,255,0.55);
-    margin-bottom: 32px;
-    line-height: 1.6;
-}
-
-.modal-buttons {
-    display: flex;
-    gap: 12px;
-    justify-content: center;
-}
-
+.modal-title { font-size: 22px; font-weight: 700; margin-bottom: 8px; color: #fff; letter-spacing: -0.5px; }
+.modal-sub { font-size: 14px; color: rgba(255,255,255,0.55); margin-bottom: 32px; line-height: 1.6; }
+.modal-buttons { display: flex; gap: 12px; justify-content: center; }
 .btn-ok {
     padding: 14px 36px;
     background: linear-gradient(135deg, #ffffff, #d0d0d0);
-    color: #000;
-    border: none;
-    border-radius: 50px;
-    font-size: 16px;
-    font-weight: 700;
-    cursor: pointer;
-    display: inline-block !important;
-    margin: 0;
+    color: #000; border: none; border-radius: 50px;
+    font-size: 16px; font-weight: 700; cursor: pointer;
+    display: inline-block !important; margin: 0;
     box-shadow: 0 8px 24px rgba(255,255,255,0.15);
     transition: all 0.25s ease;
 }
 .btn-ok:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(255,255,255,0.3); }
-
 .btn-nuh {
-    padding: 14px 36px;
-    background: transparent;
+    padding: 14px 36px; background: transparent;
     color: rgba(255,255,255,0.5);
     border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 50px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    display: inline-block !important;
-    margin: 0;
-    box-shadow: none;
-    transition: all 0.25s ease;
+    border-radius: 50px; font-size: 16px; font-weight: 600;
+    cursor: pointer; display: inline-block !important; margin: 0;
+    box-shadow: none; transition: all 0.25s ease;
 }
 .btn-nuh:hover { color: rgba(255,255,255,0.8); border-color: rgba(255,255,255,0.3); transform: translateY(-2px); }
 
-/* ── KEY STAGE ── */
 #keyStage { display: none; }
-
 .key-box {
     background: rgba(255,255,255,0.06);
     border: 1px solid rgba(255,255,255,0.12);
     border-radius: 16px;
     padding: 18px 24px;
     font-family: 'Courier New', monospace;
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    color: #fff;
-    margin: 20px 0 10px;
-    word-break: break-all;
+    font-size: 22px; font-weight: 700;
+    letter-spacing: 3px; color: #fff;
+    margin: 20px 0 10px; word-break: break-all;
 }
-
 .key-tag {
     display: inline-block;
     background: rgba(255,255,255,0.1);
     color: rgba(255,255,255,0.6);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 4px 12px;
-    border-radius: 20px;
-    margin-bottom: 8px;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 4px 12px; border-radius: 20px; margin-bottom: 8px;
 }
-
 @media (max-width: 600px) {
     .container { padding: 40px 30px; }
     h1 { font-size: 24px; }
@@ -234,8 +186,7 @@ button.show { display: inline-block; animation: bounceIn 0.6s ease-out; }
     color: #f0f0f0;
     font-family: 'Segoe UI', sans-serif;
     font-size: 13px; font-weight: 600;
-    text-decoration: none;
-    border-radius: 8px;
+    text-decoration: none; border-radius: 8px;
     backdrop-filter: blur(10px);
     transition: all 0.2s ease;
 " onmouseover="this.style.background='rgba(255,255,255,0.12)'" onmouseout="this.style.background='rgba(255,255,255,0.06)'">
@@ -246,7 +197,6 @@ button.show { display: inline-block; animation: bounceIn 0.6s ease-out; }
     Home
 </a>
 
-<!-- Main wait container -->
 <div class="container" id="mainContainer">
     <h1 id="mainTitle">⏳ Please Wait...</h1>
     <div class="timer-container">
@@ -258,9 +208,8 @@ button.show { display: inline-block; animation: bounceIn 0.6s ease-out; }
     <p class="subtitle" id="subtitle">Your script is being prepared</p>
     <button id="btn" onclick="onMainBtnClick()">Get Script Now</button>
 
-    <!-- Key stage (inside same container) -->
     <div id="keyStage">
-        <div class="key-tag">FREE KEY</div>
+        <div class="key-tag" id="keyTag">FREE KEY</div>
         <div class="key-box" id="keyValue">FREE</div>
         <button id="copyKeyBtn" class="show" onclick="copyKey()" style="margin-top:10px;">
             📋 Copy Key
@@ -269,7 +218,6 @@ button.show { display: inline-block; animation: bounceIn 0.6s ease-out; }
     </div>
 </div>
 
-<!-- AvoCat modal -->
 <div class="modal-overlay" id="avocatModal">
     <div class="modal-box">
         <span class="modal-logo">🐱</span>
@@ -311,22 +259,19 @@ function createParticles() {
 }
 createParticles();
 
-const urlParams  = new URLSearchParams(window.location.search);
-const scriptId   = urlParams.get('id');
-const isAvoCat   = scriptId === 'script_avocat';
+const urlParams = new URLSearchParams(window.location.search);
+const scriptId  = urlParams.get('id');
+const isAvoCat  = scriptId === 'script_avocat';
+const isGetKey  = scriptId === 'get_key';
 
 let timerEl  = document.getElementById('timer');
 let btn      = document.getElementById('btn');
 let subtitle = document.getElementById('subtitle');
 let fill     = document.getElementById('progressFill');
-let currentInterval = null; // один глобальний інтервал
+let currentInterval = null;
 
 function startTimer(seconds, onTick, onDone) {
-    // Зупиняємо будь-який попередній таймер
-    if (currentInterval) {
-        clearInterval(currentInterval);
-        currentInterval = null;
-    }
+    if (currentInterval) { clearInterval(currentInterval); currentInterval = null; }
     let t = seconds;
     timerEl.innerText = t;
     currentInterval = setInterval(() => {
@@ -342,37 +287,27 @@ function startTimer(seconds, onTick, onDone) {
     }, 1000);
 }
 
-// kick off progress bar animation
 fill.classList.add('animate');
 
-// Запускаємо головний таймер
 startTimer(15, null, () => {
     btn.classList.add('show');
-    subtitle.innerText = 'Ready to download!';
+    subtitle.innerText = isGetKey ? 'Your key is ready!' : 'Ready to download!';
 });
 
 function onMainBtnClick() {
-    if (scriptId) {
+    if (isGetKey) {
+        showMyKey();
+    } else if (scriptId) {
         sessionStorage.setItem('ad_passed_' + scriptId, 'true');
-        // redirect to script.html first; AvoCat modal will appear after copy (handled in script.html)
-        // BUT if this page IS the avocat flow (key stage), skip
         window.location.href = `script.html?id=${scriptId}`;
     } else {
         alert('Error: No script ID provided');
     }
 }
 
-/* ── Called from script.html after copy, via postMessage or direct call ──
-   Actually: AvoCat modal is shown on THIS page after the user copies the script
-   on script.html — but since they are separate pages we handle it differently.
-
-   The modal is shown when:
-   - isAvoCat === true  AND
-   - URL has ?showModal=1  (script.html redirects back here with this param after copy)
-*/
+// ── AvoCat modal ──
 const showModal = urlParams.get('showModal');
 if (isAvoCat && showModal === '1') {
-    // Hide normal wait UI, show modal immediately
     document.getElementById('mainContainer').style.display = 'none';
     document.getElementById('avocatModal').classList.add('show');
 }
@@ -381,39 +316,39 @@ function closeModal() {
     document.getElementById('avocatModal').classList.remove('show');
 }
 
-/* ── KEY FLOW ── */
 function startKeyFlow() {
-    // Hide modal
     document.getElementById('avocatModal').classList.remove('show');
-
-    // Reset UI
     document.getElementById('mainTitle').innerText = '⏳ Please Wait...';
     subtitle.innerText = 'Preparing your key...';
     btn.classList.remove('show');
     document.getElementById('keyStage').style.display = 'none';
     document.getElementById('mainContainer').style.display = '';
-
-    // Reset progress bar
     fill.classList.remove('animate');
     void fill.offsetWidth;
     fill.classList.add('animate');
-
-    // startTimer автоматично зупиняє старий інтервал
     startTimer(15, null, () => {
         subtitle.innerText = 'Your key is ready!';
-        showKey();
+        showAvoCatKey();
     });
 }
 
-function showKey() {
+// ── AvoCat key (FREE) ──
+function showAvoCatKey() {
     btn.classList.remove('show');
     document.getElementById('mainTitle').innerText = '🐱 AvoCat Key';
+    document.getElementById('keyTag').innerText = 'FREE KEY';
+    document.getElementById('keyValue').innerText = 'FREE';
     document.getElementById('keyStage').style.display = 'block';
 }
+
+// ── Твій динамічний ключ ──
 async function showMyKey() {
     btn.classList.remove('show');
     document.getElementById('mainTitle').innerText = '🔑 Your Key';
-    
+    document.getElementById('keyTag').innerText = 'YOUR KEY';
+    document.getElementById('keyValue').innerText = '⏳ Loading...';
+    document.getElementById('keyStage').style.display = 'block';
+
     try {
         const res = await fetch('https://private-production-7bcd.up.railway.app/addkey');
         const data = await res.json();
@@ -421,11 +356,11 @@ async function showMyKey() {
     } catch (e) {
         document.getElementById('keyValue').innerText = 'Error, try again';
     }
-    
-    document.getElementById('keyStage').style.display = 'block';
 }
+
 function copyKey() {
-    navigator.clipboard.writeText('FREE').then(() => {
+    const key = document.getElementById('keyValue').innerText;
+    navigator.clipboard.writeText(key).then(() => {
         const msg = document.getElementById('keyCopiedMsg');
         const copyBtn = document.getElementById('copyKeyBtn');
         copyBtn.innerText = '✓ Copied!';
