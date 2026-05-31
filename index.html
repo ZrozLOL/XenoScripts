@@ -288,7 +288,10 @@ function startTimer(seconds, onTick, onDone) {
 }
 
 fill.classList.add('animate');
-
+if (isGetKey) {
+    subtitle.innerText = 'Your key is being prepared';
+    document.getElementById('mainTitle').innerText = '⏳ Please Wait...';
+}
 startTimer(15, null, () => {
     btn.classList.add('show');
     subtitle.innerText = isGetKey ? 'Your key is ready!' : 'Ready to download!';
