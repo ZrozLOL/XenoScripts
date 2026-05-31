@@ -410,7 +410,20 @@ function showKey() {
     document.getElementById('mainTitle').innerText = '🐱 AvoCat Key';
     document.getElementById('keyStage').style.display = 'block';
 }
-
+async function showMyKey() {
+    btn.classList.remove('show');
+    document.getElementById('mainTitle').innerText = '🔑 Your Key';
+    
+    try {
+        const res = await fetch('https://private-production-7bcd.up.railway.app/addkey');
+        const data = await res.json();
+        document.getElementById('keyValue').innerText = data.key;
+    } catch (e) {
+        document.getElementById('keyValue').innerText = 'Error, try again';
+    }
+    
+    document.getElementById('keyStage').style.display = 'block';
+}
 function copyKey() {
     navigator.clipboard.writeText('FREE').then(() => {
         const msg = document.getElementById('keyCopiedMsg');
