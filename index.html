@@ -206,7 +206,7 @@ button.show { display: inline-block; animation: bounceIn 0.6s ease-out; }
         <div class="progress-fill" id="progressFill"></div>
     </div>
     <p class="subtitle" id="subtitle">Your script is being prepared</p>
-    <button id="btn" onclick="onMainBtnClick()">Get Script Now</button>
+    <button id="btn" onclick="onMainBtnClick()" id="btn">Get Script Now</button>
 
     <div id="keyStage">
         <div class="key-tag" id="keyTag">FREE KEY</div>
@@ -288,9 +288,9 @@ function startTimer(seconds, onTick, onDone) {
 }
 
 fill.classList.add('animate');
+subtitle.innerText = isGetKey ? 'Your key is being prepared' : 'Your script is being prepared';
 if (isGetKey) {
-    subtitle.innerText = 'Your key is being prepared';
-    document.getElementById('mainTitle').innerText = '⏳ Please Wait...';
+    document.getElementById('btn').innerText = 'Get Key Now';
 }
 startTimer(15, null, () => {
     btn.classList.add('show');
