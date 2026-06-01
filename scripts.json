@@ -1169,6 +1169,19 @@
       "reports": 0,
       "message_id": "186",
       "thumbnail_url": null
+    },
+    "script_1780309720": {
+      "name": "RZRM Auto kill zombie and Auto Heal OP Keyless",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 RZRM Auto kill zombie and Auto Heal OP Keyless\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 RZRM Auto kill zombie and Auto Heal OP Keyless\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: Auto heal, Zombie kill, Player ESP, Zombie ESP, No clip, Fly, Fly speed, Vehicle TP",
+      "code": "loadstring(game:HttpGet(\u0022https://raw.githubusercontent.com/luascripting21342/exploit-panel/refs/heads/main/main.lua\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "retro zombie rescue mission [ALPHA]",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "client",
+      "date": "2026-06-01",
+      "reports": 0,
+      "message_id": null,
+      "thumbnail_url": "https://tr.rbxcdn.com/180DAY-1cf9571d84d9b507e00a6aea5d963ad7/512/512/Image/Png/noFilter"
     }
   }
 }
