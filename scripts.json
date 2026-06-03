@@ -1208,6 +1208,19 @@
       "reports": 0,
       "message_id": "194",
       "thumbnail_url": "https://tr.rbxcdn.com/180DAY-1cd097ad56ff9d02e8bbb41a4e7a4838/512/512/Image/Png/noFilter"
+    },
+    "script_1780493751": {
+      "name": "Gun Training inf cash script keyless",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Gun Training inf cash script keyless\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Gun Training inf cash script keyless\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: Inf cash, Inf rebirth, Get best eggs",
+      "code": "loadstring(game:HttpGet(\u0022https://raw.githubusercontent.com/gumanba/Scripts/main/GunTraining\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "[EVENT\uD83C\uDFAF] Gun Training ",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "client",
+      "date": "2026-06-03",
+      "reports": 0,
+      "message_id": null,
+      "thumbnail_url": "https://tr.rbxcdn.com/180DAY-11dfddcee71c7b0b5e19d3080d3486ce/512/512/Image/Png/noFilter"
     }
   }
 }
