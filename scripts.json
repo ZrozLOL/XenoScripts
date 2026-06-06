@@ -1273,6 +1273,19 @@
       "reports": 0,
       "message_id": "206",
       "thumbnail_url": "https://tr.rbxcdn.com/180DAY-ad6380a0d6374dc0aa83ff7b01a31363/512/512/Image/Png/noFilter"
+    },
+    "script_1780753214": {
+      "name": "Auto seed roller and Auto farm op (Keyless)",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Auto seed roller and Auto farm op (Keyless)\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Auto seed roller and Auto farm op (Keyless)\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: Scan plants, Plants upgrade, Teleport to tiles, Auto upgrade plants, Auto unlock plot tiles, Auto sell crates, Auto collect drops, Teleport to drops, Auto open seed packs, Auto submit contracts, Auto insert seeds to composter, Auto saw yield, Auto saw range, Auto sprinkler, Auto expand farm, Auto seed rolls, Auto claim rewards, Auto spin, Fast spin, Auto hatch eggs, Auto buy eggs, TP to my plot, TP to sell desk, TP to egg podium, Infinite jump, Anti AFK, Anti kick, Anti lag",
+      "code": "loadstring(game:HttpGet(\u0022https://raw.githubusercontent.com/Dalkoski/Stellar/refs/heads/main/Loader\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "[\uD83C\uDF3D] Build A Ring Farm",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "server",
+      "date": "2026-06-06",
+      "reports": 0,
+      "message_id": null,
+      "thumbnail_url": "https://tr.rbxcdn.com/180DAY-f18bb72f77ad3fcc2d29d28e2fccf5f4/512/512/Image/Png/noFilter"
     }
   }
 }
