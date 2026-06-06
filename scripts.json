@@ -1260,6 +1260,19 @@
       "reports": 0,
       "message_id": "198",
       "thumbnail_url": "https://tr.rbxcdn.com/180DAY-b7317d44fd85c141d154cede4aacf4b0/512/512/Image/Png/noFilter"
+    },
+    "script_1780753195": {
+      "name": "Lucky Block Rush Auto Mobs Script Keyless",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Lucky Block Rush Auto Mobs Script Keyless\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Lucky Block Rush Auto Mobs Script Keyless\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: auto rebirth, set distant, auto attack, x2 train, collect cash, auto upgrade, auto rebirth",
+      "code": "loadstring(game:HttpGet(\u0022https://raw.githubusercontent.com/gumanba/Scripts/main/LuckyBlockRush\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "Lucky Block Rush",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "client",
+      "date": "2026-06-06",
+      "reports": 0,
+      "message_id": null,
+      "thumbnail_url": "https://tr.rbxcdn.com/180DAY-ad6380a0d6374dc0aa83ff7b01a31363/512/512/Image/Png/noFilter"
     }
   }
 }
