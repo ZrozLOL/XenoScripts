@@ -1066,19 +1066,6 @@
       "message_id": "172",
       "thumbnail_url": "https://tr.rbxcdn.com/180DAY-bd3f86254876d9f3499be36200de6122/512/512/Image/Png/noFilter"
     },
-    "script_avocat": {
-      "name": "AvoCat Hub",
-      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 AvoCat Hub\nA powerful universal hub with tons of features.\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 AvoCat Hub\n\u041C\u043E\u0449\u043D\u044B\u0439 \u0443\u043D\u0438\u0432\u0435\u0440\u0441\u0430\u043B\u044C\u043D\u044B\u0439 \u0445\u0430\u0431 \u0441 \u043C\u043D\u043E\u0436\u0435\u0441\u0442\u0432\u043E\u043C \u0444\u0443\u043D\u043A\u0446\u0438\u0439.\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438:\nFly, Noclip, Infinite Jump, Speed, Spin, Freecam, FOV Changer, Teleport, God Mode, Anti-Void, Hitbox Expander, Aimbot (FOV, Smoothing, Prediction, Wall Check, Team Check), Auto Clicker (CPS, Hold Mode, Right Click, Jitter), ESP (Names, Health, Distance), Fullbright, No Fog, Fling, Fling All, Touch Fling, Follow Player, Teleport to Player, Spectate, Tool Giver (Full Game Scan), Infinite Yield, Dex Explorer, Script Loader, Code Executor, Custom Keybinds, Anti-AFK, Anti-Lag, Anti-Slowdown, Anti-Cheat Bypass, Server Hop, Rejoin, Autoload",
-      "code": "loadstring(game:HttpGet(\u0022https://raw.githubusercontent.com/Avocat547/Avocat-Hubbb/refs/heads/main/source\u0022))()",
-      "game": "Universal",
-      "keyless": false,
-      "key_difficulty": "none",
-      "script_side": "client",
-      "date": "2026-06-01",
-      "reports": 0,
-      "message_id": "189",
-      "thumbnail_url": null
-    },
     "script_1780078517": {
       "name": "Sorcerer Tower Defense Auto Play Macro (No Keys)",
       "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Sorcerer Tower Defense Auto Play Macro (No Keys)\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Sorcerer Tower Defense Auto Play Macro (No Keys)\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: Record strat, Autoplay, Clear strat, Looping, Memory slot",
