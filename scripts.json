@@ -1286,6 +1286,19 @@
       "reports": 0,
       "message_id": "212",
       "thumbnail_url": "https://tr.rbxcdn.com/180DAY-53f81a48fb348823169b97fd42a1094a/512/512/Image/Png/noFilter"
+    },
+    "script_1781106185": {
+      "name": "Deluxed Hub Auto Farm Dandy\u0027s World script OP (No Keys)",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Deluxed Hub Auto Farm Dandy\u0027s World script OP (No Keys)\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Deluxed Hub Auto Farm Dandy\u0027s World script OP (No Keys)\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: Enable auto farm, Auto fix generators, Auto tp to generators, Auto elevator, Auto save from monsters, Generator ESP, Monster ESP, Item ESP, Camera and Lighting, Infinite jump, Jump force, Walk speed, Speed, TP walk, TP speed, Play music, Loop",
+      "code": "loadstring(game:HttpGet(\u0022https://raw.githubusercontent.com/VearyTry/DeluxedHub/main/dandysworld.lua\u0022, true))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "\uD83D\uDC3B Dandy\u2019s World [ALPHA]",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "client",
+      "date": "2026-06-10",
+      "reports": 0,
+      "message_id": null,
+      "thumbnail_url": "https://tr.rbxcdn.com/180DAY-cf79750a04eb690c91969aa3a3742542/512/512/Image/Png/noFilter"
     }
   }
 }
