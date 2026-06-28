@@ -1299,6 +1299,19 @@
       "reports": 0,
       "message_id": "216",
       "thumbnail_url": "https://tr.rbxcdn.com/180DAY-cf79750a04eb690c91969aa3a3742542/512/512/Image/Png/noFilter"
+    },
+    "script_1782617185": {
+      "name": "Ps99 Auto Rank Akuma Hub OP",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 Ps99 Auto Rank Akuma Hub OP\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 Ps99 Auto Rank Akuma Hub OP\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: Auto Rank, Auto farm, Fast farm, Auto rank quests, Kaitun rank, Auto hatch best egg, Hide egg ui, Unequip target slot, Inventory",
+      "code": "loadstring(game:HttpGet(\u0022https://raw.githubusercontent.com/chichitkh100/AKUMA-HUB/refs/heads/main/AKUMA%20HUB\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "[WORLD CUP] Pet Simulator 99! \u26BD",
+      "keyless": true,
+      "key_difficulty": "none",
+      "script_side": "both",
+      "date": "2026-06-28",
+      "reports": 0,
+      "message_id": null,
+      "thumbnail_url": "https://tr.rbxcdn.com/180DAY-c45ede7586870cc14124b48a873a3e57/512/512/Image/Png/noFilter"
     }
   }
 }
