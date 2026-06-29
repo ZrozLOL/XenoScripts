@@ -1325,6 +1325,19 @@
       "reports": 0,
       "message_id": null,
       "thumbnail_url": "https://tr.rbxcdn.com/180DAY-b7317d44fd85c141d154cede4aacf4b0/512/512/Image/Png/noFilter"
+    },
+    "script_1782758179": {
+      "name": "Msdoors",
+      "description": "\uD83C\uDDFA\uD83C\uDDF8 : Script \u2014 msdoors VERY OP SCRIPT OMG\n\uD83C\uDDF7\uD83C\uDDFA : \u0421\u043A\u0440\u0438\u043F\u0442 \u2014 msdoors \u041E\u0427\u0415\u041D\u042C \u0416\u041E\u0421\u0422\u041A\u0418\u0419 \u0421\u041A\u0420\u0418\u041F\u0422 \u041E\u041C\u0413\n\uD83D\uDD27 Features/\u0424\u0443\u043D\u043A\u0446\u0438\u0438: OP",
+      "code": "loadstring(game:HttpGet(\u0022https://www.msdoors.xyz/script\u0022))()\n-- // More scripts: t.me/XenoScriptsSupported",
+      "game": "Doors",
+      "keyless": false,
+      "key_difficulty": "easy",
+      "script_side": "server",
+      "date": "2026-06-29",
+      "reports": 0,
+      "message_id": null,
+      "thumbnail_url": null
     }
   }
 }
