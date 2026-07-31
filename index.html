@@ -353,7 +353,7 @@ async function showMyKey() {
     document.getElementById('keyStage').style.display = 'block';
 
     try {
-        const res = await fetch('https://private-production-7bcd.up.railway.app/addkey');
+        const res = await fetch('https://keybot-production-bbd0.up.railway.app/addkey');
         const data = await res.json();
         document.getElementById('keyValue').innerText = data.key;
     } catch (e) {
